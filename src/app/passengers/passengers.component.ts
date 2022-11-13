@@ -26,9 +26,10 @@ export class PassengersComponent implements OnInit {
   flights: Flight[]=[ new Flight(1,new Plane("Samolot1",100), this.passengers1, this.pilots, new Date("2000-01-21")),
                       new Flight(2,new Plane("Samolot2",200), this.passengers2, this.pilots, new Date("2001-01-21"))];
   whichClicked:number=-1;
-  flightsid!: string | null;
+  private flightid!: string;
   passengers!: Passenger[];
- // flightsid!: string;
+
+
 
 
 
@@ -37,8 +38,10 @@ export class PassengersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => this.flightsid = params.get('id'));
-    this.passengers=this.flights[this.flightsid].passengers;
+    //this.route.paramMap.subscribe(params => this.Flightid = params.get('id'));
+   console.log(this.route.snapshot.queryParams);
+    //console.log(this.route.paramMap.subscribe(params => this.flightsid = params.get('id')));
+    //this.passengers=this.flights[this.flightsid].passengers;
   }
 
   decide():boolean{
@@ -49,6 +52,12 @@ export class PassengersComponent implements OnInit {
     this.whichClicked=ind;
     console.log("Passenger clicked",Passenger,this.whichClicked);
 
+  }
+  get Flightid(){
+    return this.flightid;
+  }
+  set Flightid(flightid:string){
+    this.flightid=flightid;
   }
 
 }

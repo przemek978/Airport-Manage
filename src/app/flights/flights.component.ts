@@ -24,7 +24,7 @@ export class FlightsComponent implements OnInit {
                       new Flight(2,new Plane("Samolot2",200), this.passengers, this.pilots, new Date("2001-01-21"))];
   whichClicked:number=-1;
 
-  constructor(private route: Router) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -36,6 +36,10 @@ export class FlightsComponent implements OnInit {
 
   FlightClicked(Flight:Flight,ind:number):void{
     this.whichClicked=ind;
-    this.route.navigate(['passengers/' + ind]);
+    var sind="";
+    sind=ind.toString();
+    console.log('passengers/' + sind);
+    this.router.navigate(['passengers/' + sind]);
+    console.log(this.router);
   }
 }

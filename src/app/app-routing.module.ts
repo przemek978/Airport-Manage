@@ -4,7 +4,7 @@ import { FlightsComponent } from './flights/flights.component';
 import { PassengerComponent } from './passenger/passenger.component';
 import { PassengersComponent } from './passengers/passengers.component';
 
-const routes: Routes = [{ path: 'flights', component: FlightsComponent },{ path: 'passengers/id', component: PassengersComponent }];
+const routes: Routes = [{ path: 'flights', component: FlightsComponent },{ path: 'passengers/:id', component: PassengersComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
