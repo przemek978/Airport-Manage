@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FlightsComponent } from './flights/flights.component';
 import { PassengerComponent } from './passenger/passenger.component';
 import { PassengersComponent } from './passengers/passengers.component';
 
-const routes: Routes = [{ path: 'comp1', component: PassengersComponent },];
+const routes: Routes = [{ path: 'flights', component: FlightsComponent },];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
