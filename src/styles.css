@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  background-color: lightcyan;
+}
+
+header {
+  background-color:darkgreen;
+  color:white;
+  padding: 10px;
+  text-align:center;
+}
+
+h2{
+  text-align: center;
+}
+
+nav {
+  color: white;
+}
+
+nav a:link, nav a:visited {
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+nav a:hover,
+nav a:active {
+  background-color: #466d1d;
+}
+
+span{
+  font-weight: bold;
+}
+
+select{
+  padding: 12px;
+  width: 100%;
+}
+
+footer {
+  background:darkgreen;
+  text-align: center;
+  margin-top: 5px;
+  padding: 5px;
+}
