@@ -1,1 +1,7 @@
-<p>flight works!</p>
+<span [class.oddRow]="isOdd" [class.evenRow]="!isOdd">{{prefix}} {{flight.Plane}}  {{flight.Pilots}}  {{flight.Data}}</span>
+<span *ngIf="isClicked">
+  <input type="text" [(ngModel)]="flight.Plane"/>
+  <input type="text" [(ngModel)]="flight.Pilots"/>
+  <input type="date" [(ngModel)]="flight.Data"/>
+  <button (click)="doUnClick()">HIDE</button>
+</span>

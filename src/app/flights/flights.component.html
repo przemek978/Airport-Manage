@@ -1,1 +1,9 @@
-<p>flights works!</p>
+<p [ngClass]="'title'">Lista Pasażerów lotu</p>
+<p [ngClass]="'subtitle'">Kliknij na pasażera aby wprowadzić zmiany</p>
+<ol *ngIf="decide()">
+  <li *ngFor="let flight of flights; index as i; odd as isOdd;even as isEven" (click)="FlightClicked(flight,i)">
+    <span >
+      <print-passenger [isClicked]="whichClicked===i" prefix="Lot:&nbsp;&nbsp;&nbsp;&nbsp;" [flight]="flight" [isOdd]="isOdd"></print-passenger>
+    </span>
+  </li>
+</ol>

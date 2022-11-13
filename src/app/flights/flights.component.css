@@ -1,0 +1,21 @@
+.title {
+  color: blue;
+  font-weight: bold;
+  font-size: xx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.subtitle{
+  font-weight: bold;
+  text-align: center;
+}
+
+ol{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode','Luicia Grande','Luicia Sans',Arial,sans-serif;
+  font-size: large;
+  background-color: gold;
+}
+
+li{
+  border-style: ridge;
+}
