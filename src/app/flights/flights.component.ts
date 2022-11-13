@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
 import { Pilot } from '../types/pilot';
@@ -19,11 +20,11 @@ export class FlightsComponent implements OnInit {
   pilots: Pilot[]=[ new Pilot("Franek","Nowal", 1),
                         new Pilot("Sebastian","Kowal", 2)];
 
-  flights: Flight[]=[ new Flight(new Plane("Samolot1",100), this.passengers, this.pilots, new Date("2000-01-21")),
-                      new Flight(new Plane("Samolot2",200), this.passengers, this.pilots, new Date("2001-01-21"))];
+  flights: Flight[]=[ new Flight(1,new Plane("Samolot1",100), this.passengers, this.pilots, new Date("2000-01-21")),
+                      new Flight(2,new Plane("Samolot2",200), this.passengers, this.pilots, new Date("2001-01-21"))];
   whichClicked:number=-1;
 
-  constructor() {
+  constructor(private route: Router) {
   }
 
   ngOnInit(): void {
@@ -35,5 +36,6 @@ export class FlightsComponent implements OnInit {
 
   FlightClicked(Flight:Flight,ind:number):void{
     this.whichClicked=ind;
+    this.route.navigate(['passengers/' + ind]);
   }
 }

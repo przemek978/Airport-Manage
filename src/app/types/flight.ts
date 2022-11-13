@@ -5,6 +5,7 @@ import { Plane } from "./plane";
 export class Flight {
 
   constructor(
+    private id:number,
     private plane: Plane,
     private passengers: Passenger[],
     private pilots: Pilot[],
@@ -18,6 +19,9 @@ export class Flight {
     this.pilots.push(pilot1);
     this.pilots.push(pilot2);
   }
+  get Id():number{
+    return this.id;
+  }
   get Plane(): Plane {
     return this.plane;
   }
@@ -29,6 +33,9 @@ export class Flight {
   }
   get Data(): Date {
     return this.data;
+  }
+  set Id(id:number){
+    this.id=id;
   }
   set Plane(p: Plane) {
     this.plane = p;

@@ -1,7 +1,6 @@
-<span [class.oddRow]="isOdd" [class.evenRow]="!isOdd">{{prefix}} {{flight.Plane}}  {{flight.Pilots}}  {{flight.Data}}</span>
+<span [class.oddRow]="isOdd" [class.evenRow]="!isOdd" >{{prefix}} {{flight.Plane.Name}}  {{flight.Pilots[0].Name}} {{flight.Pilots[1].Name}}  {{flight.Data}}</span>
 <span *ngIf="isClicked">
-  <input type="text" [(ngModel)]="flight.Plane"/>
-  <input type="text" [(ngModel)]="flight.Pilots"/>
+  <input type="text" [(ngModel)]="flight.Plane.Name"/>
   <input type="date" [(ngModel)]="flight.Data"/>
   <button (click)="doUnClick()">HIDE</button>
 </span>

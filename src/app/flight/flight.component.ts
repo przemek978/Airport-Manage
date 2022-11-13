@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Flight } from '../types/flight';
 
 @Component({
-  selector: 'app-flight',
+  selector: 'print-flight',
   templateUrl: './flight.component.html',
   styleUrls: ['./flight.component.css']
 })

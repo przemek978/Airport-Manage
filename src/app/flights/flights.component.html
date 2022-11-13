@@ -1,9 +1,9 @@
-<p [ngClass]="'title'">Lista Pasażerów lotu</p>
-<p [ngClass]="'subtitle'">Kliknij na pasażera aby wprowadzić zmiany</p>
+<p [ngClass]="'title'">Lista lotów</p>
+<p [ngClass]="'subtitle'">Kliknij na lot aby wyświetlić pasażerów</p>
 <ol *ngIf="decide()">
   <li *ngFor="let flight of flights; index as i; odd as isOdd;even as isEven" (click)="FlightClicked(flight,i)">
     <span >
-      <print-passenger [isClicked]="whichClicked===i" prefix="Lot:&nbsp;&nbsp;&nbsp;&nbsp;" [flight]="flight" [isOdd]="isOdd"></print-passenger>
+      <print-flight [isClicked]="whichClicked===i" prefix="Lot:&nbsp;&nbsp;&nbsp;&nbsp;" [flight]="flight" [isOdd]="isOdd"></print-flight>
     </span>
   </li>
 </ol>
