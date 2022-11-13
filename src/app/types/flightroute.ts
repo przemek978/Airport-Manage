@@ -8,4 +8,10 @@ export class Flightroute {
   get Arrival(): string {
     return this.arrival;
   }
+  set Departure(d: string) {
+    this.departure = d;
+  }
+  set Arrival(a: string) {
+    this.arrival = a;
+  }
 }
