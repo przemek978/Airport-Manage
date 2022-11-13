@@ -4,28 +4,28 @@ export class Passenger{
   constructor(private name:string,private surname:string,private phone_nr:number,private birthday:string){
 
   }
-  public get getname():string{
+  get Name():string{
     return this.name;
   }
-  public get getsurname():string{
+  get Surname():string{
     return this.surname;
   }
-  public get getphone():number{
+  get Phone():number{
     return this.phone_nr;
   }
-  public get getbirth():string{
+  get Birth():string{
     return this.birthday;
   }
-  public set setname(n:string){
+  set Name(n:string){
     this.name=n;
   }
-  public set setsurname(sn:string){
+  set Surname(sn:string){
     this.surname=sn;
   }
-  public set setphone(phone:number){
+  set Phone(phone:number){
     this.phone_nr=phone;
   }
-  public set setbirth(birth:string){
+  set Birth(birth:string){
     this.birthday=birth;
   }
 }

@@ -1,0 +1,8 @@
+<span [class.oddRow]="isOdd" [class.evenRow]="!isOdd">{{prefix}} {{passenger.Name}}  {{passenger.Surname}}  {{passenger.Birth}}  {{passenger.Phone}}</span>
+<span *ngIf="isClicked">
+  <input type="text" [(ngModel)]="passenger.Name"/>
+  <input type="text" [(ngModel)]="passenger.Surname"/>
+  <input type="text" [(ngModel)]="passenger.Birth"/>
+  <input type="number" [(ngModel)]="passenger.Phone"/>
+  <button (click)="doUnClick()">HIDE</button>
+</span>

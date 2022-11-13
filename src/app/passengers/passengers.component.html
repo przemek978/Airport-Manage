@@ -1,0 +1,12 @@
+<p [ngClass]="'title'">Lista Pasażerów lotu</p>
+<p [ngClass]="'subtitle'">Kliknij na pasażera aby wprowadzić zmiany</p>
+<ol *ngIf="decide()">
+  <li *ngFor="let passenger of passengers; index as i; odd as isOdd;even as isEven" (click)="PassengerClicked(passenger,i)">
+    <span *ngIf="!passenger.Name.endsWith('a')">
+      <print-passenger [isClicked]="whichClicked===i" prefix="Pasażer:&nbsp;&nbsp;&nbsp;&nbsp;" [passenger]="passenger" [isOdd]="isOdd"></print-passenger>
+    </span>
+    <span *ngIf="passenger.Name.endsWith('a')">
+      <print-passenger [isClicked]="whichClicked===i" prefix="Pasażerka:&nbsp;" [passenger]="passenger" [isOdd]="isOdd"></print-passenger>
+    </span>
+  </li>
+</ol>
