@@ -1,16 +1,21 @@
+import { Passenger } from "./passenger"
+
 export class Flight {
   //private ticket:Ticket;
   constructor(
     private plane: string,
-    private passengers: string,
+    private passengers: Passenger[],
     private pilots: string,
     private data: Date
   ) {}
 
+  public addpassager(pass:Passenger){
+    this.passengers.push(pass);
+  }
   get Plane(): string {
     return this.plane;
   }
-  get Passengers(): string {
+  get Passengers(): Passenger[] {
     return this.passengers;
   }
   get Pilots(): string {
@@ -22,7 +27,7 @@ export class Flight {
   set Plane(p: string) {
     this.plane = p;
   }
-  set Passengers(Passengers: string) {
+  set Passengers(Passengers: Passenger[]) {
     this.passengers = this.passengers;
   }
   set Pilots(pilots: string) {
