@@ -10,6 +10,7 @@ import { FlightComponent } from './flight/flight.component';
 import { FlightsComponent } from './flights/flights.component';
 import { AddflightComponent } from './addflight/addflight.component';
 import { AddpassengertoflyComponent } from './addpassengertofly/addpassengertofly.component';
+import { EditflightComponent } from './editflight/editflight.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddpassengertoflyComponent } from './addpassengertofly/addpassengertofl
     FlightComponent,
     FlightsComponent,
     AddflightComponent,
-    AddpassengertoflyComponent
+    AddpassengertoflyComponent,
+    EditflightComponent
   ],
   imports: [
     BrowserModule,

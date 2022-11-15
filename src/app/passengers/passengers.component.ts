@@ -38,10 +38,11 @@ export class PassengersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.route.paramMap.subscribe(params => this.Flightid = params.get('id'));
+    //this.route.paramMap.subscribe(params => this.flightid = params.get('id'));
    console.log(this.route.snapshot.queryParams);
     //console.log(this.route.paramMap.subscribe(params => this.flightsid = params.get('id')));
     //this.passengers=this.flights[this.flightsid].passengers;
+    this.passengers=this.passengers1;
   }
 
   decide():boolean{
