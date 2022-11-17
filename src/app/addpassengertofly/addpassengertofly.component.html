@@ -1,1 +1,34 @@
-<p>addpassengertofly works!</p>
+<h1 mat-dialog-title>Dodaj pasażera do lotu</h1>
+<div mat-dialog-content>
+    <form #f="ngForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>Imię </mat-label>
+            <input matInput [(ngModel)]="data.name" name="name" required minlength="3" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Nazwisko </mat-label>
+            <input matInput [(ngModel)]="data.surname" name="surname" required minlength="3" />
+        </mat-form-field>
+
+        <div class="example-full-width" appearance="fill">
+            <!--      selected="{{film.filmId === data.show.filmId}}"-->
+            <mat-form-field appearance="fill">
+                <mat-label>Wybierz lot</mat-label>
+                <mat-select>
+                    <mat-option value="one">Eternals</mat-option>
+                    <mat-option value="two">SpiderMan</mat-option>
+                    <mat-option value="three">James Bond</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div mat-dialog-actions>
+            <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
+            <button mat-button [mat-dialog-close]="data" *ngIf="f.valid" cdkFocusInitial>
+        Ok
+      </button>
+            <button mat-button (click)="onNoClick()">Wyjdź</button>
+        </div>
+    </form>
+</div>
