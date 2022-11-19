@@ -4,7 +4,7 @@
     <form #f="ngForm">
         <mat-form-field class="example-full-width">
             <mat-label>Numer lotu </mat-label>
-            <input matInput [(ngModel)]="data.flight_number" name="flight_number" required minlength="3" />
+            <input matInput [(ngModel)]="data.Id" name="flight_number" required minlength="3" />
         </mat-form-field>
 
         <div class="example-full-width" appearance="fill">
@@ -52,9 +52,9 @@
         </p>
         <div mat-dialog-actions>
             <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-            <button mat-button [mat-dialog-close]="data" *ngIf="f.valid" cdkFocusInitial>
+            <!-- <button mat-button [mat-dialog-close]="data" *ngIf="f.valid" cdkFocusInitial>
         Ok
-      </button>
+      </button> -->
             <button mat-button (click)="onNoClick()">Wyjdź</button>
         </div>
     </form>

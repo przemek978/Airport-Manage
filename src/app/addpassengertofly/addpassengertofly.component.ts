@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { Passenger } from '../types/passenger';
 
 @Component({
   selector: 'app-addpassengertofly',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddpassengertoflyComponent implements OnInit {
 
-  constructor() { }
+  //@Input() data!:Passenger;
+  constructor(private dialogRef: MatDialogRef<AddpassengertoflyComponent>, @Inject(MAT_DIALOG_DATA) public data: Passenger) { }
 
   ngOnInit(): void {
   }
 
+  onNoClick() {
+    this.dialogRef.close();
+  }
 }

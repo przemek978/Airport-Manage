@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AddflightComponent } from '../addflight/addflight.component';
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
 import { Pilot } from '../types/pilot';
@@ -12,6 +14,7 @@ import { Plane } from '../types/plane';
 })
 export class FlightsComponent implements OnInit {
 
+
   passengers: Passenger[]=[ new Passenger("Jan","Kowalski",517355566,"24-12-2000"),
                         new Passenger("Adam","Nowak",606232556,"12-05-1984"),
                         new Passenger("Andrzej","Malinowski",506243445,"30-09-1996"),
@@ -23,13 +26,29 @@ export class FlightsComponent implements OnInit {
   flights: Flight[]=[ new Flight(1,new Plane("Samolot1",100), this.passengers, this.pilots, new Date("2000-01-21")),
                       new Flight(2,new Plane("Samolot2",200), this.passengers, this.pilots, new Date("2001-01-21"))];
   whichClicked:number=-1;
-
-  constructor(private router: Router) {
+  //public dialog!: MatDialog;
+  constructor(private router: Router,public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
   }
+  openDialog(add: boolean,edit: boolean) {
 
+    let dialogRef = null;
+
+    if (add) {
+      dialogRef = this.dialog.open(AddflightComponent, {
+        width: '30%',
+        data: {title: '', filmId: ''}
+      })
+    // } else if (edit) {
+    //   dialogRef = this.dialog.open(EditFilmComponent, {
+    //     width: '30%',
+    //     data: this.selectedFilm
+    //   })
+    } else
+      return;
+  }
   decide():boolean{
     return true;
   }

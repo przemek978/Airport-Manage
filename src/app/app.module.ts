@@ -11,6 +11,14 @@ import { FlightsComponent } from './flights/flights.component';
 import { AddflightComponent } from './addflight/addflight.component';
 import { AddpassengertoflyComponent } from './addpassengertofly/addpassengertofly.component';
 import { EditflightComponent } from './editflight/editflight.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatDialogModule} from "@angular/material/dialog";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -21,12 +29,14 @@ import { EditflightComponent } from './editflight/editflight.component';
     FlightsComponent,
     AddflightComponent,
     AddpassengertoflyComponent,
-    EditflightComponent
+    EditflightComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

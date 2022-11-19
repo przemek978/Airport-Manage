@@ -8,5 +8,6 @@
     <span *ngIf="passenger.Name.endsWith('a')">
       <print-passenger [isClicked]="whichClicked===i" prefix="Pasażerka:&nbsp;" [passenger]="passenger" [isOdd]="isOdd"></print-passenger>
     </span>
+    <button mat-raised-button color="primary" (click)="openDialog(true, false)">ADD passenger</button>
   </li>
 </ol>
