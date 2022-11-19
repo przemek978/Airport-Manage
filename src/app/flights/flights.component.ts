@@ -16,9 +16,9 @@ export class FlightsComponent implements OnInit {
 
 
   passengers: Passenger[]=[ new Passenger("Jan","Kowalski",517355566,"24-12-2000"),
-                        new Passenger("Adam","Nowak",606232556,"12-05-1984"),
-                        new Passenger("Andrzej","Malinowski",506243445,"30-09-1996"),
-                        new Passenger("Anna","Wiśniewska",786345322,"19-01-1967")];
+                            new Passenger("Adam","Nowak",606232556,"12-05-1984"),
+                            new Passenger("Andrzej","Malinowski",506243445,"30-09-1996"),
+                            new Passenger("Anna","Wiśniewska",786345322,"19-01-1967")];
 
   pilots: Pilot[]=[ new Pilot("Franek","Nowal", 1),
                         new Pilot("Sebastian","Kowal", 2)];
@@ -26,8 +26,8 @@ export class FlightsComponent implements OnInit {
   flights: Flight[]=[ new Flight(1,new Plane("Samolot1",100), this.passengers, this.pilots, new Date("2000-01-21")),
                       new Flight(2,new Plane("Samolot2",200), this.passengers, this.pilots, new Date("2001-01-21"))];
   whichClicked:number=-1;
-  //public dialog!: MatDialog;
-  constructor(private router: Router,public dialog: MatDialog) {
+
+  constructor(public dialog: MatDialog,private router: Router) {
   }
 
   ngOnInit(): void {
@@ -39,7 +39,7 @@ export class FlightsComponent implements OnInit {
     if (add) {
       dialogRef = this.dialog.open(AddflightComponent, {
         width: '30%',
-        data: {title: '', filmId: ''}
+        data: {plane:'', passengers:"" }
       })
     // } else if (edit) {
     //   dialogRef = this.dialog.open(EditFilmComponent, {
