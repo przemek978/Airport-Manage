@@ -1,1 +1,29 @@
-<p>editpassenger works!</p>
+<h1 mat-dialog-title>Dodaj pasażera do lotu</h1>
+<div mat-dialog-content>
+    <form #f="ngForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>Imię</mat-label>
+            <input matInput [(ngModel)]="data.Name" name="name" required minlength="3" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Nazwisko </mat-label>
+            <input matInput [(ngModel)]="data.Surname" name="surname" required minlength="3" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Numer telefonu</mat-label>
+            <input matInput [(ngModel)]="data.phone_number" name="phone_number" required minlength="9" />
+        </mat-form-field>
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>Wybierz datę lotu</mat-label>
+                <input type="date" matInput placeholder="Placeholder" />
+                <mat-hint>Wybierz datę</mat-hint>
+            </mat-form-field>
+        </p>
+        <div mat-dialog-actions>
+            <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
+            <button mat-button (click)="onNoClick()">Wyjdź</button>
+        </div>
+    </form>
+</div>

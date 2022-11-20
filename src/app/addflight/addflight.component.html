@@ -8,7 +8,6 @@
         </mat-form-field>
 
         <div class="example-full-width" appearance="fill">
-            <!--      selected="{{film.filmId === data.show.filmId}}"-->
             <mat-form-field appearance="fill">
                 <mat-label>Wybierz samolot</mat-label>
                 <mat-select>
@@ -20,7 +19,6 @@
         </div>
 
         <div class="example-full-width" appearance="fill">
-            <!--      selected="{{film.filmId === data.show.filmId}}"-->
             <mat-form-field appearance="fill">
                 <mat-label>Pasażerowie</mat-label>
                 <mat-select>
@@ -32,7 +30,6 @@
         </div>
 
         <div class="example-full-width" appearance="fill">
-            <!--      selected="{{film.filmId === data.show.filmId}}"-->
             <mat-form-field appearance="fill">
                 <mat-label>Piloci</mat-label>
                 <mat-select>
@@ -52,9 +49,6 @@
         </p>
         <div mat-dialog-actions>
             <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-            <!-- <button mat-button [mat-dialog-close]="data" *ngIf="f.valid" cdkFocusInitial>
-        Ok
-      </button> -->
             <button mat-button (click)="onNoClick()">Wyjdź</button>
         </div>
     </form>
