@@ -15,7 +15,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Wybierz lot</mat-label>
                 <mat-select [(ngModel)]="data.flight">
-                    <option *ngFor="let flight of flights" [ngValue]="flight">{{ flight.id }}</option>
+                    <option *ngFor="let flight of flights" [ngValue]="flight">{{ flight.Id }}</option>
                 </mat-select>
             </mat-form-field>
         </div>
