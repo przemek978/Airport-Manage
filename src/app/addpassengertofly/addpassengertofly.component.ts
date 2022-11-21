@@ -13,6 +13,7 @@ export class AddpassengertoflyComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<AddpassengertoflyComponent>, @Inject(MAT_DIALOG_DATA) public data: Passenger) { }
 
   ngOnInit(): void {
+
   }
 
   onNoClick() {
