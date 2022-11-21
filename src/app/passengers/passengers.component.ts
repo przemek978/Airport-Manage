@@ -30,6 +30,7 @@ export class PassengersComponent implements OnInit {
   whichClicked:number=-1;
   private flightid!: string;
   passengers!: Passenger[];
+  editpassenger!:Passenger;
 
 
 
