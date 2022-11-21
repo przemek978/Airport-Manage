@@ -21,6 +21,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { EditpassengerComponent } from './editpassenger/editpassenger.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EditpassengerComponent } from './editpassenger/editpassenger.component'
     AddpassengertoflyComponent,
     EditflightComponent,
     EditpassengerComponent,
+    LoginComponent,
 
   ],
   imports: [

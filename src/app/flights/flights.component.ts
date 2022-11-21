@@ -38,8 +38,8 @@ export class FlightsComponent implements OnInit {
 
     if (add) {
       dialogRef = this.dialog.open(AddflightComponent, {
-        width: '30%',
-        data: {plane:'', passengers:"" }
+        width: '50%',
+        //data: {plane:'', passengers:'' }
       })
     // } else if (edit) {
     //   dialogRef = this.dialog.open(EditFilmComponent, {
