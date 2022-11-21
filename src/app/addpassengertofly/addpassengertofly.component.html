@@ -1,14 +1,14 @@
 <h1 mat-dialog-title>Dodaj pasażera do lotu</h1>
 <div mat-dialog-content>
     <form #f="ngForm">
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Imię </mat-label>
-            <input matInput [(ngModel)]="data.Name" name="name" required minlength="3" />
+            <input matInput [(ngModel)]="data.Name" name="name"  />
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
             <mat-label>Nazwisko </mat-label>
-            <input matInput [(ngModel)]="data.Surname" name="surname" required minlength="3" />
+            <!-- <input matInput [(ngModel)]="data.Surname" name="surname" required minlength="3" /> -->
         </mat-form-field>
 
         <div class="example-full-width" appearance="fill">

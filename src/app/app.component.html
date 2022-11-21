@@ -1,36 +1,12 @@
-<!-- <app-passengers></app-passengers> -->
-<!doctype html>
-<html lang="pl">
-<head>
-  <meta charset="utf-8">
-  <title>AngularProject</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <header>
-    <mat-toolbar>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar>
 
-  </header>
-  <section>
-    <h2>Lista </h2>
-    <router-outlet></router-outlet>
-  </section>
-  <footer>
-    <h3>Airport Manager ~ 2022 PS4</h3>
-  </footer>
-</body>
-</html>
+<mat-toolbar color="primary">
+  <span>Airport Managment</span>
+  <!-- <span class="example-spacer"></span> -->
+  <a  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" href="flights">
+    Loty
+  </a>
+  <a  mat-icon-button class="example-icon">
+    Samoloty
+  </a>
+</mat-toolbar>
+<router-outlet></router-outlet>

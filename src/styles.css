@@ -1,17 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+/* body {
   margin: 0;
   background-color: lightcyan;
-}
+} */
 
-header {
+/* header {
   background-color:darkgreen;
   color:white;
   padding: 10px;
   text-align:center;
-}
+} */
 
-h2{
+/* h2 {
   text-align: center;
 }
 
@@ -19,7 +19,8 @@ nav {
   color: white;
 }
 
-nav a:link, nav a:visited {
+nav a:link,
+nav a:visited {
   color: white;
   padding: 10px 20px;
   text-align: center;
@@ -32,18 +33,18 @@ nav a:active {
   background-color: #466d1d;
 }
 
-span{
+span {
   font-weight: bold;
 }
 
-select{
+select {
   padding: 12px;
   width: 100%;
 }
 
 footer {
-  background:darkgreen;
+  background: darkgreen;
   text-align: center;
   margin-top: 5px;
   padding: 5px;
-}
+} */
