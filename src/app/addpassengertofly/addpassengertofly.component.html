@@ -8,17 +8,8 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>Nazwisko </mat-label>
-            <!-- <input matInput [(ngModel)]="data.Surname" name="surname" required minlength="3" /> -->
+            <input matInput [(ngModel)]="data.Surname" name="surname" />
         </mat-form-field>
-
-        <div class="example-full-width" appearance="fill">
-            <mat-form-field appearance="fill">
-                <mat-label>Wybierz lot</mat-label>
-                <mat-select [(ngModel)]="data.flights">
-                    <option *ngFor="let flight of flights" [ngValue]="flight">{{ flight.Id }}</option>
-                </mat-select>
-            </mat-form-field>
-        </div>
 
         <div mat-dialog-actions>
             <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
