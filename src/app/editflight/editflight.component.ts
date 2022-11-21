@@ -15,8 +15,6 @@ export class EditflightComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+
 
 }

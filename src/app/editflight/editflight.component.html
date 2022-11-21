@@ -2,31 +2,15 @@
 
 <div mat-dialog-content>
     <form #f="ngForm">
-        <div class="example-full-width" appearance="fill">
-            <mat-form-field appearance="fill">
-                <mat-label>Wybierz lot</mat-label>
-<<<<<<< HEAD
-                <mat-select [(ngModel)]="data.flight">
-                    <option *ngFor="let flight of flights" [ngValue]="flight">{{ flight.id }}</option>
-=======
-                <mat-select>
-                    <mat-option value="one"></mat-option>
-
->>>>>>> 2cb89b7e1781cddee5d4f2235282a25be2d8ae7f
-                </mat-select>
-            </mat-form-field>
-        </div>
 
         <div class="example-full-width" appearance="fill">
             <mat-form-field appearance="fill">
                 <mat-label>Wybierz samolot</mat-label>
-<<<<<<< HEAD
+
                 <mat-select [(ngModel)]="data.plane">
                     <option *ngFor="let plane of planes" [ngValue]="plane">{{ plane.name }}</option>
-=======
-                <mat-select>
-                    <mat-option value="one"></mat-option>
->>>>>>> 2cb89b7e1781cddee5d4f2235282a25be2d8ae7f
+
+
                 </mat-select>
             </mat-form-field>
         </div>
@@ -34,13 +18,10 @@
         <div class="example-full-width" appearance="fill">
             <mat-form-field appearance="fill">
                 <mat-label>Pasażerowie</mat-label>
-<<<<<<< HEAD
+
                 <mat-select [(ngModel)]="data.passenger">
                     <option *ngFor="let passenger of passengers" [ngValue]="passenger">{{ passenger.phone}}</option>
-=======
-                <mat-select>
-                    <mat-option value="one"></mat-option>
->>>>>>> 2cb89b7e1781cddee5d4f2235282a25be2d8ae7f
+
                 </mat-select>
             </mat-form-field>
         </div>
@@ -48,13 +29,9 @@
         <div class="example-full-width" appearance="fill">
             <mat-form-field appearance="fill">
                 <mat-label>Piloci</mat-label>
-<<<<<<< HEAD
+
                 <mat-select [(ngModel)]="data.pilots">
                     <option *ngFor="let pilot of pilots" [ngValue]="pilots">{{ pilot.licence_id }}</option>
-=======
-                <mat-select>
-                    <mat-option value="one"></mat-option>
->>>>>>> 2cb89b7e1781cddee5d4f2235282a25be2d8ae7f
                 </mat-select>
             </mat-form-field>
         </div>
