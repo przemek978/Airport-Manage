@@ -14,10 +14,8 @@
         <div class="example-full-width" appearance="fill">
             <mat-form-field appearance="fill">
                 <mat-label>Wybierz lot</mat-label>
-                <mat-select>
-                    <mat-option value="one">Eternals</mat-option>
-                    <mat-option value="two">SpiderMan</mat-option>
-                    <mat-option value="three">James Bond</mat-option>
+                <mat-select [(ngModel)]="data.flight">
+                    <option *ngFor="let flight of flights" [ngValue]="flight">{{ flight.id }}</option>
                 </mat-select>
             </mat-form-field>
         </div>
