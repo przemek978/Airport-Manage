@@ -10,10 +10,8 @@
         <div class="example-full-width" appearance="fill">
             <mat-form-field appearance="fill">
                 <mat-label>Wybierz samolot</mat-label>
-                <mat-select>
-                    <mat-option value="one">Eternals</mat-option>
-                    <mat-option value="two">SpiderMan</mat-option>
-                    <mat-option value="three">James Bond</mat-option>
+                <mat-select [(ngModel)]="data.plane">
+                    <option *ngFor="let plane of planes" [ngValue]="plane">{{ plane.name }}</option>
                 </mat-select>
             </mat-form-field>
         </div>
@@ -21,10 +19,8 @@
         <div class="example-full-width" appearance="fill">
             <mat-form-field appearance="fill">
                 <mat-label>Pasażerowie</mat-label>
-                <mat-select>
-                    <mat-option value="one">Eternals</mat-option>
-                    <mat-option value="two">SpiderMan</mat-option>
-                    <mat-option value="three">James Bond</mat-option>
+                <mat-select [(ngModel)]="data.passenger">
+                    <option *ngFor="let passenger of passengers" [ngValue]="passenger">{{ passenger.phone }}</option>
                 </mat-select>
             </mat-form-field>
         </div>
@@ -32,10 +28,8 @@
         <div class="example-full-width" appearance="fill">
             <mat-form-field appearance="fill">
                 <mat-label>Piloci</mat-label>
-                <mat-select>
-                    <mat-option value="one">Eternals</mat-option>
-                    <mat-option value="two">SpiderMan</mat-option>
-                    <mat-option value="three">James Bond</mat-option>
+                <mat-select [(ngModel)]="data.pilot">
+                    <option *ngFor="let pilot of pilots" [ngValue]="pilot">{{ pilot.licence_id }}</option>
                 </mat-select>
             </mat-form-field>
         </div>
