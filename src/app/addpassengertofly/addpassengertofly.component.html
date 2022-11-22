@@ -1,29 +1,32 @@
 <h1 mat-dialog-title>Dodaj pasażera do lotu</h1>
-<div mat-dialog-content>
-    <form #f="ngForm">
+<div mat-dialog-content class="mat-dialog-window">
+  <form #f="ngForm" [formGroup]="passForm">
+
       <mat-form-field class="example-full-width">
         <mat-label>Imię</mat-label>
-        <input matInput name="name" />
+        <input matInput name="name" formControlName="name"/>
       </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Nazwisko </mat-label>
-            <input matInput name="surname" />
-        </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <mat-label>Nazwisko </mat-label>
+          <input matInput name="surname" formControlName="surname"/>
+      </mat-form-field>
 
       <mat-form-field class="example-full-width">
           <mat-label>Numer telefonu</mat-label>
-          <input matInput name="phone" >
+          <input matInput name="phone" formControlName="phone">
       </mat-form-field>
+
       <mat-form-field appearance="standard">
           <mat-label>Data urodzenia</mat-label>
-          <input type="date" matInput placeholder="Placeholder" />
+          <input type="date" matInput placeholder="Placeholder" formControlName="date" />
           <mat-hint>Wybierz datę</mat-hint>
       </mat-form-field>
-        <div mat-dialog-actions>
-            <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-            <button mat-button [mat-dialog-close]="data" *ngIf="f.valid" cdkFocusInitial>Ok</button>
-            <button mat-button (click)="onNoClick()">Wyjdź</button>
-        </div>
+
     </form>
+    <div mat-dialog-actions>
+      <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
+      <button mat-button [mat-dialog-close]="newPass" *ngIf="f.valid" cdkFocusInitial (click)="Save()">Ok</button>
+      <button mat-button (click)="onNoClick()">Wyjdź</button>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
@@ -25,19 +25,25 @@ export class AddpassengertoflyComponent implements OnInit {
   flights: Flight[]=[ new Flight(1,this.planes[0], this.passengers, this.pilots, new Date("2000-01-21")),
   new Flight(2,this.planes[1], this.passengers, this.pilots, new Date("2001-01-21"))];
   passForm!:FormGroup;
+  newPass!:Passenger;
     //@Input() data!:Passenger;
   constructor(private formBuilder: FormBuilder,private dialogRef: MatDialogRef<AddpassengertoflyComponent>, @Inject(MAT_DIALOG_DATA) public data: Passenger) { }
 
   ngOnInit(): void {
-    // this.passForm = this.formBuilder.group({
-    //   name: ['', Validators.required,],
-    //   surname: ['', Validators.required],
-    //   date: [new Date(), Validators.required],
-    //   phone: ['', Validators.required],
-    // })
+    this.passForm = this.formBuilder.group({
+      name: ['', Validators.required,],
+      surname: ['', Validators.required],
+      date: [new Date(), Validators.required],
+      phone: ['', Validators.required],
+    })
+    //console.log(this.formBuilder.group);
 
   }
 
+  Save(){
+    //this.passengers.push(new Passenger(this.passForm.value.name,this.passForm.value.surname,this.passForm.value.date,this.passForm.value.birth,this.passengers.length+1));
+    //console.log(this.passForm);
+  }
   onNoClick() {
     this.dialogRef.close();
   }

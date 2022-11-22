@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PassengerComponent } from './passenger/passenger.component';
 import { PassengersComponent } from './passengers/passengers.component';
 import { FlightComponent } from './flight/flight.component';
@@ -42,6 +42,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
