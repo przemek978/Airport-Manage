@@ -24,8 +24,8 @@ export class FlightsComponent implements OnInit {
   pilots: Pilot[]=[ new Pilot("Franek","Nowal", 1),
                         new Pilot("Sebastian","Kowal", 2)];
 
-  flights: Flight[]=[ new Flight(1,new Plane("Samolot1",100), this.passengers, this.pilots, new Date("2000-01-21")),
-                      new Flight(2,new Plane("Samolot2",200), this.passengers, this.pilots, new Date("2001-01-21"))];
+  flights: Flight[]=[ new Flight(1,new Plane(1,"Samolot1",100), this.passengers, this.pilots, new Date("2000-01-21")),
+                      new Flight(2,new Plane(2,"Samolot2",200), this.passengers, this.pilots, new Date("2001-01-21"))];
   whichClicked:number=-1;
   selectedFlight!:Flight;
   constructor(public dialog: MatDialog,private router: Router) {

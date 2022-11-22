@@ -23,6 +23,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { EditpassengerComponent } from './editpassenger/editpassenger.component';
 import { LoginComponent } from './login/login.component';
+import { PlanesComponent } from './planes/planes.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { LoginComponent } from './login/login.component';
     EditflightComponent,
     EditpassengerComponent,
     LoginComponent,
+    PlanesComponent,
 
   ],
   imports: [

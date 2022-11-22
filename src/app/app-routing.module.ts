@@ -6,8 +6,9 @@ import { FlightsComponent } from './flights/flights.component';
 import { LoginComponent } from './login/login.component';
 import { PassengerComponent } from './passenger/passenger.component';
 import { PassengersComponent } from './passengers/passengers.component';
+import { PlanesComponent } from './planes/planes.component';
 
-const routes: Routes = [{ path: 'flights', component: FlightsComponent },{ path: 'login', component: LoginComponent },{ path: 'passengers/:id', component: PassengersComponent }];
+const routes: Routes = [{ path: 'planes', component: PlanesComponent },{ path: 'flights', component: FlightsComponent },{ path: 'login', component: LoginComponent },{ path: 'passengers/:id', component: PassengersComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
