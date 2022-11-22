@@ -1,4 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
@@ -23,10 +24,17 @@ export class AddpassengertoflyComponent implements OnInit {
 
   flights: Flight[]=[ new Flight(1,this.planes[0], this.passengers, this.pilots, new Date("2000-01-21")),
   new Flight(2,this.planes[1], this.passengers, this.pilots, new Date("2001-01-21"))];
+  passForm!:FormGroup;
     //@Input() data!:Passenger;
-  constructor(private dialogRef: MatDialogRef<AddpassengertoflyComponent>, @Inject(MAT_DIALOG_DATA) public data: Passenger) { }
+  constructor(private formBuilder: FormBuilder,private dialogRef: MatDialogRef<AddpassengertoflyComponent>, @Inject(MAT_DIALOG_DATA) public data: Passenger) { }
 
   ngOnInit(): void {
+    // this.passForm = this.formBuilder.group({
+    //   name: ['', Validators.required,],
+    //   surname: ['', Validators.required],
+    //   date: [new Date(), Validators.required],
+    //   phone: ['', Validators.required],
+    // })
 
   }
 
