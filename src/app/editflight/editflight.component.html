@@ -7,10 +7,8 @@
             <mat-form-field appearance="fill">
                 <mat-label>Wybierz samolot</mat-label>
 
-                <mat-select [(ngModel)]="data.Plane">
+                <mat-select >
                     <option *ngFor="let plane of planes" [ngValue]="plane">{{ plane.Name }}</option>
-
-
                 </mat-select>
             </mat-form-field>
         </div>
@@ -19,7 +17,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Pasażerowie</mat-label>
 
-                <mat-select [(ngModel)]="data.Passengers">
+                <mat-select>
                     <option *ngFor="let passenger of passengers" [ngValue]="passenger">{{ passenger.Phone}}</option>
 
                 </mat-select>
@@ -30,7 +28,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Piloci</mat-label>
 
-                <mat-select [(ngModel)]="data.Pilots">
+                <mat-select>
                     <option *ngFor="let pilot of pilots" [ngValue]="pilots">{{ pilot.Licence_id }}</option>
                 </mat-select>
             </mat-form-field>
