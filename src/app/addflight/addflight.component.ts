@@ -14,11 +14,11 @@ import { Plane } from '../types/plane';
 })
 export class AddflightComponent implements OnInit {
 
-  passengers: Passenger[]=[ new Passenger("Jan","Kowalski",517355566,"24-12-2000"),
+  passengers: Passenger[]=[ new Passenger("Jan","Kowalski",517355566,"24-12-2000",1),
 
-  new Passenger("Adam","Nowak",606232556,"12-05-1984"),
-  new Passenger("Andrzej","Malinowski",506243445,"30-09-1996"),
-  new Passenger("Anna","Wiśniewska",786345322,"19-01-1967")];
+  new Passenger("Adam","Nowak",606232556,"12-05-1984",2),
+  new Passenger("Andrzej","Malinowski",506243445,"30-09-1996",3),
+  new Passenger("Anna","Wiśniewska",786345322,"19-01-1967",4)];
 
   pilots: Pilot[]=[ new Pilot("Franek","Nowal", 1),
   new Pilot("Sebastian","Kowal", 2),];

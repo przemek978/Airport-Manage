@@ -1,18 +1,28 @@
 <h1 mat-dialog-title>Dodaj pasażera do lotu</h1>
 <div mat-dialog-content>
     <form #f="ngForm">
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Imię </mat-label>
-            <input matInput [(ngModel)]="data.Name" name="name"  />
-        </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Imię</mat-label>
+        <input matInput name="name" />
+      </mat-form-field>
 
         <mat-form-field class="example-full-width">
             <mat-label>Nazwisko </mat-label>
-            <input matInput [(ngModel)]="data.Surname" name="surname" />
+            <input matInput name="surname" />
         </mat-form-field>
 
+      <mat-form-field class="example-full-width">
+          <mat-label>Numer telefonu</mat-label>
+          <input matInput name="phone" >
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+          <mat-label>Data urodzenia</mat-label>
+          <input type="date" matInput placeholder="Placeholder" />
+          <mat-hint>Wybierz datę</mat-hint>
+      </mat-form-field>
         <div mat-dialog-actions>
             <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
+            <button mat-button [mat-dialog-close]="data" *ngIf="f.valid" cdkFocusInitial>Ok</button>
             <button mat-button (click)="onNoClick()">Wyjdź</button>
         </div>
     </form>

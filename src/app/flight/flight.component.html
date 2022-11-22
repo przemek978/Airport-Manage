@@ -1,6 +1,35 @@
-<span [class.oddRow]="isOdd" [class.evenRow]="!isOdd" >{{prefix}} {{flight.Plane.Name}}  {{flight.Pilots[0].Name}} {{flight.Pilots[1].Name}}  {{flight.Data}}</span>
+<!-- <span [class.oddRow]="isOdd" [class.evenRow]="!isOdd" >{{prefix}} {{flight.Plane.Name}}  {{flight.Pilots[0].Name}} {{flight.Pilots[1].Name}}  {{flight.Date}}</span>
 <span *ngIf="isClicked">
   <input type="text" [(ngModel)]="flight.Plane.Name"/>
-  <input type="date" [(ngModel)]="flight.Data"/>
+  <input type="date" [(ngModel)]="flight.Date"/>
   <button (click)="doUnClick()">HIDE</button>
-</span>
+</span> -->
+<!-- <mat-card class="details">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{film?.title || ""}}</mat-card-title>
+    <mat-card-subtitle>{{film?.releaseDate || ""}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{film?.image}}" alt="image">
+  <mat-card-content>
+    <p>Plot:
+      {{film?.plot || ""}}
+    </p>
+    <p>Rating:
+      {{film?.rating || ""}}
+    </p>
+    <p>Runtime:
+      {{film?.runtimeStr || ""}}
+    </p>
+    <p>Awards:
+      {{film?.awards || ""}}
+    </p>
+    <p>Directors
+      {{film?.directors || ""}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="editSelectedFilm()">EDIT</button>
+    <button mat-button color="warn" (click)="deleteSelectedFilm()">DELETE</button>
+  </mat-card-actions>
+</mat-card> -->

@@ -1,5 +1,5 @@
 <p [ngClass]="'title'">Lista Pasażerów lotu</p>
-<p [ngClass]="'subtitle'">Kliknij na pasażera aby wprowadzić zmiany</p>
+<!-- <p [ngClass]="'subtitle'">Kliknij na pasażera aby wprowadzić zmiany</p>
 <ol *ngIf="decide()">
   <li *ngFor="let passenger of passengers; index as i; odd as isOdd;even as isEven" (click)="PassengerClicked(passenger,i)">
     <span *ngIf="!passenger.Name.endsWith('a')">
@@ -9,5 +9,40 @@
       <print-passenger [isClicked]="whichClicked===i" prefix="Pasażerka:&nbsp;" [passenger]="passenger" [isOdd]="isOdd"></print-passenger>
     </span>
   </li>
-</ol>
-<button mat-raised-button color="primary" (click)="openDialog(true, false)">ADD passenger</button>
+</ol> -->
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <span class="theader">Id</span>
+      </th>
+      <th>
+        <span class="theader">Imie</span>
+      </th>
+      <th>
+        <span class="theader">Nazwisko</span>
+      </th>
+      <th>
+        <span class="theader">Numer Tel</span>
+      </th>
+      <th>
+        <span class="theader">Data Urodzenia</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let passenger of passengers" [class.selected]="passenger===selectedPassenger">
+      <td (mousedown)="onSelect(passenger)"><span class="tbody">{{passenger.Id}}</span></td>
+      <td (mousedown)="onSelect(passenger)"><span>{{passenger.Name}}</span></td>
+      <td (mousedown)="onSelect(passenger)"><span>{{passenger.Surname}}</span></td>
+      <td (mousedown)="onSelect(passenger)"><span>{{passenger.Phone}}</span></td>
+      <td (mousedown)="onSelect(passenger)"><span>{{passenger.Birth}}</span></td>
+  </tr>
+  </tbody>
+</table>
+<button mat-raised-button color="primary" (click)="openDialog(true, false)">Dodaj pasazera</button>
+<div *ngIf="selectedPassenger!=null">
+  <!-- <app-film-component [film]="selectedFlight" (changeFilmStatus)="changeStatus()" (deleteFilm)="deleteFilm()" (editFilm)="openDialog(false, true)"></app-film-component> -->
+  <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj Pasazera</button>
+</div>
+

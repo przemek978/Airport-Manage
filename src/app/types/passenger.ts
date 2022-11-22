@@ -1,8 +1,12 @@
 export class Passenger{
 
-  //private ticket:Ticket;
-  constructor(private name:string,private surname:string,private phone_nr:number,private birthday:string){
 
+  //private ticket:Ticket;
+  constructor(private name:string,private surname:string,private phone_nr:number,private birthday:string,private id:number){
+
+  }
+  get Id():number{
+    return this.id;
   }
   get Name():string{
     return this.name;
@@ -15,6 +19,9 @@ export class Passenger{
   }
   get Birth():string{
     return this.birthday;
+  }
+  set Id(id:number){
+    this.id=id;
   }
   set Name(n:string){
     this.name=n;

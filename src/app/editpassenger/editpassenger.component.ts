@@ -1,6 +1,6 @@
 
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Passenger } from '../types/passenger';
 
 @Component({
@@ -10,7 +10,8 @@ import { Passenger } from '../types/passenger';
 })
 export class EditpassengerComponent implements OnInit {
 
-
+  @Input() passenger!:Passenger;
+  @Output() editpassenger: EventEmitter<void> = new EventEmitter();
   constructor(private dialogRef: MatDialogRef<EditpassengerComponent>, @Inject(MAT_DIALOG_DATA) public data: Passenger) { }
 
   ngOnInit(): void {
@@ -18,5 +19,7 @@ export class EditpassengerComponent implements OnInit {
   onNoClick() {
     this.dialogRef.close();
   }
-
+  editSelectedFilm(): void {
+    this.editpassenger.emit();
+  }
 }

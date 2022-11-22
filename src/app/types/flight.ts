@@ -9,7 +9,7 @@ export class Flight {
     private plane: Plane,
     private passengers: Passenger[],
     private pilots: Pilot[],
-    private data: Date
+    private date: Date
   ) {}
 
   public addpassager(pass:Passenger){
@@ -31,8 +31,8 @@ export class Flight {
   get Pilots(): Pilot[] {
     return this.pilots;
   }
-  get Data(): Date {
-    return this.data;
+  get Date(): Date {
+    return this.date;
   }
   set Id(id:number){
     this.id=id;
@@ -46,7 +46,7 @@ export class Flight {
   set Pilots(pilots: Pilot[]) {
     this.pilots = pilots;
   }
-  set Data(data: Date) {
-    this.data = data;
+  set Date(date: Date) {
+    this.date = date;
   }
 }

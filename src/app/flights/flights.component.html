@@ -1,10 +1,47 @@
 <p [ngClass]="'title'">Lista lotów</p>
-<p [ngClass]="'subtitle'">Kliknij na lot aby wyświetlić pasażerów</p>
+<!-- <p [ngClass]="'subtitle'">Kliknij na lot aby wyświetlić pasażerów</p>
 <ol *ngIf="decide()">
   <li *ngFor="let flight of flights; index as i; odd as isOdd;even as isEven" (click)="FlightClicked(flight,i+1)">
     <span >
       <print-flight [isClicked]="whichClicked===i" prefix="Lot:&nbsp;&nbsp;&nbsp;&nbsp;" [flight]="flight" [isOdd]="isOdd"></print-flight>
+      <button mat-raised-button color="primary" (click)="openDialog(false,true)">ADD Flight</button>
     </span>
   </li>
-</ol>
-<button mat-raised-button color="primary" (click)="openDialog(true, false)">ADD Flight</button>
+</ol> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <span class="theader">Id</span>
+      </th>
+      <th>
+        <span class="theader">Samolot</span>
+      </th>
+      <th>
+        <span class="theader">Pilot 1</span>
+      </th>
+      <th>
+        <span class="theader">Pilot 2</span>
+      </th>
+      <th>
+        <span class="theader">Data lotu</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let flight of flights" [class.selected]="flight===selectedFlight">
+      <td (mousedown)="onSelect(flight)"><span class="tbody">{{flight.Id}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.Plane.Name}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.Pilots[0].Name}} {{flight.Pilots[0].Surname}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.Pilots[1].Name}} {{flight.Pilots[1].Surname}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.Date}}</span></td>
+  </tr>
+  </tbody>
+</table>
+<button mat-raised-button color="primary" (click)="openDialog(true, false)">Dodaj lot</button>
+<div *ngIf="selectedFlight!=null">
+  <!-- <app-film-component [film]="selectedFlight" (changeFilmStatus)="changeStatus()" (deleteFilm)="deleteFilm()" (editFilm)="openDialog(false, true)"></app-film-component> -->
+  <button mat-raised-button color="primary" (click)="openDialog(true, true)">Edytuj Lot</button>
+  <button mat-raised-button color="primary" (click)="FlightRoute(selectedFlight,selectedFlight.Id)">Pasażerowie</button>
+</div>
