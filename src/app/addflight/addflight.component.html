@@ -1,38 +1,26 @@
 <h1 mat-dialog-title>Dodaj nowy lot</h1>
 
 <div mat-dialog-content class="dialog">
-    <form #f="ngForm">
+    <form #f="ngForm" [formGroup]="flightForm">
         <mat-form-field class="example-full-width">
             <mat-label>Numer lotu </mat-label>
-            <!-- <input matInput [(ngModel)]="data.Id" name="flight_number" required minlength="3" /> -->
+            <input matInput name="flight_number" required minlength="3" />
         </mat-form-field>
 
-        <div class="example-full-width" appearance="fill">
-            <mat-form-field appearance="fill">
+            <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Wybierz samolot</mat-label>
-                <mat-select >
-                    <option *ngFor="let plane of planes" [ngValue]="plane">{{ plane.Name }}</option>
+                <mat-select name="plane" formControlName="plane">
+                    <mat-option *ngFor="let plane of planes" [value]="plane">{{ plane }}</mat-option>
                 </mat-select>
             </mat-form-field>
-        </div>
 
-        <div class="example-full-width" appearance="fill">
-            <mat-form-field appearance="fill">
-                <mat-label>Pasażerowie</mat-label>
-                <mat-select>
-                    <option *ngFor="let passenger of passengers" [ngValue]="passenger">{{ passenger.Phone }}</option>
-                </mat-select>
-            </mat-form-field>
-        </div>
 
-        <div class="example-full-width" appearance="fill">
-            <mat-form-field appearance="fill">
+            <mat-form-field class="example-full-width" appearance="fill" appearance="fill">
                 <mat-label>Piloci</mat-label>
                 <mat-select >
-                    <option *ngFor="let pilot of pilots" [ngValue]="pilot">{{ pilot.Licence_id }}</option>
+                    <option *ngFor="let pilot of pilots" [value]="pilot">{{ pilot.Name }}</option>
                 </mat-select>
             </mat-form-field>
-        </div>
 
         <p>
             <mat-form-field appearance="standard">

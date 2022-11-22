@@ -1,4 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
@@ -28,9 +29,16 @@ export class AddflightComponent implements OnInit {
   flights: Flight[]=[ new Flight(1,this.planes[0], this.passengers, this.pilots, new Date("2000-01-21")),
   new Flight(2,this.planes[1], this.passengers, this.pilots, new Date("2001-01-21"))];
 
-  constructor(private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
+  flightForm!:FormGroup;
+  constructor(private formBuilder: FormBuilder,private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.flightForm = this.formBuilder.group({
+      plane: ['', Validators.required,],
+      pilots: ['', Validators.required],
+      date: [new Date(), Validators.required],
+    })
+  }
   onNoClick() {
     this.dialogRef.close();
   }
