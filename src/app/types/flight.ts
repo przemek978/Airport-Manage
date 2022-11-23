@@ -4,10 +4,10 @@ import { Plane } from "./plane";
 
 export class Flight {
 
+  private passengers!: Passenger[];
   constructor(
     private id:number,
     private plane: Plane,
-    private passengers: Passenger[],
     private pilots: Pilot[],
     private date: Date
   ) {}

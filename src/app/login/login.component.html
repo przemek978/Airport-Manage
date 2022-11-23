@@ -1,6 +1,7 @@
-<h1 mat-dialog-title>Zaloguj się</h1>
-<div mat-dialog-content class="mat-dialog-window">
-    <form #f="ngForm" [formGroup]="employeeForm">
+<h1 ngClass="title">Zaloguj się</h1>
+    <form #f="ngForm" [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <div class="container">
         <mat-form-field class="example-full-width">
             <mat-label>Login</mat-label>
             <input matInput name="username" formControlName="username" />
@@ -8,14 +9,9 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>Hasło</mat-label>
-            <input matInput name="password" formControlName="password" />
+            <input matInput type="password" placeholder="Password"  formControlName="password" />
         </mat-form-field>
-    </form>
-    <div mat-dialog-actions>
-        <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-        <button mat-button [mat-dialog-close]="newlogin" *ngIf="f.valid" cdkFocusInitial>
-      Zaloguj
-    </button>
-        <button mat-button (click)="onNoClick()">Wyjdź</button>
+        <button mat-flat-button color="primary" [disabled]="!loginForm.valid" type="submit">Login</button>
     </div>
-</div>
+  </form>
+

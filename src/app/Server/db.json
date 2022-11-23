@@ -31,24 +31,27 @@
         "birth": "19-01-1967"
       }
       ],
-      "pilots":[
+      "pilot1":
       {
         "id": 1,
         "name": "Franek",
         "surname":"Nowal"
       },
+      "pilot2":
       {
-        "id": 1,
+        "id": 2,
         "name": "Sebastian",
         "surname": "Kowal"
       }
 
-      ]
+
     }
   ],
   "users": [
     {
-
+      "id": 1,
+      "username": "admin",
+      "password": "admin"
     }
   ]
 }

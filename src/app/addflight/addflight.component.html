@@ -4,33 +4,40 @@
     <form #f="ngForm" [formGroup]="flightForm">
         <mat-form-field class="example-full-width">
             <mat-label>Numer lotu </mat-label>
-            <input matInput name="flight_number" required minlength="3" />
+            <input matInput name="id" formControlName="id"  />
         </mat-form-field>
 
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Wybierz samolot</mat-label>
                 <mat-select name="plane" formControlName="plane">
-                    <mat-option *ngFor="let plane of planes" [value]="plane">{{ plane }}</mat-option>
+                    <mat-option *ngFor="let plane of planes" [value]="plane">{{ plane.Name }}</mat-option>
                 </mat-select>
             </mat-form-field>
 
 
             <mat-form-field class="example-full-width" appearance="fill" appearance="fill">
-                <mat-label>Piloci</mat-label>
+                <mat-label>Pilot 1</mat-label>
                 <mat-select >
-                    <option *ngFor="let pilot of pilots" [value]="pilot">{{ pilot.Name }}</option>
+                    <mat-option *ngFor="let pilot of pilots" [value]="pilot">{{ pilot.Name }} {{ pilot.Surname }}</mat-option>
                 </mat-select>
             </mat-form-field>
 
-        <p>
+            <mat-form-field class="example-full-width" appearance="fill" appearance="fill">
+              <mat-label>Pilot 2</mat-label>
+              <mat-select >
+                  <mat-option *ngFor="let pilot of pilots" [value]="pilot">{{ pilot.Name }} {{ pilot.Surname }}</mat-option>
+              </mat-select>
+          </mat-form-field>
+
             <mat-form-field appearance="standard">
                 <mat-label>Wybierz datę lotu</mat-label>
                 <input type="date" matInput placeholder="Placeholder" />
                 <mat-hint>Wybierz datę</mat-hint>
             </mat-form-field>
-        </p>
+
         <div mat-dialog-actions>
             <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
+            <button mat-raised-button color="primary" [mat-dialog-close]="newflight" *ngIf="f.valid" cdkFocusInitial (click)="addflight()">Ok</button>
             <button mat-button (click)="onNoClick()">Wyjdź</button>
         </div>
     </form>
