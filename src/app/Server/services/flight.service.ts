@@ -18,9 +18,6 @@ export class FlightService {
   getFlightid(id:number){
     return this.http.get<Flight>("http://localhost:3000/flights/"+id);
   }
-  getpassengers(id:number){
-    return this.http.get<Passenger[]>("http://localhost:3000/flights/"+id+"/passengers");
-  }
   putFlight(data: Flight, id: number) {
     return this.http.put<any>("http://localhost:3000/flights/" + id, data)
   }

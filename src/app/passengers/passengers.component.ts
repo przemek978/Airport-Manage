@@ -43,13 +43,9 @@ export class PassengersComponent implements OnInit {
     //this.passengers=this.flight.passengers;
     this.flightservice.getFlightid(this.flightid).subscribe(res=>{
           this.flight=res;});
-    this.flightservice.getpassengers(this.flightid).subscribe(res=>{this.passengers=res;
-    console.log(res);})
   }
 
-  decide():boolean{
-    return true;
-  }
+
   onSelect(passenger:Passenger): void {
     this.selectedPassenger = passenger;
   }
