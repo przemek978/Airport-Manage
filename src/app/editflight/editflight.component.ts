@@ -31,6 +31,10 @@ export class EditflightComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  editflight(){
+  }
+
   onNoClick() {
     this.dialogRef.close();
   }
