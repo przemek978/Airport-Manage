@@ -17,9 +17,9 @@
   </thead>
   <tbody>
   <tr *ngFor="let plane of planes" [class.selected]="plane===selectedPlane">
-      <td (mousedown)="onSelect(plane)"><span class="tbody">{{plane.Id}}</span></td>
-      <td (mousedown)="onSelect(plane)"><span>{{plane.Name}}</span></td>
-      <td (mousedown)="onSelect(plane)"><span>{{plane.Capacity}}</span></td>
+      <td (mousedown)="onSelect(plane)"><span class="tbody">{{plane.id}}</span></td>
+      <td (mousedown)="onSelect(plane)"><span>{{plane.name}}</span></td>
+      <td (mousedown)="onSelect(plane)"><span>{{plane.capacity}}</span></td>
   </tr>
   </tbody>
 </table>

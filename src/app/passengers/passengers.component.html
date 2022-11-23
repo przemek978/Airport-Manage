@@ -32,11 +32,11 @@
   </thead>
   <tbody>
   <tr *ngFor="let passenger of passengers" [class.selected]="passenger===selectedPassenger">
-      <td (mousedown)="onSelect(passenger)"><span class="tbody">{{passenger.Id}}</span></td>
-      <td (mousedown)="onSelect(passenger)"><span>{{passenger.Name}}</span></td>
-      <td (mousedown)="onSelect(passenger)"><span>{{passenger.Surname}}</span></td>
-      <td (mousedown)="onSelect(passenger)"><span>{{passenger.Phone}}</span></td>
-      <td (mousedown)="onSelect(passenger)"><span>{{passenger.Birth}}</span></td>
+      <td (mousedown)="onSelect(passenger)"><span class="tbody">{{passenger.id}}</span></td>
+      <td (mousedown)="onSelect(passenger)"><span>{{passenger.name}}</span></td>
+      <td (mousedown)="onSelect(passenger)"><span>{{passenger.surname}}</span></td>
+      <td (mousedown)="onSelect(passenger)"><span>{{passenger.phone}}</span></td>
+      <td (mousedown)="onSelect(passenger)"><span>{{passenger.birth}}</span></td>
   </tr>
   </tbody>
 </table>

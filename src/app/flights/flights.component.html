@@ -32,9 +32,9 @@
   <tbody>
   <tr *ngFor="let flight of flights" [class.selected]="flight===selectedFlight">
       <td (mousedown)="onSelect(flight)"><span class="tbody">{{flight.Id}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.Plane.Name}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.Pilot1.Name}} {{flight.Pilot1.Surname}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.Pilot2.Name}} {{flight.Pilot2.Surname}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.Plane.name}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.Pilot1.name}} {{flight.Pilot1.surname}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.Pilot2.name}} {{flight.Pilot2.surname}}</span></td>
       <td (mousedown)="onSelect(flight)"><span>{{flight.Date}}</span></td>
   </tr>
   </tbody>
