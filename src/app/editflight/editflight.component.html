@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>Edytuj lot</h1>
 
 <div mat-dialog-content class="dialog">
-  <form #f="ngForm" [formGroup]="flightForm">
+  <form #f="ngForm" [formGroup]="editflightForm">
       <mat-form-field class="example-full-width">
           <mat-label>Numer lotu </mat-label>
           <input matInput name="id" formControlName="id"  />
@@ -37,7 +37,7 @@
 
       <div mat-dialog-actions>
           <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-          <button mat-raised-button color="primary" [mat-dialog-close]="newflight" *ngIf="f.valid" cdkFocusInitial (click)="addflight()">Ok</button>
+          <button mat-raised-button color="primary" [mat-dialog-close]="editflight" *ngIf="f.valid" cdkFocusInitial (click)="editflight()">Ok</button>
           <button mat-button (click)="onNoClick()">Wyjdź</button>
       </div>
   </form>

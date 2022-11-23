@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';;
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
 import { Pilot } from '../types/pilot';
@@ -24,6 +25,8 @@ export class EditflightComponent implements OnInit {
 
   flights: Flight[]=[ new Flight(1,this.planes[0], new Pilot("Franek","Nowal", 1), new Pilot("Sebastian","Kowal", 2), new Date("2000-01-21")),
   new Flight(2,this.planes[1], new Pilot("Franek","Nowal", 1), new Pilot("Sebastian","Kowal", 2), new Date("2001-01-21"))];
+
+  editflightForm!:FormGroup;
   constructor(private dialogRef: MatDialogRef<EditflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
 
   ngOnInit(): void {
