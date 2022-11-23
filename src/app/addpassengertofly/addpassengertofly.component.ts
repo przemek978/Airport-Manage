@@ -17,13 +17,10 @@ export class AddpassengertoflyComponent implements OnInit {
   new Passenger("Andrzej","Malinowski",506243445,"30-09-1996",3),
   new Passenger("Anna","Wiśniewska",786345322,"19-01-1967",4)];
 
-  pilots: Pilot[]=[ new Pilot("Franek","Nowal", 1),
-  new Pilot("Sebastian","Kowal", 2),];
-
   planes: Plane[]=[new Plane(1,"Samolot1",100),new Plane(2,"Samolot2",200)];
 
-  flights: Flight[]=[ new Flight(1,this.planes[0], this.passengers, this.pilots, new Date("2000-01-21")),
-  new Flight(2,this.planes[1], this.passengers, this.pilots, new Date("2001-01-21"))];
+  flights: Flight[]=[ new Flight(1,this.planes[0], new Pilot("Franek","Nowal", 1), new Pilot("Sebastian","Kowal", 2), new Date("2000-01-21")),
+  new Flight(2,this.planes[1], new Pilot("Franek","Nowal", 1), new Pilot("Sebastian","Kowal", 2), new Date("2001-01-21"))];
   passForm!:FormGroup;
   newPass!:Passenger;
     //@Input() data!:Passenger;
