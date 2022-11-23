@@ -27,11 +27,11 @@ export class AddflightComponent implements OnInit {
 
   planes: Plane[]=[new Plane(1,"Samolot1",100),new Plane(2,"Samolot2",200)];
 
-  flights: Flight[]=[ new Flight(1,this.planes[0], this.passengers, this.pilots, new Date("2000-01-21")),
-  new Flight(2,this.planes[1], this.passengers, this.pilots, new Date("2001-01-21"))];
+  flights: Flight[]=[ new Flight(1,this.planes[0], this.pilots, new Date("2000-01-21")),
+  new Flight(2,this.planes[1], this.pilots, new Date("2001-01-21"))];
 
   flightForm!:FormGroup;
-  newflight:Flight=new Flight(0,new Plane(),);
+  newflight:Flight=new Flight(0,new Plane(0,"",0),this.pilots,new Date());
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
   constructor(private formBuilder: FormBuilder,private api:ApiService, private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
 
