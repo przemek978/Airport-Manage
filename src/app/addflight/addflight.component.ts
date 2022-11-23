@@ -1,6 +1,7 @@
 import { Component, Inject, Input, OnInit,EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { FlightService } from '../Server/services/flight.service';
 import { PlaneService } from '../Server/services/plane.service';
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
@@ -32,7 +33,7 @@ export class AddflightComponent implements OnInit {
   flightForm!:FormGroup;
   newflight:Flight=new Flight(0,new Plane(0,"",0),new Pilot("","", 1), new Pilot("","", 2) ,new Date());
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private formBuilder: FormBuilder,private planeservice:PlaneService, private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
+  constructor(private formBuilder: FormBuilder,private flightservice:FlightService, private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
 
   ngOnInit(): void {
     this.flightForm = this.formBuilder.group({
@@ -47,7 +48,7 @@ export class AddflightComponent implements OnInit {
 
   addflight(){
     if(this.flightForm.valid){
-      this.api.postFlight(this.flightForm.value)
+      this.flightservice.postFlight(this.flightForm.value)
       .subscribe({
         next:(res)=>{
           alert("Lot został dodany")
