@@ -5,7 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { Employee } from '../types/employee';
 
 @Component({
@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   newlogin!: Employee;
   constructor(
     private formBuilder: FormBuilder,
+    public dialog: MatDialog,
     private dialogRef: MatDialogRef<LoginComponent>,
     @Inject(MAT_DIALOG_DATA) public newlog: Employee
   ) {}
@@ -31,8 +32,39 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
+
+
+
+
+      // dialogRef.afterClosed().subscribe(result => {
+      //   console.log(result);
+      //   if (result !== undefined) {
+      //     if (result.Name.length === 0) {
+
+      //     }
+      //     if(result.id== undefined){
+      //       result.id=this.passengers.length+1;
+      //     }
+      //     //this.newPass = new Passenger(result.Name,result.Surname,result.Phone,result.Birth,result.Id);
+
+      //     if(add){
+      //       this.passengers.push(this.newPass);
+      //     }
+      //     else if(edit){
+      //       this.passengers.forEach((obj, index, tab) =>{
+      //         if(obj === this.selectedPassenger){
+      //           tab[index] = this.selectedPassenger;
+      //           //this.passengers.editPassenger(this.newPass, this.selectedPassenger); dodac dodanie do serwisu
+      //           this.selectedPassenger = tab[index];
+      //         }
+      //       })
+      //     }
+
+      //   }
+      // })
   }
   onNoClick() {
     this.dialogRef.close();
   }
+
 }
