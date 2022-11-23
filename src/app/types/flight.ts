@@ -8,7 +8,8 @@ export class Flight {
   constructor(
     private id:number,
     private plane: Plane,
-    private pilots: Pilot[],
+    private pilot1: Pilot,
+    private pilot2: Pilot,
     private date: Date
   ) {}
 
@@ -16,8 +17,8 @@ export class Flight {
     this.passengers.push(pass);
   }
   public addpilots(pilot1:Pilot,pilot2:Pilot){
-    this.pilots.push(pilot1);
-    this.pilots.push(pilot2);
+    this.pilot1=pilot1;
+    this.pilot2=pilot2;
   }
   get Id():number{
     return this.id;
@@ -28,8 +29,11 @@ export class Flight {
   get Passengers(): Passenger[] {
     return this.passengers;
   }
-  get Pilots(): Pilot[] {
-    return this.pilots;
+  get Pilot1(): Pilot {
+    return this.pilot1;
+  }
+  get Pilot2(): Pilot {
+    return this.pilot2;
   }
   get Date(): Date {
     return this.date;
@@ -43,8 +47,11 @@ export class Flight {
   set Passengers(Passengers: Passenger[]) {
     this.passengers = this.passengers;
   }
-  set Pilots(pilots: Pilot[]) {
-    this.pilots = pilots;
+  set Pilot1(pilot:Pilot) {
+    this.pilot1 = pilot;
+  }
+  set Pilot2(pilot:Pilot) {
+    this.pilot2 = pilot;
   }
   set Date(date: Date) {
     this.date = date;
