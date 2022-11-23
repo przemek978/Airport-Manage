@@ -31,11 +31,11 @@
   </thead>
   <tbody>
   <tr *ngFor="let flight of flights" [class.selected]="flight===selectedFlight">
-      <td (mousedown)="onSelect(flight)"><span class="tbody">{{flight.Id}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.Plane.name}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.Pilot1.name}} {{flight.Pilot1.surname}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.Pilot2.name}} {{flight.Pilot2.surname}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.Date}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span class="tbody">{{flight.id}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.plane.name}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.pilot1.name}} {{flight.pilot1.surname}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.pilot2.name}} {{flight.pilot2.surname}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.date}}</span></td>
   </tr>
   </tbody>
 </table>
@@ -43,5 +43,5 @@
 <div *ngIf="selectedFlight!=null">
   <!-- <app-film-component [film]="selectedFlight" (changeFilmStatus)="changeStatus()" (deleteFilm)="deleteFilm()" (editFilm)="openDialog(false, true)"></app-film-component> -->
   <button mat-raised-button color="primary" (click)="openDialog(true, true)">Edytuj Lot</button>
-  <button mat-raised-button color="primary" (click)="FlightRoute(selectedFlight,selectedFlight.Id)">Pasażerowie</button>
+  <button mat-raised-button color="primary" (click)="FlightRoute(selectedFlight,selectedFlight.id)">Pasażerowie</button>
 </div>

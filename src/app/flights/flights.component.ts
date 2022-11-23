@@ -62,7 +62,7 @@ export class FlightsComponent implements OnInit {
     this.whichClicked=ind;
     var sind="";
     //sind=ind.toString();
-    sind+=Flight.Id;
+    sind+=Flight.id;
     console.log('passengers/' + sind);
     if(Number(sind)>=0)
     {
