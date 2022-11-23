@@ -6,54 +6,54 @@ export class Flight {
 
   private passengers!: Passenger[];
   constructor(
-    private id:number,
-    private plane: Plane,
-    private pilot1: Pilot,
-    private pilot2: Pilot,
-    private date: Date
+    private _id:number,
+    private _plane: Plane,
+    private _pilot1: Pilot,
+    private _pilot2: Pilot,
+    private _date: Date
   ) {}
 
   public addpassager(pass:Passenger){
     this.passengers.push(pass);
   }
   public addpilots(pilot1:Pilot,pilot2:Pilot){
-    this.pilot1=pilot1;
-    this.pilot2=pilot2;
+    this._pilot1=pilot1;
+    this._pilot2=pilot2;
   }
   get Id():number{
-    return this.id;
+    return this._id;
   }
   get Plane(): Plane {
-    return this.plane;
+    return this._plane;
   }
   get Passengers(): Passenger[] {
     return this.passengers;
   }
   get Pilot1(): Pilot {
-    return this.pilot1;
+    return this._pilot1;
   }
   get Pilot2(): Pilot {
-    return this.pilot2;
+    return this._pilot2;
   }
   get Date(): Date {
-    return this.date;
+    return this._date;
   }
   set Id(id:number){
-    this.id=id;
+    this._id=id;
   }
   set Plane(p: Plane) {
-    this.plane = p;
+    this._plane = p;
   }
   set Passengers(Passengers: Passenger[]) {
     this.passengers = this.passengers;
   }
   set Pilot1(pilot:Pilot) {
-    this.pilot1 = pilot;
+    this._pilot1 = pilot;
   }
   set Pilot2(pilot:Pilot) {
-    this.pilot2 = pilot;
+    this._pilot2 = pilot;
   }
   set Date(date: Date) {
-    this.date = date;
+    this._date = date;
   }
 }

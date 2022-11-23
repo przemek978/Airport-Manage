@@ -1,24 +1,24 @@
 export class Plane {
   //private ticket:Ticket;
-  constructor(private id: number, private name: string, private capacity: number) {}
+  constructor(private _id: number, private _name: string, private _capacity: number) {}
 
-  get Id(): number {
-    return this.id;
+  get id(): number {
+    return this._id;
   }
 
-  get Name(): string {
-    return this.name;
+  get name(): string {
+    return this._name;
   }
-  get Capacity(): number {
-    return this.capacity;
+  get capacity(): number {
+    return this._capacity;
   }
-  set Id(i: number) {
-    this.Id = i;
+  set id(i: number) {
+    this._id = i;
   }
-  set Name(n: string) {
-    this.name = n;
+  set name(n: string) {
+    this._name = n;
   }
-  set Capacity(c: number) {
-    this.capacity = c;
+  set capacity(c: number) {
+    this._capacity = c;
   }
 }

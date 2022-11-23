@@ -1,5 +1,5 @@
 export class Employee{
-  constructor(private id:number,private _username:string,private _password:string ){
+  constructor(private _id:number,private _username:string,private _password:string ){
     //private name:string,private surname:string,private position:string,
     //this._username=username;
   }
@@ -10,7 +10,7 @@ export class Employee{
     return this._password;
   }
   set username(username:string){
-    this.username=username;
+    this._username=username;
   }
   set password(pass:string){
     this._password=pass;

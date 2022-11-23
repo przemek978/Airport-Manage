@@ -2,37 +2,37 @@ export class Passenger{
 
 
   //private ticket:Ticket;
-  constructor(private name:string,private surname:string,private phone_nr:number,private birthday:string,private id:number){
+  constructor(private _name:string,private _surname:string,private _phone_nr:number,private _birthday:string,private _id:number){
 
   }
-  get Id():number{
-    return this.id;
+  get id():number{
+    return this._id;
   }
-  get Name():string{
-    return this.name;
+  get name():string{
+    return this._name;
   }
-  get Surname():string{
-    return this.surname;
+  get surname():string{
+    return this._surname;
   }
-  get Phone():number{
-    return this.phone_nr;
+  get phone():number{
+    return this._phone_nr;
   }
-  get Birth():string{
-    return this.birthday;
+  get birth():string{
+    return this._birthday;
   }
-  set Id(id:number){
-    this.id=id;
+  set od(id:number){
+    this._id=id;
   }
-  set Name(n:string){
-    this.name=n;
+  set name(n:string){
+    this._name=n;
   }
-  set Surname(sn:string){
-    this.surname=sn;
+  set surname(sn:string){
+    this._surname=sn;
   }
-  set Phone(phone:number){
-    this.phone_nr=phone;
+  set phone(phone:number){
+    this._phone_nr=phone;
   }
-  set Birth(birth:string){
-    this.birthday=birth;
+  set birth(birth:string){
+    this._birthday=birth;
   }
 }
