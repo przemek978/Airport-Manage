@@ -1,27 +1,27 @@
 export class Pilot {
   //private ticket:Ticket;
   constructor(
-    private name: string,
-    private surname: string,
-    private licence_id: number
+    private _name: string,
+    private _surname: string,
+    private _licence_id: number
   ) {}
 
-  get Name(): string {
-    return this.name;
+  get name(): string {
+    return this._name;
   }
-  get Passengers(): string {
-    return this.surname;
+  get passengers(): string {
+    return this._surname;
   }
-  get Licence_id(): number {
-    return this.licence_id;
+  get licence_id(): number {
+    return this._licence_id;
   }
-  set Name(n: string) {
-    this.name = n;
+  set name(n: string) {
+    this._name = n;
   }
-  set Surname(s: string) {
-    this.surname = s;
+  set surname(s: string) {
+    this._surname = s;
   }
-  set Licence_id(l_id: number) {
-    this.licence_id = l_id;
+  set licence_id(l_id: number) {
+    this._licence_id = l_id;
   }
 }
