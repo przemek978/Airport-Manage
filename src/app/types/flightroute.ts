@@ -2,16 +2,16 @@ export class Flightroute {
   //private ticket:Ticket;
   constructor(private _departure: string, private _arrival: string) {}
 
-  get Departure(): string {
+  get departure(): string {
     return this._departure;
   }
-  get Arrival(): string {
+  get arrival(): string {
     return this._arrival;
   }
-  set Departure(d: string) {
+  set departure(d: string) {
     this._departure = d;
   }
-  set Arrival(a: string) {
+  set arrival(a: string) {
     this._arrival = a;
   }
 }

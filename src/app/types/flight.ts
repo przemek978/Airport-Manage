@@ -4,7 +4,7 @@ import { Plane } from "./plane";
 
 export class Flight {
 
-  private passengers!: Passenger[];
+  private _passengers!: Passenger[];
   constructor(
     private _id:number,
     private _plane: Plane,
@@ -20,40 +20,40 @@ export class Flight {
     this._pilot1=pilot1;
     this._pilot2=pilot2;
   }
-  get Id():number{
+  get id():number{
     return this._id;
   }
-  get Plane(): Plane {
+  get plane(): Plane {
     return this._plane;
   }
-  get Passengers(): Passenger[] {
+  get passengers(): Passenger[] {
     return this.passengers;
   }
-  get Pilot1(): Pilot {
+  get pilot1(): Pilot {
     return this._pilot1;
   }
-  get Pilot2(): Pilot {
+  get pilot2(): Pilot {
     return this._pilot2;
   }
-  get Date(): Date {
+  get date(): Date {
     return this._date;
   }
-  set Id(id:number){
+  set id(id:number){
     this._id=id;
   }
-  set Plane(p: Plane) {
+  set plane(p: Plane) {
     this._plane = p;
   }
-  set Passengers(Passengers: Passenger[]) {
+  set passengers(Passengers: Passenger[]) {
     this.passengers = this.passengers;
   }
-  set Pilot1(pilot:Pilot) {
+  set pilot1(pilot:Pilot) {
     this._pilot1 = pilot;
   }
-  set Pilot2(pilot:Pilot) {
+  set pilot2(pilot:Pilot) {
     this._pilot2 = pilot;
   }
-  set Date(date: Date) {
+  set date(date: Date) {
     this._date = date;
   }
 }
