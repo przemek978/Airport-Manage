@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit,EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import { ApiService } from '../Server/services/api.service';
@@ -31,15 +31,21 @@ export class AddflightComponent implements OnInit {
   new Flight(2,this.planes[1], this.passengers, this.pilots, new Date("2001-01-21"))];
 
   flightForm!:FormGroup;
+  newflight:Flight=new Flight(0,new Plane(),);
+  @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
   constructor(private formBuilder: FormBuilder,private api:ApiService, private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
 
   ngOnInit(): void {
     this.flightForm = this.formBuilder.group({
-      plane: ['', Validators.required,],
-      pilots: ['', Validators.required],
+      id: ['', Validators.required,],
+      plane: ['', Validators.required],
+      pilot1: ['', Validators.required],
+      pilot2: ['', Validators.required],
       date: [new Date(), Validators.required],
     })
+    console.log(this.flightForm.value);
   }
+
   addflight(){
     if(this.flightForm.valid){
       this.api.postFlight(this.flightForm.value)
