@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Flight } from 'src/app/types/flight';
+import { Passenger } from 'src/app/types/passenger';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,16 @@ export class FlightService {
 
   constructor(private http:HttpClient) { }
   postFlight(data: Flight){
-    return this.http.post<any>("http://localhost:3000/flights/",data);
+    return this.http.post<Flight[]>("http://localhost:3000/flights/",data);
   }
   getFlight(){
-    return this.http.get<any>("http://localhost:3000/flights/");
+    return this.http.get<Flight[]>("http://localhost:3000/flights/");
+  }
+  getFlightid(id:number){
+    return this.http.get<Flight>("http://localhost:3000/flights/"+id);
+  }
+  getpassengers(id:number){
+    return this.http.get<Passenger[]>("http://localhost:3000/flights/"+id+"/passengers");
   }
   putFlight(data: Flight, id: number) {
     return this.http.put<any>("http://localhost:3000/flights/" + id, data)

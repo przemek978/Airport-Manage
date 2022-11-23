@@ -2,6 +2,7 @@ import { Component, Inject, Input, OnInit,EventEmitter, Output } from '@angular/
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import { FlightService } from '../Server/services/flight.service';
+import { PilotService } from '../Server/services/pilot.service';
 import { PlaneService } from '../Server/services/plane.service';
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
@@ -23,17 +24,16 @@ export class AddflightComponent implements OnInit {
   new Passenger("Andrzej","Malinowski",506243445,"30-09-1996",3),
   new Passenger("Anna","Wiśniewska",786345322,"19-01-1967",4)];
 
-  pilots: Pilot[]=[ new Pilot("Franek","Nowal", 1),
-  new Pilot("Sebastian","Kowal", 2),];
+  // pilots: Pilot[]=[ new Pilot("Franek","Nowal", 1),
+  // new Pilot("Sebastian","Kowal", 2),];
 
-  planes: Plane[]=[new Plane(1,"Samolot1",100),new Plane(2,"Samolot2",200)];
-
-  flights: Flight[]=[ new Flight(1,this.planes[0],new Pilot("Franek","Nowal", 1), new Pilot("Sebastian","Kowal", 2) , new Date("2000-01-21"))];
-
+  //planes: Plane[]=[new Plane(1,"Samolot1",100),new Plane(2,"Samolot2",200)];
+  planes:Plane[]=[];
+  pilots:Pilot[]=[]
   flightForm!:FormGroup;
   newflight:Flight=new Flight(0,new Plane(0,"",0),new Pilot("","", 1), new Pilot("","", 2) ,new Date());
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private formBuilder: FormBuilder,private flightservice:FlightService, private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
+  constructor(private formBuilder: FormBuilder,private flightservice:FlightService,private planeservice:PlaneService,private pilotservice:PilotService, private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
 
   ngOnInit(): void {
     this.flightForm = this.formBuilder.group({
@@ -43,7 +43,9 @@ export class AddflightComponent implements OnInit {
       pilot2: ['', Validators.required],
       date: [new Date(), Validators.required],
     })
-    console.log(this.flightForm.value);
+    this.planeservice.getPlane().subscribe(res=>{this.planes=res;});
+    this.pilotservice.getPilot().subscribe(res=>{this.pilots=res;});
+    //console.log(this.flightForm.value);
   }
 
   addflight(){

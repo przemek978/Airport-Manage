@@ -6,6 +6,25 @@
       "Capacity": 200
     }
   ],
+  "pilots":[
+    {
+      "id": 1,
+      "name": "Franek",
+      "surname": "Nowak"
+    },
+    {
+      "id": 2,
+      "name": "Sebastian",
+      "surname": "Kowal"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin"
+    }
+  ],
   "flights": [
     {
       "id": 1,
@@ -39,33 +58,8 @@
         "id": 2,
         "name": "Sebastian",
         "surname": "Kowal"
-      }
-    },
-    {
-      "id": "12",
-      "plane": {
-        "id": 1,
-        "name": "Samolot1",
-        "capacity": 100
-      },
-      "pilot1": {
-        "name": "Franek",
-        "surname": "Nowal",
-        "licence_id": 1
-      },
-      "pilot2": {
-        "name": "Sebastian",
-        "surname": "Kowal",
-        "licence_id": 2
       },
       "date": "2022-11-23T21:38:31.788Z"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "username": "admin",
-      "password": "admin"
     }
   ]
 }

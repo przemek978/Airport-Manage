@@ -20,7 +20,7 @@ export class Passenger{
   get birth():string{
     return this._birthday;
   }
-  set od(id:number){
+  set id(id:number){
     this._id=id;
   }
   set name(n:string){

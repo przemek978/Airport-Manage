@@ -19,7 +19,5 @@ export class EditpassengerComponent implements OnInit {
   onNoClick() {
     this.dialogRef.close();
   }
-  editSelectedFilm(): void {
-    this.editpassenger.emit();
-  }
+
 }
