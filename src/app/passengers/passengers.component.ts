@@ -40,7 +40,7 @@ export class PassengersComponent implements OnInit {
     this.route.paramMap.subscribe(params => this.flightid = Number(params.get('id')));
     //console.log(this.route.snapshot.queryParams);
     //console.log(this.route.paramMap.subscribe(params => this.flightsid = params.get('id')));
-    this.passengers=this.flights[this.flightid-1].Passengers;
+    this.passengers=this.flights[this.flightid-1].passengers;
     //this.passengers=this.passengers1;
   }
 
