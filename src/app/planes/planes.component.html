@@ -1,0 +1,30 @@
+<p [ngClass]="'title'">Lista samolotów</p>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <span class="theader">Id</span>
+      </th>
+      <th>
+        <span class="theader">Nazwa</span>
+      </th>
+      <th>
+        <span class="theader">Pojemność</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let plane of planes" [class.selected]="plane===selectedPlane">
+      <td (mousedown)="onSelect(plane)"><span class="tbody">{{plane.Id}}</span></td>
+      <td (mousedown)="onSelect(plane)"><span>{{plane.Name}}</span></td>
+      <td (mousedown)="onSelect(plane)"><span>{{plane.Capacity}}</span></td>
+  </tr>
+  </tbody>
+</table>
+<!-- <button mat-raised-button color="primary" (click)="openDialog(true, false)">Dodaj lot</button>
+<div *ngIf="selectedFlight!=null">
+   <app-film-component [film]="selectedFlight" (changeFilmStatus)="changeStatus()" (deleteFilm)="deleteFilm()" (editFilm)="openDialog(false, true)"></app-film-component>
+  <button mat-raised-button color="primary" (click)="openDialog(true, true)">Edytuj Lot</button>
+</div> -->

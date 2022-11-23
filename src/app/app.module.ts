@@ -24,6 +24,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { EditpassengerComponent } from './editpassenger/editpassenger.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PlanesComponent } from './planes/planes.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     EditflightComponent,
     EditpassengerComponent,
     LoginComponent,
+    PlanesComponent,
 
   ],
   imports: [

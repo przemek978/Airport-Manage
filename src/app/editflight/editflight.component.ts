@@ -20,7 +20,7 @@ export class EditflightComponent implements OnInit {
   pilots: Pilot[]=[ new Pilot("Franek","Nowal", 1),
   new Pilot("Sebastian","Kowal", 2),];
 
-  planes: Plane[]=[new Plane("Samolot1",100),new Plane("Samolot2",200)];
+  planes: Plane[]=[new Plane(1,"Samolot1",100),new Plane(2,"Samolot2",200)];
 
   flights: Flight[]=[ new Flight(1,this.planes[0], this.passengers, this.pilots, new Date("2000-01-21")),
   new Flight(2,this.planes[1], this.passengers, this.pilots, new Date("2001-01-21"))];
