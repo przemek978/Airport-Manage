@@ -78,7 +78,7 @@ export class PassengersComponent implements OnInit {
           if(result.id== undefined){
             result.id=this.passengers.length+1;
           }
-          this.newPass = new Passenger(result.Name,result.Surname,result.Phone,result.Birth,result.Id);
+          //this.newPass = new Passenger(result.Name,result.Surname,result.Phone,result.Birth,result.Id);
 
           if(add){
             this.passengers.push(this.newPass);
