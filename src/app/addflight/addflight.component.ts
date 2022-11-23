@@ -48,6 +48,7 @@ export class AddflightComponent implements OnInit {
 
   addflight(){
     console.log(this.flightForm.valid);
+
     if(this.flightForm.valid){
       this.flightservice.postFlight(this.flightForm.value)
       .subscribe({

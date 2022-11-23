@@ -17,14 +17,14 @@
 
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Pilot 1</mat-label>
-                <mat-select >
+                <mat-select name="pilot1" formControlName="pilot1">
                     <mat-option *ngFor="let pilot of pilots" [value]="pilot">{{ pilot.Name }} {{ pilot.Surname }}</mat-option>
                 </mat-select>
             </mat-form-field>
 
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Pilot 2</mat-label>
-              <mat-select >
+              <mat-select name="pilot2" formControlName="pilot2">
                   <mat-option *ngFor="let pilot of pilots" [value]="pilot">{{ pilot.Name }} {{ pilot.Surname }}</mat-option>
               </mat-select>
           </mat-form-field>
