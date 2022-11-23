@@ -1,0 +1,54 @@
+{
+  "planes": [
+    {
+      "id": 1,
+      "name": "Boeing 757",
+      "Capacity": 200
+    }
+  ],
+  "flights": [
+    {
+      "id": 1,
+      "Plane":
+      {
+        "id": 1,
+        "name": "Boeing 757",
+        "Capacity": 200
+      },
+      "passengers":[
+      {
+        "id": 1,
+        "name": "Jan",
+        "surname": "Kowalski",
+        "phone": "517355566",
+        "birth":"24-12-2000"
+      },
+      {
+        "id": 4,
+        "name": "Anna",
+        "surname": "Wiśniewska",
+        "phone": "786345322",
+        "birth": "19-01-1967"
+      }
+      ],
+      "pilots":[
+      {
+        "id": 1,
+        "name": "Franek",
+        "surname":"Nowal"
+      },
+      {
+        "id": 1,
+        "name": "Sebastian",
+        "surname": "Kowal"
+      }
+
+      ]
+    }
+  ],
+  "users": [
+    {
+
+    }
+  ]
+}

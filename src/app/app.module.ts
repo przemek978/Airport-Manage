@@ -23,6 +23,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { EditpassengerComponent } from './editpassenger/editpassenger.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { LoginComponent } from './login/login.component';
     MatCardModule,
     MatIconModule,
     MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

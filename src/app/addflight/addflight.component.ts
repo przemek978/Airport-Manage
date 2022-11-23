@@ -1,6 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { ApiService } from '../Server/services/api.service';
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
 import { Pilot } from '../types/pilot';
@@ -30,7 +31,7 @@ export class AddflightComponent implements OnInit {
   new Flight(2,this.planes[1], this.passengers, this.pilots, new Date("2001-01-21"))];
 
   flightForm!:FormGroup;
-  constructor(private formBuilder: FormBuilder,private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
+  constructor(private formBuilder: FormBuilder,private api:ApiService, private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
 
   ngOnInit(): void {
     this.flightForm = this.formBuilder.group({
@@ -38,6 +39,20 @@ export class AddflightComponent implements OnInit {
       pilots: ['', Validators.required],
       date: [new Date(), Validators.required],
     })
+  }
+  addflight(){
+    if(this.flightForm.valid){
+      this.api.postFlight(this.flightForm.value)
+      .subscribe({
+        next:(res)=>{
+          alert("Lot został dodany")
+        },
+        error:()=>{
+          alert("Blad")
+        }
+      })
+
+    }
   }
   onNoClick() {
     this.dialogRef.close();
