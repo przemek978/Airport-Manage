@@ -11,6 +11,7 @@ export class PlaneService {
     return this.http.post<any>("http://localhost:3000/planes/",data);
   }
   getPlane(){
+    console.log(this.http.get<any>("http://localhost:3000/planes/"));
     return this.http.get<any>("http://localhost:3000/planes/");
   }
 }
