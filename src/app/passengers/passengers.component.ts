@@ -62,11 +62,13 @@ export class PassengersComponent implements OnInit {
           if (result.data.name.length <3) {
               alert("Za krótkie imie")
           }
-          if(result.id== undefined){
+          if(result.data.id== undefined){
             result.id=this.passengers.length+1;
           }
           if(add){
-            console.log(result.data);
+            if(this.flight.passengers==undefined){
+              this.flight.passengers=[];
+            }
             this.flight.passengers.push(new Passenger(result.data.name,result.data.surname,result.data.phone,result.data.birth,this.flight.passengers.length+1));
             this.flightservice.putFlight(this.flight,this.flightid).subscribe({
               next: (res) => {
