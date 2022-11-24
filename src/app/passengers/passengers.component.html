@@ -1,6 +1,6 @@
 
 <p [ngClass]="'title'">Lista Pasażerów lotu</p>
-<table class="table">
+<table class="table" >
   <thead>
     <tr>
       <th>
@@ -21,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let passenger of flight.passengers" [class.selected]="passenger===selectedPassenger">
+  <tr *ngFor="let passenger of flight.passengers" [class.selected]="passenger===selectedPassenger" >
       <td (mousedown)="onSelect(passenger)"><span class="tbody">{{passenger.id}}</span></td>
       <td (mousedown)="onSelect(passenger)"><span>{{passenger.name}}</span></td>
       <td (mousedown)="onSelect(passenger)"><span>{{passenger.surname}}</span></td>
@@ -30,7 +30,7 @@
   </tr>
   </tbody>
 </table>
-<button mat-raised-button color="primary" (click)="openDialog(true, false)">Dodaj pasazera</button>
+<button mat-raised-button color="primary" (click)="openDialog(true, false)" >Dodaj pasazera</button>
 <div *ngIf="selectedPassenger!=null">
   <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj Pasazera</button>
 </div>

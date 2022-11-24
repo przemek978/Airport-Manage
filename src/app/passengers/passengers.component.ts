@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { AddpassengertoflyComponent } from '../addpassengertofly/addpassengertofly.component';
@@ -19,7 +19,7 @@ export class PassengersComponent implements OnInit {
   private flightid!: number;
   passengers: Passenger[]=[];
   selectedPassenger!:Passenger;
-  private newPass!:Passenger;
+  private newPass:Passenger=new Passenger("","",0,"",0);
   flight!:Flight;
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // passengers1: Passenger[]=[ new Passenger("Jan","Kowalski",517355566,"24-12-2000",1),
@@ -50,14 +50,15 @@ export class PassengersComponent implements OnInit {
     this.selectedPassenger = passenger;
   }
   openDialog(add: boolean,edit: boolean) {
-    console.log(this.flight);
-    console.log(this.passengers);
+    //console.log(this.flight);
+    //console.log(this.passengers);
     let dialogRef = null;
 
     if (add) {
       dialogRef = this.dialog.open(AddpassengertoflyComponent, {
         width: '30%',
-        data: {name: '',surname: '',phone: '',date: ''}
+        data: this.newPass
+        // {name: this.newPass.name ,surname: 'a',phone: '',date: ''}
       })
     } else if (edit) {
       dialogRef = this.dialog.open(EditpassengerComponent, {
@@ -67,16 +68,26 @@ export class PassengersComponent implements OnInit {
     } else
       return;
       dialogRef.afterClosed().subscribe(result => {
+        //console.log(result.data);
         if (result !== undefined) {
-          if (result.Name.length === 0) {
 
+          if (result.data.name.length <3) {
+              alert("Za krótkie imie")
           }
           if(result.id== undefined){
             result.id=this.passengers.length+1;
           }
-
           if(add){
-
+            console.log(result.data);
+            this.flight.passengers.push(new Passenger(result.data.name,result.data.surname,result.data.phone,result.data.birth,this.flight.passengers.length+1));
+            this.flightservice.putFlight(this.flight,this.flightid).subscribe({
+              next: (res) => {
+                alert("Dodano pasażera")
+              },
+              error: () => {
+                alert("Wystąpił błąd");
+              }
+            });
           }
           else if(edit){
             this.passengers.forEach((obj, index, tab) =>{
