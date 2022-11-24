@@ -29,10 +29,9 @@ export class AddflightComponent implements OnInit {
 
   //planes: Plane[]=[new Plane(1,"Samolot1",100),new Plane(2,"Samolot2",200)];
   planes:Plane[]=[];
-  pilots:Pilot[]=[]
+  pilots:Pilot[]=[];
   flightForm!:FormGroup;
   newflight:Flight=new Flight(0,new Plane(0,"",0),new Pilot("","", 1), new Pilot("","", 2) ,new Date());
-  @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
   constructor(private formBuilder: FormBuilder,private flightservice:FlightService,private planeservice:PlaneService,private pilotservice:PilotService, private dialogRef: MatDialogRef<AddflightComponent>, @Inject(MAT_DIALOG_DATA) public data: Flight) { }
 
   ngOnInit(): void {
@@ -61,7 +60,7 @@ export class AddflightComponent implements OnInit {
           alert("Blad")
         }
       })
-
+      this.dialogRef.close(new Flight(this.flightForm.value.id,this.flightForm.value.plane,this.flightForm.value.pilot1,this.flightForm.value.pilot2,this.flightForm.value.date));
     }
   }
   onNoClick() {

@@ -26,7 +26,8 @@ export class FlightsComponent implements OnInit {
   //                     new Flight(2,new Plane(2,"Samolot2",200), new Pilot("Franek","Nowal", 1), new Pilot("Sebastian","Kowal", 2), new Date("2001-01-21"))];
   passengers: Passenger[]=[];
   flights: Flight[]=[];
-  selectedFlight!:Flight;
+  private _selectedFlight!:Flight;
+  newflight!:Flight;
   constructor(public dialog: MatDialog,private flightservice:FlightService,private router: Router) {
   }
 
@@ -35,6 +36,7 @@ export class FlightsComponent implements OnInit {
   }
   onSelect(flight:Flight): void {
     this.selectedFlight = flight;
+    //console.log(this.selectedFlight);
   }
   openDialog(add: boolean,edit: boolean) {
 
@@ -42,16 +44,35 @@ export class FlightsComponent implements OnInit {
 
     if (add) {
       dialogRef = this.dialog.open(AddflightComponent, {
-        width: '100%',
+        width: '50%',
         data: {}
       })
     } else if (edit) {
+      //console.log(this.selectedFlight);
       dialogRef = this.dialog.open(EditflightComponent, {
-        width: '100%',
+        width: '50%',
         data: this.selectedFlight
       })
     } else
       return;
+
+      dialogRef.afterClosed().subscribe(result => {
+        if (result !== undefined) {
+          this.newflight=new Flight(result.id, result.plane, result.pilot1, result.pilot2, result.date);
+          if(add){
+            this.flights.push(this.newflight);
+          }
+          else if(edit){
+            this.flights.forEach((obj, index, tab) =>{
+              if(obj === this.selectedFlight){
+                tab[index] = this.newflight;
+                this.selectedFlight = tab[index];
+              }
+            })
+          }
+
+        }
+      })
   }
   decide():boolean{
     return true;
@@ -67,5 +88,11 @@ export class FlightsComponent implements OnInit {
     {
       this.router.navigate(['passengers/' + sind]);
     }
+  }
+  get selectedFlight():Flight{
+    return this._selectedFlight;
+  }
+  set selectedFlight(fl:Flight){
+    this._selectedFlight=fl;
   }
 }

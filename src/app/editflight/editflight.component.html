@@ -7,9 +7,9 @@
           <input matInput name="id" formControlName="id"  />
       </mat-form-field>
 
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field class="example-full-width" appearance="fill" >
               <mat-label>Wybierz samolot</mat-label>
-              <mat-select name="plane" formControlName="plane">
+              <mat-select name="plane" formControlName="plane" >
                   <mat-option *ngFor="let plane of planes" [value]="plane">{{ plane.name }}</mat-option>
               </mat-select>
           </mat-form-field>
@@ -31,14 +31,15 @@
 
           <mat-form-field appearance="standard">
               <mat-label>Wybierz datę lotu</mat-label>
-              <input type="date" matInput placeholder="Placeholder" />
+              <input type="date" matInput placeholder="Placeholder" formControlName="date"/>
               <mat-hint>Wybierz datę</mat-hint>
           </mat-form-field>
 
       <div mat-dialog-actions>
           <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-          <button mat-raised-button color="primary" [mat-dialog-close]="editflight" *ngIf="f.valid" cdkFocusInitial (click)="editflight()">Ok</button>
+          <button mat-raised-button color="primary" [mat-dialog-close]="editData" *ngIf="f.valid" cdkFocusInitial (click)="editflight()">Ok</button>
           <button mat-button (click)="onNoClick()">Wyjdź</button>
+          <!-- <button (click)="change()">a</button> -->
       </div>
   </form>
 </div>
