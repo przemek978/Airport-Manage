@@ -1,14 +1,14 @@
 
 <mat-toolbar color="primary">
-  <span>Airport Managment</span>
+  <span mat-icon-button class="example-icon" href="home" [routerLink]="['/home']" routerLinkActive="router-link-active">Airport Managment</span>
   <!-- <span class="example-spacer"></span> -->
-  <a  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" href="flights">
+  <a  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" href="flights" [routerLink]="['/flights']" routerLinkActive="router-link-active">
     Loty
   </a>
-  <a  mat-icon-button class="example-icon" href="planes">
+  <a  mat-icon-button class="example-icon" href="planes" [routerLink]="['/planes']" routerLinkActive="router-link-active">
     Samoloty
   </a>
-  <a  mat-icon-button class="example-icon" href="login">
+  <a  mat-icon-button class="example-icon" href="login" [routerLink]="['/login']" routerLinkActive="router-link-active">
     Logowanie
   </a>
 </mat-toolbar>
