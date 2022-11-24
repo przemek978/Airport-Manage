@@ -26,6 +26,7 @@ import { EditpassengerComponent } from './editpassenger/editpassenger.component'
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlanesComponent } from './planes/planes.component';
+import { DeleteflightComponent } from './deleteflight/deleteflight.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { PlanesComponent } from './planes/planes.component';
     EditpassengerComponent,
     LoginComponent,
     PlanesComponent,
-
+    DeleteflightComponent
   ],
   imports: [
     BrowserModule,
