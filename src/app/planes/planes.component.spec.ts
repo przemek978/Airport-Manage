@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PlanesComponent } from './planes.component';
 
 describe('PlanesComponent', () => {

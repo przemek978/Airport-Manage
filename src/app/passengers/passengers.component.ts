@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { AddpassengertoflyComponent } from '../addpassengertofly/addpassengertofly.component';
@@ -6,8 +6,6 @@ import { EditpassengerComponent } from '../editpassenger/editpassenger.component
 import { FlightService } from '../Server/services/flight.service';
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
-import { Pilot } from '../types/pilot';
-import { Plane } from '../types/plane';
 
 @Component({
   selector: 'app-passengers',

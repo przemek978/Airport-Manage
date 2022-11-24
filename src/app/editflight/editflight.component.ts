@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import { Flight } from '../types/flight';
-import { Passenger } from '../types/passenger';
 import { Pilot } from '../types/pilot';
 import { Plane } from '../types/plane';
 import { FlightService } from '../Server/services/flight.service';

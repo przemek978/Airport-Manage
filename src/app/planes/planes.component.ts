@@ -10,7 +10,6 @@ import { Plane } from '../types/plane';
 })
 export class PlanesComponent implements OnInit {
 
-  //planes: Plane[]=[new Plane(1,"Samolot1",100), new Plane(2,"Samolot2",200)]
   selectedPlane!:Plane;
   planes: Plane[]=[];
   constructor(private planeservice:PlaneService) { }

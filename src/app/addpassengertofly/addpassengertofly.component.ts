@@ -1,10 +1,7 @@
-import { Component, Inject, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import { Flight } from '../types/flight';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { Passenger } from '../types/passenger';
-import { Pilot } from '../types/pilot';
-import { Plane } from '../types/plane';
 
 @Component({
   selector: 'app-addpassengertofly',

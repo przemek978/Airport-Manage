@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { EditflightComponent } from './editflight.component';
 
 describe('EditflightComponent', () => {
