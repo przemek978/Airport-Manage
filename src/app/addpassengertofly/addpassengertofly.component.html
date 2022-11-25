@@ -14,7 +14,7 @@
 
       <mat-form-field class="example-full-width">
           <mat-label>Numer telefonu</mat-label>
-          <input matInput name="phone" formControlName="phone">
+          <input matInput name="phone" formControlName="phone" ngModel pattern="[0-9]*" required>
       </mat-form-field>
 
       <mat-form-field appearance="standard">
