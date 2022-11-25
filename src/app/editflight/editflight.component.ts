@@ -7,6 +7,7 @@ import { Plane } from '../types/plane';
 import { FlightService } from '../Server/services/flight.service';
 import { PlaneService } from '../Server/services/plane.service';
 import { PilotService } from '../Server/services/pilot.service';
+import { Passenger } from '../types/passenger';
 
 @Component({
   selector: 'app-editflight',
@@ -19,6 +20,7 @@ export class EditflightComponent implements OnInit {
   planes:Plane[]=[];
   pilots:Pilot[]=[];
   editflightForm!:FormGroup;
+  tmppassengers!:Passenger[];
   constructor(private formBuilder: FormBuilder,private flightservice:FlightService,private planeservice:PlaneService,private pilotservice:PilotService,private dialogRef: MatDialogRef<EditflightComponent>, @Inject(MAT_DIALOG_DATA) public editData: Flight) { }
 
   ngOnInit(): void {
@@ -41,11 +43,12 @@ export class EditflightComponent implements OnInit {
       this.editflightForm.controls['pilot2'].setValue(this.editData.pilot2);
       this.editflightForm.controls['date'].setValue(this.editData.date);
     }
+    this.tmppassengers=this.editData.passengers;
   }
-  // change(){
-  //   console.log(this.editflightForm.controls);
-  // }
   editflight(){
+
+    //this.data.flight.passengers.push({id:this.data.flight.passengers.length+1,name:this.passForm.value.name,surname:this.passForm.value.surname,phone_nr:this.passForm.value.phone,birthday:this.passForm.value.date});
+    this.editflightForm.value.passengers=this.tmppassengers;
     this.flightservice.putFlight(this.editflightForm.value, this.editData.id).subscribe({
       next: (res) => {
         alert("Lot został edytowany");

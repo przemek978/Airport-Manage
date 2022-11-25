@@ -70,13 +70,13 @@ export class FlightsComponent implements OnInit {
     this.flightservice.deleteFlight(this.selectedFlight.id)
       .subscribe({
         next: (res) => {
-          alert("usunieto")
+          alert("Usunieto")
         },
         error: () => {
             alert("blad")
         }
-      })
-      this.flightservice.getFlight().subscribe(res=>{this.flights=res})
+      });
+      this.flightservice.getFlight().subscribe(res=>{this.flights=res});
   }
   FlightRoute(Flight:Flight,ind:number):void{
     var sind="";
