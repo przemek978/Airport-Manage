@@ -2,48 +2,46 @@
 
 <div mat-dialog-content class="dialog">
     <form #f="ngForm" [formGroup]="flightForm">
+      <small *ngIf="flightForm.controls['id'].hasError('required')" appMain color="red">Numer lotu jest wymagane</small>
+      <small *ngIf="flightForm.controls['id'].hasError('pattern')" appMain color="red">Numer lotu musi byc liczba</small><br/><br/>
         <mat-form-field class="example-full-width">
             <mat-label>Numer lotu </mat-label>
-            <input matInput name="id" formControlName="id"  ngModel pattern="[0-9]*" required />
+            <input matInput name="id" formControlName="id"  ngModel pattern required />
 
         </mat-form-field>
-        <div *ngIf="f.value.id.invalid && f.value.id.touched">
-          <div *ngIf="f.value.id.required" style="color: red">Numer lotu jest wymagany!</div>
-          <div *ngIf="f.value.id.pattern" style="color: red">Numer lotu musi być liczbą!</div>
-        </div>
 
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Wybierz samolot</mat-label>
-                <mat-select name="plane" formControlName="plane">
-                    <mat-option *ngFor="let plane of planes" [value]="plane">{{ plane.name }}</mat-option>
-                </mat-select>
-            </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Wybierz samolot</mat-label>
+              <mat-select name="plane" formControlName="plane">
+                  <mat-option *ngFor="let plane of planes" [value]="plane">{{ plane.name }}</mat-option>
+              </mat-select>
+          </mat-form-field>
 
 
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Pilot 1</mat-label>
-                <mat-select name="pilot1" formControlName="pilot1">
-                    <mat-option *ngFor="let pilot of pilots" [value]="pilot">{{ pilot.name }} {{ pilot.surname }}</mat-option>
-                </mat-select>
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Pilot 2</mat-label>
-              <mat-select name="pilot2" formControlName="pilot2">
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Pilot 1</mat-label>
+              <mat-select name="pilot1" formControlName="pilot1">
                   <mat-option *ngFor="let pilot of pilots" [value]="pilot">{{ pilot.name }} {{ pilot.surname }}</mat-option>
               </mat-select>
           </mat-form-field>
 
-            <mat-form-field appearance="standard">
-                <mat-label>Wybierz datę lotu</mat-label>
-                <input type="date" matInput placeholder="Placeholder" />
-                <mat-hint>Wybierz datę</mat-hint>
-            </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Pilot 2</mat-label>
+            <mat-select name="pilot2" formControlName="pilot2">
+                <mat-option *ngFor="let pilot of pilots" [value]="pilot">{{ pilot.name }} {{ pilot.surname }}</mat-option>
+            </mat-select>
+        </mat-form-field>
 
-        <div mat-dialog-actions>
-            <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-            <button mat-raised-button color="primary" [mat-dialog-close]="newflight" *ngIf="f.valid" cdkFocusInitial (click)="addflight()">Ok</button>
-            <button mat-button (click)="onNoClick()">Wyjdź</button>
-        </div>
+          <mat-form-field appearance="standard">
+              <mat-label>Wybierz datę lotu</mat-label>
+              <input type="date" matInput placeholder="Placeholder" />
+              <mat-hint>Wybierz datę</mat-hint>
+          </mat-form-field>
+
+      <div mat-dialog-actions>
+          <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
+          <button mat-raised-button color="primary" [mat-dialog-close]="newflight" *ngIf="f.valid" cdkFocusInitial (click)="addflight()">Ok</button>
+          <button mat-button (click)="onNoClick()">Wyjdź</button>
+      </div>
     </form>
 </div>
