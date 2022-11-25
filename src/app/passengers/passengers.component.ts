@@ -36,6 +36,17 @@ export class PassengersComponent implements OnInit {
   onSelect(passenger:Passenger): void {
     this.selectedPassenger = passenger;
   }
+  deleteFlight(): void {
+    this.flightservice.deleteFlight(this.postData.id)
+      .subscribe({
+        next: (res) => {
+
+        },
+        error: () => {
+
+        }
+      })
+  }
   openDialog(add: boolean,edit: boolean) {
     //console.log(this.flight);
     //console.log(this.passengers);
