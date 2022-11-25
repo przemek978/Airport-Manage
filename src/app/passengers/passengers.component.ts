@@ -37,13 +37,13 @@ export class PassengersComponent implements OnInit {
     this.selectedPassenger = passenger;
   }
   deleteFlight(): void {
-    this.flightservice.deleteFlight(this.postData.id)
+    this.flightservice.deleteFlight(this.selectedPassenger.id)
       .subscribe({
         next: (res) => {
-
+          alert("usunieto")
         },
         error: () => {
-
+            alert("blad")
         }
       })
   }
