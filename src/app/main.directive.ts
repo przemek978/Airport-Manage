@@ -1,14 +1,13 @@
-import { Directive,ElementRef, Input } from '@angular/core';
-import { AbstractControl, ValidationErrors, Validator } from '@angular/forms';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appLogin]'
+  selector: '[appMain]'
 })
-export class LoginDirective {
+export class MainDirective {
+
   @Input() color!:string;
   @Input() sep!:string;
-  constructor(private element: ElementRef) { }
-
+  constructor(private element:ElementRef) { }
   ngAfterViewInit(): void {
     //this.element.nativeElement.innerText = 'Date of birth: ' + outDate;
   console.log(this.element);
