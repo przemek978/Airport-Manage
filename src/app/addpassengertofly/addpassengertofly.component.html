@@ -1,8 +1,8 @@
 <h1 mat-dialog-title>Dodaj pasażera do lotu</h1>
 <div mat-dialog-content class="mat-dialog-window">
-  <form #f="ngForm" [formGroup]="passForm">
-    <small *ngIf="passForm.controls['id'].hasError('required')" appMain color="red">Numer telefonu jest wymagany</small>
-    <small *ngIf="passForm.controls['id'].hasError('pattern')" appMain color="red">Numer telefonu musi byc liczba</small><br/>
+  <form #f="ngForm" class= "dialog" [formGroup]="passForm">
+    <small *ngIf="passForm.controls['phone'].hasError('required')" appMain color="red">Numer telefonu jest wymagany</small>
+    <small *ngIf="passForm.controls['phone'].hasError('pattern')" appMain color="red">Numer telefonu musi byc liczba</small><br/>
       <mat-form-field class="example-full-width">
         <mat-label>Imię</mat-label>
         <input matInput name="name" formControlName="name"/>
