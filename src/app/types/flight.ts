@@ -13,7 +13,7 @@ export class Flight {
     private _date: Date
   ) {}
 
-  public addpassager(pass:Passenger){
+  public addpassenger(pass:Passenger){
     this.passengers.push(pass);
   }
   public addpilots(pilot1:Pilot,pilot2:Pilot){
@@ -27,7 +27,7 @@ export class Flight {
     return this._plane;
   }
   get passengers(): Passenger[] {
-    return this.passengers;
+    return this._passengers;
   }
   get pilot1(): Pilot {
     return this._pilot1;
