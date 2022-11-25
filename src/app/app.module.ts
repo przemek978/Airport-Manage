@@ -26,6 +26,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlanesComponent } from './planes/planes.component';
 import { HomeComponent } from './home/home.component';
+import { LoginDirective } from './login.directive';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     PlanesComponent,
     HomeComponent,
+    LoginDirective
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { HomeComponent } from './home/home.component';
     MatIconModule,
     MatListModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { LoginvalidationDirective } from './loginvalidation.directive';
+import { LoginDirective } from './login.directive';
 
-describe('Directive: Loginvalidation', () => {
+describe('LoginDirective', () => {
   it('should create an instance', () => {
     const directive = new LoginvalidationDirective();
     expect(directive).toBeTruthy();
