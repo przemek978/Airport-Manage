@@ -4,7 +4,7 @@
   <form #f="ngForm" [formGroup]="editflightForm">
       <mat-form-field class="example-full-width">
           <mat-label>Numer lotu </mat-label>
-          <input matInput name="id" formControlName="id"  />
+          <input matInput name="id" formControlName="id"   ngModel pattern="[0-9]*" required  />
       </mat-form-field>
 
           <mat-form-field class="example-full-width" appearance="fill" >
