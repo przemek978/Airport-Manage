@@ -14,10 +14,10 @@ export class Passenger{
   get surname():string{
     return this._surname;
   }
-  get phone():number{
+  get phone_nr():number{
     return this._phone_nr;
   }
-  get birth():string{
+  get birthday():string{
     return this._birthday;
   }
   set id(id:number){
@@ -29,10 +29,10 @@ export class Passenger{
   set surname(sn:string){
     this._surname=sn;
   }
-  set phone(phone:number){
+  set phone_nr(phone:number){
     this._phone_nr=phone;
   }
-  set birth(birth:string){
+  set birthday(birth:string){
     this._birthday=birth;
   }
 }

@@ -43,30 +43,7 @@
         "name": "Sebastian",
         "surname": "Kowal"
       },
-      "date": "2022-11-22",
-      "passengers": [
-        {
-          "name": "jjj",
-          "surname": "jjj",
-          "phone_nr": "88",
-          "birthday": "2022-11-03",
-          "id": 1
-        },
-        {
-          "name": "test",
-          "surname": "test",
-          "phone_nr": "123456789",
-          "birthday": "2022-02-22",
-          "id": 2
-        },
-        {
-          "_name": "test2",
-          "_surname": "test2",
-          "_phone_nr": "500",
-          "_birthday": "2011-02-22",
-          "_id": 3
-        }
-      ]
+      "date": "2022-11-22"
     },
     {
       "id": "2",
@@ -107,11 +84,11 @@
       "date": "2022-11-24T16:49:20.396Z",
       "passengers": [
         {
-          "_name": "abs",
-          "_surname": "asd",
-          "_phone_nr": "12345",
-          "_birthday": "2012-06-12",
-          "_id": 1
+          "name": "abs",
+          "surname": "asd",
+          "phone_nr": "12345",
+          "birthday": "2012-06-12",
+          "id": 1
         }
       ]
     },

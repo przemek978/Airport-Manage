@@ -27,7 +27,9 @@ export class PassengersComponent implements OnInit {
     this.route.paramMap.subscribe(params => this.flightid = Number(params.get('id')));
     //this.passengers=this.flight.passengers;
     this.flightservice.getFlightid(this.flightid).subscribe(res=>{
-          this.flight=res;});
+          this.flight=res;
+          console.log(res);});
+
   }
 
 
@@ -54,7 +56,7 @@ export class PassengersComponent implements OnInit {
     } else
       return;
       dialogRef.afterClosed().subscribe(result => {
-        //console.log(result.data);
+        console.log(result.data);
         if (result !== undefined) {
 
           if (result.data.name.length <3) {

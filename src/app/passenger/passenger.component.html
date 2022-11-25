@@ -1,8 +1,8 @@
-<span [class.oddRow]="isOdd" [class.evenRow]="!isOdd">{{prefix}} {{passenger.name}}  {{passenger.surname}}  {{passenger.birth}}  {{passenger.phone}}</span>
+<span [class.oddRow]="isOdd" [class.evenRow]="!isOdd">{{prefix}} {{passenger.name}}  {{passenger.surname}}  {{passenger.birthday}}  {{passenger.phone_nr}}</span>
 <span *ngIf="isClicked">
   <input type="text" [(ngModel)]="passenger.name"/>
   <input type="text" [(ngModel)]="passenger.surname"/>
-  <input type="text" [(ngModel)]="passenger.birth"/>
-  <input type="number" [(ngModel)]="passenger.phone"/>
+  <input type="text" [(ngModel)]="passenger.birthday"/>
+  <input type="number" [(ngModel)]="passenger.phone_nr"/>
   <button (click)="doUnClick()">HIDE</button>
 </span>
