@@ -26,7 +26,7 @@ export class EditflightComponent implements OnInit {
   ngOnInit(): void {
 
     this.editflightForm = this.formBuilder.group({
-      id: ['', Validators.required,],
+      id: ['', Validators.required,Validators.pattern("[0-9]*")],
       plane: ['', Validators.required],
       pilot1: ['', Validators.required],
       pilot2: ['', Validators.required],

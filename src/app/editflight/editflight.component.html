@@ -2,9 +2,11 @@
 
 <div mat-dialog-content class="dialog">
   <form #f="ngForm" [formGroup]="editflightForm">
-      <mat-form-field class="example-full-width">
+    <small *ngIf="editflightForm.controls['id'].hasError('required')" appMain color="red">Numer lotu jest wymagany</small>
+      <small *ngIf="editflightForm.controls['id'].hasError('pattern')" appMain color="red">Numer lotu musi byc liczba</small><br/>
+    <mat-form-field class="example-full-width">
           <mat-label>Numer lotu </mat-label>
-          <input matInput name="id" formControlName="id"   ngModel pattern="[0-9]*" required  />
+          <input matInput name="id" formControlName="id"   ngModel pattern required  />
       </mat-form-field>
 
           <mat-form-field class="example-full-width" appearance="fill" >
