@@ -15,21 +15,6 @@ export class DeleteflightComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteFlight(): void {
-    this.flightservice.deleteFlight(this.postData.id)
-      .subscribe({
-        next: (res) => {
-          //this.toast.success({ detail: "Success", summary: "Post deleted successfully!", duration: 5000 });
-          console.log("Success");
-          this.dialogRef.close('delete');
-        },
-        error: () => {
-          //this.toast.error({ detail: "Error", summary: "Error while deleting the record!", duration: 5000 });
-          console.log("Debil");
-        }
-      })
-  }
-
   onNoClick(): void {
     this.dialogRef.close();
   }

@@ -4,6 +4,11 @@
       "id": 1,
       "name": "Boeing 757",
       "capacity": 200
+    },
+    {
+      "id": 1,
+      "name": "Boeing 575",
+      "capacity": 150
     }
   ],
   "pilots": [
