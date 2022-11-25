@@ -7,13 +7,16 @@
             <input matInput name="username" formControlName="username" />
             <mat-hint *ngIf="loginForm.controls['username'].hasError('required')">Nazwa jest wymagana</mat-hint>
         </mat-form-field>
+        <!-- <small *ngIf="loginForm.controls['username'].hasError('required')" appMain color="red">Nazwa użytkownika jest wymagana</small> -->
 
         <mat-form-field class="example-full-width">
             <mat-label>Hasło</mat-label>
             <input matInput type="password" placeholder="Password" type="password"  formControlName="password" />
             <mat-hint *ngIf="loginForm.controls['password'].hasError('required')">Hasło jest wymagane</mat-hint>
         </mat-form-field>
+        <!-- <small *ngIf="loginForm.controls['password'].hasError('required')" appMain color="red">Haslo jest wymagane</small><br/> -->
         <button mat-flat-button color="primary" [disabled]="!loginForm.valid" type="submit">Login</button>
+
     </div>
   </form>
 
