@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { PassengerComponent } from './passenger/passenger.component';
 import { PassengersComponent } from './passengers/passengers.component';
 import { PlanesComponent } from './planes/planes.component';
-import { LoginvalidationDirective } from './loginvalidation.directive';
+//import { LoginDirective } from './login.directive';
 
 const routes: Routes = [{ path: 'home', component: HomeComponent }, { path: 'planes', component: PlanesComponent },{ path: 'flights', component: FlightsComponent },{ path: 'login', component: LoginComponent },{ path: 'passengers/:id', component: PassengersComponent }];
 
@@ -16,7 +16,7 @@ const routes: Routes = [{ path: 'home', component: HomeComponent }, { path: 'pla
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
    declarations: [
-      LoginvalidationDirective
+      //LoginDirective
    ]
 })
 export class AppRoutingModule { }
