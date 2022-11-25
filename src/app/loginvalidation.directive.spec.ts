@@ -5,7 +5,7 @@ import { LoginvalidationDirective } from './loginvalidation.directive';
 
 describe('Directive: Loginvalidation', () => {
   it('should create an instance', () => {
-    //const directive = new LoginvalidationDirective();
-    //expect(directive).toBeTruthy();
+    const directive = new LoginvalidationDirective();
+    expect(directive).toBeTruthy();
   });
 });

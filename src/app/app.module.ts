@@ -20,7 +20,6 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import {MatSelectModule} from '@angular/material/select'
-import { MatDialog } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { EditpassengerComponent } from './editpassenger/editpassenger.component';
 import { LoginComponent } from './login/login.component';
