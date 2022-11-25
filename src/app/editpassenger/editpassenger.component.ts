@@ -1,7 +1,14 @@
 
 import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FlightService } from '../Server/services/flight.service';
+import { PilotService } from '../Server/services/pilot.service';
+import { PlaneService } from '../Server/services/plane.service';
+import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
+import { Pilot } from '../types/pilot';
+import { Plane } from '../types/plane';
 
 @Component({
   selector: 'app-editpassenger',
@@ -10,12 +17,53 @@ import { Passenger } from '../types/passenger';
 })
 export class EditpassengerComponent implements OnInit {
 
-  @Input() passenger!:Passenger;
-  @Output() editpassenger: EventEmitter<void> = new EventEmitter();
-  constructor(private dialogRef: MatDialogRef<EditpassengerComponent>, @Inject(MAT_DIALOG_DATA) public data: Passenger) { }
+  editpassForm!:FormGroup;
+  newPass:Passenger=new Passenger("","",0,"",0);
+  constructor(private formBuilder: FormBuilder,private flightservice:FlightService,private planeservice:PlaneService,private pilotservice:PilotService,private dialogRef: MatDialogRef<EditpassengerComponent>, @Inject(MAT_DIALOG_DATA) public editData: any) { }
 
   ngOnInit(): void {
+    this.editpassForm = this.formBuilder.group({
+      name: ['', Validators.required,],
+      surname: ['', Validators.required],
+      date: [new Date(), Validators.required],
+      phone: ['', Validators.required],
+    });
+    //console.log(this.editData);
+    //console.log(this.editpassForm);
+    if (this.editData) {
+      this.editpassForm.controls['name'].setValue(this.editData.pass.name);
+      this.editpassForm.controls['surname'].setValue(this.editData.pass.surname);
+      this.editpassForm.controls['date'].setValue(this.editData.pass.birthday);
+      this.editpassForm.controls['phone'].setValue(this.editData.pass.phone_nr);
+    }
   }
+
+  editPassenger(){
+
+    console.log(this.editData);
+    if(this.editData.flight.passengers==undefined){
+      this.editData.flight.passengers=[];
+    }
+    console.log(this.editData.flight);
+    for(let i=0;i<this.editData.flight.passengers.length;i++){
+      console.log(this.editData.flight.passengers[i].id);
+      console.log(this.editData.pass.id);
+      if(this.editData.flight.passengers[i].id==this.editData.pass.id){
+        this.editData.flight.passengers[i]={id:this.editData.flight.passengers[i].id,name:this.editpassForm.value.name,surname:this.editpassForm.value.surname,phone_nr:this.editpassForm.value.phone,birthday:this.editpassForm.value.date};
+
+      }
+    }
+    //this.editData.flight.passengers.push({id:this.editData.flight.passengers.length+1,name:this.editpassForm.value.name,surname:this.editpassForm.value.surname,phone_nr:this.editpassForm.value.phone,birthday:this.editpassForm.value.date});
+    //console.log(this.editData.flight);
+    this.flightservice.putFlight(this.editData.flight,this.editData.flight.id).subscribe({
+         next: (res) => {
+           alert("Edytowano pasażera")
+         },
+         error: () => {
+           alert("Wystąpił błąd");
+         }
+       });
+    }
   onNoClick() {
     this.dialogRef.close();
   }

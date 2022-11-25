@@ -59,7 +59,7 @@ export class PassengersComponent implements OnInit {
       console.log(this.selectedPassenger);
       dialogRef = this.dialog.open(EditpassengerComponent, {
         width: '30%',
-        data: this.selectedPassenger
+        data: {pass:this.selectedPassenger,flight: this.flight}
       })
     } else
       return;
@@ -95,13 +95,13 @@ export class PassengersComponent implements OnInit {
           //  });
           }
           else if(edit){
-            this.passengers.forEach((obj, index, tab) =>{
-              if(obj === this.selectedPassenger){
-                tab[index] = this.selectedPassenger;
-                //this.passengers.editPassenger(this.newPass, this.selectedPassenger); dodac dodanie do serwisu
-                this.selectedPassenger = tab[index];
-              }
-            })
+            // this.passengers.forEach((obj, index, tab) =>{
+            //   if(obj === this.selectedPassenger){
+            //     tab[index] = this.selectedPassenger;
+            //     //this.passengers.editPassenger(this.newPass, this.selectedPassenger); dodac dodanie do serwisu
+            //     this.selectedPassenger = tab[index];
+            //   }
+            // })
           }
 
         }

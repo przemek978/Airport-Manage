@@ -32,12 +32,10 @@ export class AddpassengertoflyComponent implements OnInit {
 
   addPassenger(){
     this.newPass=new Passenger(this.passForm.value.name,this.passForm.value.surname,this.passForm.value.phone,this.passForm.value.date,0);
-    //let editFlight=this.flightservice.getFlightid(this.data.id);
-    //console.log(editFlight);
     if(this.data.flight.passengers==undefined){
       this.data.flight.passengers=[];
     }
-    console.log(this.data.flight);
+    //console.log(this.data.flight);
     this.data.flight.passengers.push({id:this.data.flight.passengers.length+1,name:this.passForm.value.name,surname:this.passForm.value.surname,phone_nr:this.passForm.value.phone,birthday:this.passForm.value.date});
 
     this.flightservice.putFlight(this.data.flight,this.data.flight.id).subscribe({
