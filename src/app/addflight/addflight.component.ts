@@ -42,6 +42,9 @@ export class AddflightComponent implements OnInit {
   addflight(){
     console.log(this.flightForm.valid);
 
+    const pom = this.flightForm.value.date.getFullYear()+"-"+this.flightForm.value.date.Month()+"-"+this.flightForm.value.date.getDate()+" "+this.flightForm.value.getHours()+":"+this.flightForm.value.getMinutes();
+
+
     if(this.flightForm.valid){
       this.flightservice.postFlight(this.flightForm.value)
       .subscribe({
