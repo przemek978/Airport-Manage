@@ -98,23 +98,23 @@
       ]
     },
     {
-      "id": "213",
+      "id": "4",
       "plane": {
         "id": 1,
-        "name": "Boeing 757",
-        "capacity": 200
+        "name": "Boeing 575",
+        "capacity": 150
       },
       "pilot1": {
-        "id": 2,
-        "name": "Sebastian",
-        "surname": "Kowal"
-      },
-      "pilot2": {
         "id": 1,
         "name": "Franek",
         "surname": "Nowak"
       },
-      "date": "2022-11-24T21:43:22.482Z"
+      "pilot2": {
+        "id": 2,
+        "name": "Sebastian",
+        "surname": "Kowal"
+      },
+      "date": "2022-11-25T17:52:34.566Z"
     }
   ]
 }

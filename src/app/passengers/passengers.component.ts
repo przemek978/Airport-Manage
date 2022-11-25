@@ -36,17 +36,7 @@ export class PassengersComponent implements OnInit {
   onSelect(passenger:Passenger): void {
     this.selectedPassenger = passenger;
   }
-  deleteFlight(): void {
-    this.flightservice.deleteFlight(this.selectedPassenger.id)
-      .subscribe({
-        next: (res) => {
-          alert("usunieto")
-        },
-        error: () => {
-            alert("blad")
-        }
-      })
-  }
+
   openDialog(add: boolean,edit: boolean) {
     //console.log(this.flight);
     //console.log(this.passengers);

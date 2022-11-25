@@ -27,7 +27,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlanesComponent } from './planes/planes.component';
 import { HomeComponent } from './home/home.component';
-import { DeleteflightComponent } from './deleteflight/deleteflight.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +42,6 @@ import { DeleteflightComponent } from './deleteflight/deleteflight.component';
     LoginComponent,
     PlanesComponent,
     HomeComponent,
-    DeleteflightComponent
   ],
   imports: [
     BrowserModule,
