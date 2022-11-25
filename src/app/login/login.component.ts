@@ -32,7 +32,21 @@ export class LoginComponent implements OnInit {
         const user = res.find((a: Employee) => {
           return a.username === this.loginForm.value.username && a.password === this.loginForm.value.password
         });
-          console.log(user);
+        if (user) {
+          localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
+          if (user.role == 'admin') {
+            localStorage.setItem('userType', 'admin');
+          }
+          else {
+            localStorage.setItem('userType', 'user');
+          }
+          this.loginForm.reset();
+        }
+        else {
+          alert({ detail: "Error", summary: "User not found. Check the correctness of typed data.", duration: 5000 })
+        }
+      }, err => {
+        alert({ detail: "Error", summary: "Something went wrong! Try again.", duration: 5000 })
       })
   }
 }

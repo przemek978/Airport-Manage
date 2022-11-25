@@ -4,8 +4,13 @@
     <form #f="ngForm" [formGroup]="flightForm">
         <mat-form-field class="example-full-width">
             <mat-label>Numer lotu </mat-label>
-            <input matInput name="id" formControlName="id"  />
+            <input matInput name="id" formControlName="id"  ngModel pattern="[0-9]*" required />
+
         </mat-form-field>
+        <div *ngIf="f.value.id.invalid && f.value.id.touched">
+          <div *ngIf="f.value.id.required" style="color: red">Numer lotu jest wymagany!</div>
+          <div *ngIf="f.value.id.pattern" style="color: red">Numer lotu musi być liczbą!</div>
+        </div>
 
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Wybierz samolot</mat-label>

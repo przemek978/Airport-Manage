@@ -8,11 +8,15 @@ import { LoginComponent } from './login/login.component';
 import { PassengerComponent } from './passenger/passenger.component';
 import { PassengersComponent } from './passengers/passengers.component';
 import { PlanesComponent } from './planes/planes.component';
+import { LoginvalidationDirective } from './loginvalidation.directive';
 
 const routes: Routes = [{ path: 'home', component: HomeComponent }, { path: 'planes', component: PlanesComponent },{ path: 'flights', component: FlightsComponent },{ path: 'login', component: LoginComponent },{ path: 'passengers/:id', component: PassengersComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+   declarations: [
+      LoginvalidationDirective
+   ]
 })
 export class AppRoutingModule { }
