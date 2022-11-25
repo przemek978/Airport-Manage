@@ -2,7 +2,7 @@
 
 <div mat-dialog-content class="dialog">
     <form #f="ngForm" [formGroup]="flightForm">
-      <small *ngIf="flightForm.controls['id'].hasError('required')" appMain color="red">Numer lotu jest wymagane</small>
+      <small *ngIf="flightForm.controls['id'].hasError('required')" appMain color="red">Numer lotu jest wymagany</small>
       <small *ngIf="flightForm.controls['id'].hasError('pattern')" appMain color="red">Numer lotu musi byc liczba</small><br/>
         <mat-form-field class="example-full-width">
             <mat-label>Numer lotu </mat-label>
