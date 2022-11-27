@@ -37,7 +37,7 @@
       <td (mousedown)="onSelect(flight)"><span>{{flight.plane.name}}</span></td>
       <td (mousedown)="onSelect(flight)"><span>{{flight.pilot1.name}} {{flight.pilot1.surname}}</span></td>
       <td (mousedown)="onSelect(flight)"><span>{{flight.pilot2.name}} {{flight.pilot2.surname}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.date | date:'dd/MM/YYYY, HH:MM'}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.date | date:'dd/MMMM/YYYY, HH:MM'}}</span></td>
   </tr>
   </tbody>
 </table>
