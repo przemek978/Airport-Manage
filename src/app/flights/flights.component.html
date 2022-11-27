@@ -33,13 +33,16 @@
   </tbody>
 </table>
 <div *ngIf="this.auth.IsLogged()" class="przyciski">
-  <button mat-raised-button color="primary" (click)="openDialog(true, false)">Dodaj lot</button>
-  <div *ngIf="selectedFlight!=null">
-    <button mat-raised-button color="primary" (click)="FlightRoute(selectedFlight,selectedFlight.id)">Pasażerowie</button>
+  <div class="przyciski_right">
+    <button mat-raised-button color="primary" (click)="openDialog(true, false)">Dodaj lot</button>
+    <div *ngIf="selectedFlight!=null && this.auth.IsAdmin()">
+      <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj Lot</button>
+      <button mat-raised-button color="primary" (click)="deleteFlight()">Usuń Lot</button>
+    </div>
   </div>
-  <div *ngIf="selectedFlight!=null && this.auth.IsAdmin()">
-    <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj Lot</button>
-    <button mat-raised-button color="primary" (click)="deleteFlight()">Usuń Lot</button>
+
+  <div *ngIf="selectedFlight!=null" class="przyciski_left">
+    <button mat-raised-button color="primary" (click)="FlightRoute(selectedFlight,selectedFlight.id)">Pasażerowie</button>
   </div>
 </div>
 </html>

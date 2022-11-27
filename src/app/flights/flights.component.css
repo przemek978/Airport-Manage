@@ -1,7 +1,13 @@
 .przyciski{
-  margin-right: 5%;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 90%;
 }
 
-button{
+.przyciski_right button{
   margin-left: 10px;
+}
+
+.przyciski_left button{
+  margin-right: 75%;
 }
