@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../Server/services/auth.service';
 import { Employee } from '../types/employee';
 
 @Component({
@@ -16,37 +17,50 @@ export class LoginComponent implements OnInit {
   // ];
   loginForm!: FormGroup;
   newlogin!: Employee;
-  constructor(private formBuilder: FormBuilder,private route: ActivatedRoute, private http: HttpClient,) {
+  constructor(private formBuilder: FormBuilder,private auth:AuthService, private route: ActivatedRoute, private http: HttpClient,private router:Router) {
 
   }
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-    });
+    if(this.auth.username==null)
+    {
+      this.loginForm = this.formBuilder.group({
+        username: ['', Validators.required],
+        password: ['', Validators.required],
+      });
+    }
+    else {
+      console.log(this.auth.username)
+      this.router.navigate(['home']);
+    }
   }
   login(){
-    this.http.get<any>("http://localhost:3000/users")
-      .subscribe(res => {
+
+      {this.auth.Login().subscribe(res => {
         const user = res.find((a: Employee) => {
           return a.username === this.loginForm.value.username && a.password === this.loginForm.value.password
         });
         if (user) {
           localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
           if (user.role == 'admin') {
-            localStorage.setItem('userType', 'admin');
+            localStorage.setItem('role', 'admin');
           }
           else {
-            localStorage.setItem('userType', 'user');
+            localStorage.setItem('role', 'pracownik');
           }
+          localStorage.setItem('userName', user.username);
+          console.log(localStorage);
           this.loginForm.reset();
+          alert("Zalogowano");
+          window.location.reload();
+          //this.router.navigate(['home']);
         }
         else {
-          alert({ detail: "Error", summary: "User not found. Check the correctness of typed data.", duration: 5000 })
+          alert("Nieprawidłowe dane");
         }
       }, err => {
-        alert({ detail: "Error", summary: "Something went wrong! Try again.", duration: 5000 })
+        alert("Błąd");
       })
+    }
   }
 }

@@ -1,5 +1,8 @@
-export class Employee{
-  constructor(private _id:number,private _username:string,private _password:string, private _role:string ){
+import { Person } from "./person";
+
+export class Employee extends Person{
+  constructor(private _id:number,private _username:string,private _password:string, private _role:string,name:string,surname:string){
+    super(name,surname);
     //private name:string,private surname:string,private position:string,
     //this._username=username;
   }

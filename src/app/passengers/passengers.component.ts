@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { AddpassengertoflyComponent } from '../addpassengertofly/addpassengertofly.component';
 import { EditpassengerComponent } from '../editpassenger/editpassenger.component';
+import { AuthService } from '../Server/services/auth.service';
 import { FlightService } from '../Server/services/flight.service';
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
@@ -20,7 +21,7 @@ export class PassengersComponent implements OnInit {
   private newPass:Passenger=new Passenger("","",0,"",0);
   flight!:Flight;
   temp!:any;
-  constructor(public dialog: MatDialog,private flightservice:FlightService,private route: ActivatedRoute) {
+  constructor(public auth:AuthService,public dialog: MatDialog,private flightservice:FlightService,private route: ActivatedRoute) {
 
   }
 

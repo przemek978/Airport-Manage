@@ -24,7 +24,7 @@ export class AddpassengertoflyComponent implements OnInit {
       name: ['', Validators.required,],
       surname: ['', Validators.required],
       date: [new Date(), Validators.required],
-      phone: ['', Validators.required,Validators.pattern("[0-9]*")],
+      phone: ['',[ Validators.required,Validators.pattern("[0-9]*")]],
     })
     //console.log(this.formBuilder.group);
 

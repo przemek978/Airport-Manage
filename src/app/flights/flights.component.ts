@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AddflightComponent } from '../addflight/addflight.component';
 import { EditflightComponent } from '../editflight/editflight.component';
+import { AuthService } from '../Server/services/auth.service';
 import { FlightService } from '../Server/services/flight.service';
 import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
@@ -18,7 +19,7 @@ export class FlightsComponent implements OnInit {
   flights: Flight[]=[];
   private _selectedFlight!:Flight;
   newflight!:Flight;
-  constructor(public dialog: MatDialog,private flightservice:FlightService,private router: Router) {
+  constructor(public auth:AuthService, public dialog: MatDialog,private flightservice:FlightService,private router: Router) {
   }
 
   ngOnInit(): void {

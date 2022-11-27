@@ -30,8 +30,10 @@
   </tr>
   </tbody>
 </table>
-<button mat-raised-button color="primary" (click)="openDialog(true, false)" >Dodaj pasazera</button>
-<div *ngIf="selectedPassenger!=null">
-  <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj Pasazera</button>
+<div *ngIf="this.auth.IsLogged()">
+  <button mat-raised-button color="primary" (click)="openDialog(true, false)" >Dodaj pasazera</button>
+  <div *ngIf="selectedPassenger!=null && this.auth.IsAdmin()" >
+    <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj Pasazera</button>
+  </div>
 </div>
 

@@ -8,8 +8,14 @@
   <a  mat-icon-button class="example-icon" href="planes" [routerLink]="['/planes']" routerLinkActive="router-link-active">
     Samoloty
   </a>
-  <a  mat-icon-button class="example-icon" href="login" [routerLink]="['/login']" routerLinkActive="router-link-active">
+  <a  mat-icon-button class="example-icon" href="login" [routerLink]="['/login']" routerLinkActive="router-link-active" *ngIf="!auth.IsLogged()">
     Logowanie
+  </a>
+  <a  mat-icon-button class="example-icon" [routerLink]="['/logout']" routerLinkActive="router-link-active" *ngIf="auth.IsLogged()" (click)="Logout()">
+    Wyloguj
+  </a>
+  <a  mat-icon-button class="example-icon" *ngIf="auth.IsLogged()">
+    Witaj {{username}}
   </a>
 </mat-toolbar>
 <router-outlet></router-outlet>

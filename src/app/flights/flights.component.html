@@ -39,10 +39,13 @@
   </tr>
   </tbody>
 </table>
-<button mat-raised-button color="primary" (click)="openDialog(true, false)">Dodaj lot</button>
-<div *ngIf="selectedFlight!=null">
-  <!-- <app-film-component [film]="selectedFlight" (changeFilmStatus)="changeStatus()" (deleteFilm)="deleteFilm()" (editFilm)="openDialog(false, true)"></app-film-component> -->
-  <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj Lot</button>
-  <button mat-raised-button color="primary" (click)="deleteFlight()">Usuń Lot</button>
-  <button mat-raised-button color="primary" (click)="FlightRoute(selectedFlight,selectedFlight.id)">Pasażerowie</button>
+<div *ngIf="this.auth.IsLogged()">
+  <button mat-raised-button color="primary" (click)="openDialog(true, false)">Dodaj lot</button>
+  <div *ngIf="selectedFlight!=null">
+    <button mat-raised-button color="primary" (click)="FlightRoute(selectedFlight,selectedFlight.id)">Pasażerowie</button>
+  </div>
+  <div *ngIf="selectedFlight!=null && this.auth.IsAdmin()">
+    <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj Lot</button>
+    <button mat-raised-button color="primary" (click)="deleteFlight()">Usuń Lot</button>
+  </div>
 </div>

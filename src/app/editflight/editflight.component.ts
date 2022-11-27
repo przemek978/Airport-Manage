@@ -26,7 +26,7 @@ export class EditflightComponent implements OnInit {
   ngOnInit(): void {
 
     this.editflightForm = this.formBuilder.group({
-      id: ['', Validators.required,Validators.pattern("[0-9]*")],
+      id: ['', [Validators.required,,Validators.pattern("[0-9]*")]],
       plane: ['', Validators.required],
       pilot1: ['', Validators.required],
       pilot2: ['', Validators.required],
@@ -34,8 +34,8 @@ export class EditflightComponent implements OnInit {
     })
     this.planeservice.getPlane().subscribe(res=>{this.planes=res;});
     this.pilotservice.getPilot().subscribe(res=>{this.pilots=res;});
-    //console.log(this.editData);
-    //console.log(this.editflightForm.controls);
+    console.log(this.editData);
+    console.log(this.editflightForm);
     if (this.editData) {
       this.editflightForm.controls['id'].setValue(this.editData.id);
       this.editflightForm.controls['plane'].setValue(this.editData.plane);

@@ -27,7 +27,18 @@
     {
       "id": 1,
       "username": "admin",
-      "password": "admin"
+      "password": "admin",
+      "name": "admin",
+      "surname": "admin",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "Przemo123",
+      "password": "Przemo123",
+      "name": "Przemek",
+      "surname": "K",
+      "role": "employee"
     }
   ],
   "flights": [
@@ -63,8 +74,60 @@
           "surname": "yyychfdhxc",
           "phone_nr": "332322323",
           "birthday": "2022-11-09"
+        },
+        {
+          "id": 3,
+          "name": "hhhh",
+          "surname": "hhh",
+          "phone_nr": "8",
+          "birthday": "2022-11-03"
+        },
+        {
+          "id": 4,
+          "name": "kdfk",
+          "surname": "sdjdfjdj",
+          "phone_nr": "12232",
+          "birthday": "2022-11-09"
         }
       ]
+    },
+    {
+      "id": "2",
+      "plane": {
+        "id": 1,
+        "name": "Boeing 575",
+        "capacity": 150
+      },
+      "pilot1": {
+        "id": 2,
+        "name": "Sebastian",
+        "surname": "Kowal"
+      },
+      "pilot2": {
+        "id": 1,
+        "name": "Franek",
+        "surname": "Nowak"
+      },
+      "date": "2022-10-27 14:28"
+    },
+    {
+      "id": "3",
+      "plane": {
+        "id": 1,
+        "name": "Boeing 575",
+        "capacity": 150
+      },
+      "pilot1": {
+        "id": 1,
+        "name": "Franek",
+        "surname": "Nowak"
+      },
+      "pilot2": {
+        "id": 2,
+        "name": "Sebastian",
+        "surname": "Kowal"
+      },
+      "date": "2022-10-27 14:37"
     }
   ]
 }
