@@ -7,13 +7,14 @@ import { Plane } from 'src/app/types/plane';
 })
 export class PlaneService {
 
+  private url="http://localhost:3000/planes/";
   constructor(private http:HttpClient) { }
+
   postPlane(data:Plane){
-    return this.http.post<Plane[]>("http://localhost:3000/planes/",data);
+    return this.http.post<Plane[]>(this.url,data);
   }
   getPlane(){
-    //console.log(this.http.get<any>("http://localhost:3000/planes/"));
-    return this.http.get<Plane[]>("http://localhost:3000/planes/");
+    return this.http.get<Plane[]>(this.url);
   }
 
 }
