@@ -23,6 +23,7 @@
 
 .toolbar_main{
   width: 100%;
+  font-family: 'Oswald', sans-serif;
 }
 .toolbar_main_left{
   margin-right: 30%;
@@ -30,3 +31,13 @@
 .toolbar_main_right{
   margin-left: 35%;
 }
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  padding-left: 33%;
+}
+
