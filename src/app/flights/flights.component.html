@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
 <p [ngClass]="'title'">Lista lotów</p>
-<!-- <p [ngClass]="'subtitle'">Kliknij na lot aby wyświetlić pasażerów</p>
-<ol *ngIf="decide()">
-  <li *ngFor="let flight of flights; index as i; odd as isOdd;even as isEven" (click)="FlightClicked(flight,i+1)">
-    <span >
-      <print-flight [isClicked]="whichClicked===i" prefix="Lot:&nbsp;&nbsp;&nbsp;&nbsp;" [flight]="flight" [isOdd]="isOdd"></print-flight>
-      <button mat-raised-button color="primary" (click)="openDialog(false,true)">ADD Flight</button>
-    </span>
-  </li>
-</ol> -->
 
 <table class="table">
   <thead>
@@ -37,7 +28,7 @@
       <td (mousedown)="onSelect(flight)"><span>{{flight.plane.name}}</span></td>
       <td (mousedown)="onSelect(flight)"><span>{{flight.pilot1.name}} {{flight.pilot1.surname}}</span></td>
       <td (mousedown)="onSelect(flight)"><span>{{flight.pilot2.name}} {{flight.pilot2.surname}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.date | date:'dd/MMMM/YYYY, HH:MM'}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.date | date:'dd-MM-YYYY HH:mm'}}</span></td>
   </tr>
   </tbody>
 </table>
