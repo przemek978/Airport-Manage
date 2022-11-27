@@ -1,11 +1,13 @@
 body{
   margin: 0 auto;
+  font-family: 'Oswald', sans-serif;
 }
 .title {
   color: blue;
   font-weight: bold;
   font-size: xx-large;
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family: 'Oswald', sans-serif;
   text-align: center;
 }
 .subtitle{
@@ -14,7 +16,8 @@ body{
 }
 
 ol{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode','Luicia Grande','Luicia Sans',Arial,sans-serif;
+  /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode','Luicia Grande','Luicia Sans',Arial,sans-serif;*/
+  font-family: 'Oswald', sans-serif;
   font-size: large;
   background-color: gold;
 }
@@ -42,7 +45,8 @@ td {
 th {
   background-color: gainsboro;
   color: darkslategrey;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+  font-family: 'Oswald', sans-serif;
   font-size: large;
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../Server/services/auth.service';
 
 @Component({
@@ -13,9 +13,6 @@ export class HomeComponent implements OnInit {
   constructor(public auth:AuthService) { }
 
   ngOnInit(): void {
-  }
-  reload(){
-    window.location.reload();
   }
 
 }

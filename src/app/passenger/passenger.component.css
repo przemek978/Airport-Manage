@@ -1,7 +1,29 @@
-.oddRow{
-  background-color: lightskyblue;
+.title {
+  color: blue;
+  font-weight: bold;
+  font-size: xx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.subtitle{
+  font-weight: bold;
+  text-align: center;
 }
 
-.evenRow{
-  background-color: lightseagreen;
+ol{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode','Luicia Grande','Luicia Sans',Arial,sans-serif;
+  font-size: large;
+  background-color: gold;
+}
+
+li{
+  border-style: ridge;
+}
+
+.przyciski{
+  margin-right: 5%;
+}
+
+button{
+  margin-left: 10px;
 }
