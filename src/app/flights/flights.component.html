@@ -39,7 +39,7 @@
   </tr>
   </tbody>
 </table>
-<div *ngIf="this.auth.IsLogged()">
+<div *ngIf="this.auth.IsLogged()" class="przyciski">
   <button mat-raised-button color="primary" (click)="openDialog(true, false)">Dodaj lot</button>
   <div *ngIf="selectedFlight!=null">
     <button mat-raised-button color="primary" (click)="FlightRoute(selectedFlight,selectedFlight.id)">Pasażerowie</button>

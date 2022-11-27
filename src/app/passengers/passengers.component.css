@@ -19,3 +19,11 @@ ol{
 li{
   border-style: ridge;
 }
+
+.przyciski{
+  margin-right: 5%;
+}
+
+button{
+  margin-left: 10px;
+}
