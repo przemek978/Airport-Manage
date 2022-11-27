@@ -25,7 +25,7 @@ export class AuthService {
     return false;
   }
   IsAdmin(){
-    console.log(this.role);
+    //console.log(this.role);
     if(this.role=='admin'){
       return true;
     }

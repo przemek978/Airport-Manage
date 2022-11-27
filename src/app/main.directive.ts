@@ -9,9 +9,8 @@ export class MainDirective {
   @Input() sep!:string;
   constructor(private element:ElementRef) { }
   ngAfterViewInit(): void {
-    //this.element.nativeElement.innerText = 'Date of birth: ' + outDate;
+
   console.log(this.element);
-  this.element.nativeElement.style.color=this.color;
-  //this.element.nativeElement.face=;
+    this.element.nativeElement.style.color=this.color;
   }
 }

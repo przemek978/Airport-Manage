@@ -4,11 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'myDate'
 })
-export class MyDatePipe implements PipeTransform {
+export class MyDatePipe extends DatePipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): any {
-    // const date = value;
-    // const dateTab = date.split(' ');
+  override transform(value: any, ...args: any[]): any {
+    // const date = super.transform(value, 'medium');;
+    // const dateTab = date.split('-');
     // let datePlForm = '';
     // switch (dateTab[1]) {
     //   case '01': dateTab[1] = 'stycznia'; break;

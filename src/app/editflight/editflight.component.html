@@ -33,7 +33,7 @@
 
           <mat-form-field appearance="standard">
               <mat-label>Wybierz datę lotu</mat-label>
-              <input type="date" matInput placeholder="Placeholder" formControlName="date"/>
+              <input type="datetime-local" matInput placeholder="Placeholder" formControlName="date"/>
               <mat-hint>Wybierz datę</mat-hint>
           </mat-form-field>
 
@@ -41,7 +41,7 @@
           <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
           <button mat-raised-button color="primary" [mat-dialog-close]="editData" *ngIf="f.valid" cdkFocusInitial (click)="editflight()">Ok</button>
           <button mat-button (click)="onNoClick()">Wyjdź</button>
-          <!-- <button (click)="change()">a</button> -->
+
       </div>
   </form>
 </div>

@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pl">
 <p [ngClass]="'title'">Lista lotów</p>
 <!-- <p [ngClass]="'subtitle'">Kliknij na lot aby wyświetlić pasażerów</p>
 <ol *ngIf="decide()">
@@ -35,7 +37,7 @@
       <td (mousedown)="onSelect(flight)"><span>{{flight.plane.name}}</span></td>
       <td (mousedown)="onSelect(flight)"><span>{{flight.pilot1.name}} {{flight.pilot1.surname}}</span></td>
       <td (mousedown)="onSelect(flight)"><span>{{flight.pilot2.name}} {{flight.pilot2.surname}}</span></td>
-      <td (mousedown)="onSelect(flight)"><span>{{flight.date}}</span></td>
+      <td (mousedown)="onSelect(flight)"><span>{{flight.date | date:'dd/MM/YYYY, HH:MM'}}</span></td>
   </tr>
   </tbody>
 </table>
@@ -49,3 +51,4 @@
     <button mat-raised-button color="primary" (click)="deleteFlight()">Usuń Lot</button>
   </div>
 </div>
+</html>

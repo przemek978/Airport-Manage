@@ -2,25 +2,50 @@
   "planes": [
     {
       "id": 1,
-      "name": "Boeing 757",
-      "capacity": 200
+      "name": "Tu-154",
+      "capacity": 180
     },
     {
       "id": 2,
-      "name": "Boeing 575",
-      "capacity": 150
+      "name": "Airbus A220",
+      "capacity": 220
+    },
+    {
+      "id": 3,
+      "name": "Boeing 787",
+      "capacity": 250
+    },
+    {
+      "id": 4,
+      "name": "Airbus A300",
+      "capacity": 265
+    },
+    {
+      "id": 5,
+      "name": "Boeing 747",
+      "capacity": 400
     }
   ],
   "pilots": [
     {
       "id": 1,
-      "name": "Franek",
+      "name": "Jan",
       "surname": "Nowak"
     },
     {
       "id": 2,
       "name": "Sebastian",
-      "surname": "Kowal"
+      "surname": "Kowalski"
+    },
+    {
+      "id": 3,
+      "name": "Andrzej",
+      "surname": "Duda"
+    },
+    {
+      "id": 4,
+      "name": "Michał",
+      "surname": "Malinowski"
     }
   ],
   "users": [
@@ -46,48 +71,67 @@
       "id": "1",
       "plane": {
         "id": 1,
-        "name": "Boeing 575",
-        "capacity": 150
+        "name": "Tu-154",
+        "capacity": 180
       },
       "pilot1": {
         "id": 1,
-        "name": "Franek",
+        "name": "Jan",
         "surname": "Nowak"
       },
       "pilot2": {
-        "id": 2,
-        "name": "Sebastian",
-        "surname": "Kowal"
+        "id": 3,
+        "name": "Andrzej",
+        "surname": "Duda"
       },
-      "date": "2022-10-25 21:14",
+      "date": "2022-10-30 18:00",
       "passengers": [
         {
           "id": 1,
-          "name": "fffssh",
-          "surname": "ffff",
-          "phone_nr": "666777",
-          "birthday": "2022-01-05"
+          "name": "Andrzej",
+          "surname": "Lewandowski",
+          "phone_nr": "513556666",
+          "birthday": "1960-07-14"
         }
       ]
     },
     {
       "id": "2",
       "plane": {
-        "id": 1,
-        "name": "Boeing 575",
-        "capacity": 150
+        "id": 3,
+        "name": "Boeing 787",
+        "capacity": 250
+      },
+      "pilot1": {
+        "id": 4,
+        "name": "Michał",
+        "surname": "Malinowski"
+      },
+      "pilot2": {
+        "id": 2,
+        "name": "Sebastian",
+        "surname": "Kowalski"
+      },
+      "date": "2022-12-12 17:00"
+    },
+    {
+      "id": "3",
+      "plane": {
+        "id": 3,
+        "name": "Boeing 787",
+        "capacity": 250
       },
       "pilot1": {
         "id": 2,
         "name": "Sebastian",
-        "surname": "Kowal"
+        "surname": "Kowalski"
       },
       "pilot2": {
-        "id": 1,
-        "name": "Franek",
-        "surname": "Nowak"
+        "id": 3,
+        "name": "Andrzej",
+        "surname": "Duda"
       },
-      "date": "2022-10-27 14:28"
+      "date": "2022-12-16T01:00"
     }
   ]
 }

@@ -64,9 +64,7 @@ export class FlightsComponent implements OnInit {
         }
       })
   }
-  decide():boolean{
-    return true;
-  }
+
   deleteFlight(): void {
     this.flightservice.deleteFlight(this.selectedFlight.id)
       .subscribe({
@@ -78,6 +76,7 @@ export class FlightsComponent implements OnInit {
         }
       });
       this.flightservice.getFlight().subscribe(res=>{this.flights=res});
+      window.location.reload();
   }
   FlightRoute(Flight:Flight,ind:number):void{
     var sind="";

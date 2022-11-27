@@ -42,16 +42,16 @@ export class AddflightComponent implements OnInit {
   }
 
   addflight(){
-    console.log(this.flightForm.value);
+    //console.log(this.flightForm.value);
 
     //this.pom = this.flightForm.value.date.getFullYear()+"-"+this.flightForm.value.date.Month()+"-"+this.flightForm.value.date.getDate()+" "+this.flightForm.value.getHours()+":"+this.flightForm.value.getMinutes();
-    this.pom=this.flightForm.value.date;
-    let date=this.pom.getFullYear()+"-"+this.pom.getMonth()+"-"+this.flightForm.value.date.getDate();
-    let h=this.pom.getHours()<10 ? '0'+this.pom.getHours(): this.pom.getHours() ;
-    let m=this.pom.getMinutes()<10 ? '0'+this.pom.getMinutes(): this.pom.getMinutes() ;
-    date=date+" "+h+":"+m;
-    //console.log(date);
-    this.flightForm.value.date=date;
+    // this.pom=this.flightForm.value.date;
+    // let date=this.pom.getFullYear()+"-"+this.pom.getMonth()+"-"+this.pom.getDate();
+    // let h=this.pom.getHours()<10 ? '0'+this.pom.getHours(): this.pom.getHours() ;
+    // let m=this.pom.getMinutes()<10 ? '0'+this.pom.getMinutes(): this.pom.getMinutes() ;
+    // date=date+" "+h+":"+m;
+    // //console.log(date);
+    // this.flightForm.value.date=date;
     if(this.flightForm.valid){
       this.flightservice.postFlight(this.flightForm.value)
       .subscribe({

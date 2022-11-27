@@ -12,8 +12,6 @@ export class Passenger extends Person{
 
     super(name,surname);
     this._id=id;
-    // this._name=name;
-    // this._surname=surname;
     this._phone_nr=phone_nr;
     this._birthday=birthday;
   }
@@ -21,12 +19,6 @@ export class Passenger extends Person{
   get id():number{
     return this._id;
   }
-  // public get name():string{
-  //   return this._name;
-  // }
-  // public get surname():string{
-  //   return this._surname;
-  // }
   public get phone_nr():number{
     return this._phone_nr;
   }
@@ -36,12 +28,7 @@ export class Passenger extends Person{
   set id(id:number){
     this._id=id;
   }
-  // set name(n:string){
-  //   this._name=n;
-  // }
-  // set surname(sn:string){
-  //   this._surname=sn;
-  // }
+
   set phone_nr(phone:number){
     this._phone_nr=phone;
   }

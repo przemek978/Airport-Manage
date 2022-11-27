@@ -21,6 +21,7 @@ export class EditflightComponent implements OnInit {
   pilots:Pilot[]=[];
   editflightForm!:FormGroup;
   tmppassengers!:Passenger[];
+  pom!:Date;
   constructor(private formBuilder: FormBuilder,private flightservice:FlightService,private planeservice:PlaneService,private pilotservice:PilotService,private dialogRef: MatDialogRef<EditflightComponent>, @Inject(MAT_DIALOG_DATA) public editData: Flight) { }
 
   ngOnInit(): void {
@@ -34,8 +35,7 @@ export class EditflightComponent implements OnInit {
     })
     this.planeservice.getPlane().subscribe(res=>{this.planes=res;});
     this.pilotservice.getPilot().subscribe(res=>{this.pilots=res;});
-    console.log(this.editData);
-    console.log(this.editflightForm);
+
     if (this.editData) {
       this.editflightForm.controls['id'].setValue(this.editData.id);
       this.editflightForm.controls['plane'].setValue(this.editData.plane);
@@ -47,8 +47,15 @@ export class EditflightComponent implements OnInit {
   }
   editflight(){
 
-    //this.data.flight.passengers.push({id:this.data.flight.passengers.length+1,name:this.passForm.value.name,surname:this.passForm.value.surname,phone_nr:this.passForm.value.phone,birthday:this.passForm.value.date});
     this.editflightForm.value.passengers=this.tmppassengers;
+    // this.pom=this.editflightForm.value.date;
+    // console.log(this.pom);
+    // //console.log(this.pom.getFullYear()+"-"+this.pom.getMonth()+"-"+this.pom.getDate());
+    // let date=this.pom.getFullYear()+"-"+this.pom.getMonth()+"-"+this.editflightForm.value.date.getDate();
+    // let h=this.pom.getHours()<10 ? '0'+this.pom.getHours(): this.pom.getHours() ;
+    // let m=this.pom.getMinutes()<10 ? '0'+this.pom.getMinutes(): this.pom.getMinutes() ;
+    // date=date+" "+h+":"+m;
+    // this.editflightForm.value.date=date;
     this.flightservice.putFlight(this.editflightForm.value, this.editData.id).subscribe({
       next: (res) => {
         alert("Lot został edytowany");
@@ -57,13 +64,11 @@ export class EditflightComponent implements OnInit {
         alert("Blad");
       }
     })
-    this.dialogRef.close(new Flight(this.editflightForm.value.id,this.editflightForm.value.plane,this.editflightForm.value.pilot1,this.editflightForm.value.pilot2,this.editflightForm.value.date));
+    this.dialogRef.close(new Flight(this.editflightForm.value.id,this.editflightForm.value.plane,
+      this.editflightForm.value.pilot1,this.editflightForm.value.pilot2,this.editflightForm.value.date));
   }
 
   onNoClick() {
     this.dialogRef.close();
   }
-
-
-
 }
