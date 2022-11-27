@@ -201,14 +201,14 @@
         "capacity": 400
       },
       "pilot1": {
-        "id": 3,
-        "name": "Andrzej",
-        "surname": "Duda"
-      },
-      "pilot2": {
         "id": 4,
         "name": "Michał",
         "surname": "Malinowski"
+      },
+      "pilot2": {
+        "id": 3,
+        "name": "Andrzej",
+        "surname": "Duda"
       },
       "date": "2022-12-22T14:15",
       "passengers": [
