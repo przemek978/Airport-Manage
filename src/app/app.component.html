@@ -1,15 +1,16 @@
 
-<mat-toolbar color="primary">
-  <span mat-icon-button class="title" href="home" [routerLink]="['/home']" routerLinkActive="router-link-active" >Airport Managment</span>
-  <!-- <span class="example-spacer"></span> -->
-  <a  mat-icon-button class="icon"  href="flights" [routerLink]="['/flights']" routerLinkActive="router-link-active">
-    Loty
-  </a>
-  <a  mat-icon-button class="icon" href="planes" [routerLink]="['/planes']" routerLinkActive="router-link-active">
-    Samoloty
-  </a>
-
-  <div class="login">
+<mat-toolbar color="primary" class="toolbar_main">
+  <div class="toolbar_main_left">
+    <span mat-icon-button class="title" href="home" [routerLink]="['/home']" routerLinkActive="router-link-active" >Airport Managment</span>
+    <!-- <span class="example-spacer"></span> -->
+    <a  mat-icon-button class="icon"  href="flights" [routerLink]="['/flights']" routerLinkActive="router-link-active">
+      Loty
+    </a>
+    <a  mat-icon-button class="icon" href="planes" [routerLink]="['/planes']" routerLinkActive="router-link-active">
+      Samoloty
+    </a>
+  </div>
+  <div class="toolbar_main_right">
     <a  mat-icon-button class="icon" href="login" [routerLink]="['/login']" routerLinkActive="router-link-active" *ngIf="!auth.IsLogged()">
       Logowanie
     </a>
@@ -19,6 +20,6 @@
     <a  mat-icon-button class="icon" *ngIf="auth.IsLogged()">
       Witaj {{username}}
     </a>
-</div>
+  </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
