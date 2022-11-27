@@ -23,9 +23,9 @@
           <mat-hint>Wybierz datę</mat-hint>
       </mat-form-field>
         <div mat-dialog-actions>
-            <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-            <button mat-button  mat-raised-button color="primary" [mat-dialog-close]="editData" *ngIf="f.valid" cdkFocusInitial (click)="editPassenger()">Ok</button>
-            <button mat-button (click)="onNoClick()">Wyjdź</button>
+            <button mat-raised-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
+            <button mat-raised-button color="primary" [mat-dialog-close]="editData" *ngIf="f.valid" cdkFocusInitial (click)="editPassenger()">Ok</button>
+            <button mat-raised-button (click)="onNoClick()">Wyjdź</button>
         </div>
     </form>
 </div>

@@ -26,8 +26,8 @@
 
     </form>
     <div mat-dialog-actions>
-      <button mat-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-      <button mat-button mat-raised-button color="primary" [mat-dialog-close]="newPass" *ngIf="f.valid" cdkFocusInitial (click)="addPassenger()">Ok</button>
-      <button mat-button (click)="onNoClick()">Wyjdź</button>
+      <button mat-raised-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
+      <button mat-raised-button color="primary" [mat-dialog-close]="newPass" *ngIf="f.valid" cdkFocusInitial (click)="addPassenger()">Ok</button>
+      <button mat-raised-button (click)="onNoClick()">Wyjdź</button>
   </div>
 </div>
