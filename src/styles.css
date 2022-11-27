@@ -35,6 +35,7 @@ table {
   border-radius: 5px;
 }
 
+
 table,
 th,
 td {
@@ -43,10 +44,11 @@ td {
 }
 
 th {
-  background-color: gainsboro;
-  color: darkslategrey;
+  background-color: #3f51b5;
+  color: white;
   /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
   font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
   font-size: large;
 }
 
