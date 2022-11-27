@@ -1,21 +1,23 @@
 
 <mat-toolbar color="primary">
-  <span mat-icon-button class="example-icon" href="home" [routerLink]="['/home']" routerLinkActive="router-link-active" >Airport Managment</span>
+  <span mat-icon-button class="title" href="home" [routerLink]="['/home']" routerLinkActive="router-link-active" >Airport Managment</span>
   <!-- <span class="example-spacer"></span> -->
-  <a  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" href="flights" [routerLink]="['/flights']" routerLinkActive="router-link-active">
+  <a  mat-icon-button class="icon"  href="flights" [routerLink]="['/flights']" routerLinkActive="router-link-active">
     Loty
   </a>
-  <a  mat-icon-button class="example-icon" href="planes" [routerLink]="['/planes']" routerLinkActive="router-link-active">
+  <a  mat-icon-button class="icon" href="planes" [routerLink]="['/planes']" routerLinkActive="router-link-active">
     Samoloty
   </a>
-  <a  mat-icon-button class="example-icon" href="login" [routerLink]="['/login']" routerLinkActive="router-link-active" *ngIf="!auth.IsLogged()">
+  <a  mat-icon-button class="icon login" href="login" [routerLink]="['/login']" routerLinkActive="router-link-active" *ngIf="!auth.IsLogged()">
     Logowanie
   </a>
-  <a  mat-icon-button class="example-icon" [routerLink]="['/logout']" routerLinkActive="router-link-active" *ngIf="auth.IsLogged()" (click)="Logout()">
-    Wyloguj
-  </a>
-  <a  mat-icon-button class="example-icon" *ngIf="auth.IsLogged()">
-    Witaj {{username}}
-  </a>
+  <div class="login">
+    <a  mat-icon-button class="icon" [routerLink]="['/logout']" routerLinkActive="router-link-active" *ngIf="auth.IsLogged()" (click)="Logout()">
+      Wyloguj
+    </a>
+    <a  mat-icon-button class="icon" *ngIf="auth.IsLogged()">
+      Witaj {{username}}
+    </a>
+</div>
 </mat-toolbar>
 <router-outlet></router-outlet>

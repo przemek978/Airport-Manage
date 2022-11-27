@@ -1,2 +1,2 @@
-<h1 style="text-align: center" appLogin color="green">Witam na Lotnisku </h1>
-<p *ngIf="auth.IsLogged()">Jesteś zalogowany jako {{username}} mająć uprawnienia {{role}}a</p>
+<h1 appLogin color="green">Witaj na Lotnisku </h1>
+<h2 *ngIf="auth.IsLogged()">Jesteś zalogowany jako {{username}} mająć uprawnienia {{role}}a</h2>

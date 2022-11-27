@@ -46,8 +46,8 @@
       "id": "1",
       "plane": {
         "id": 1,
-        "name": "Boeing 757",
-        "capacity": 200
+        "name": "Boeing 575",
+        "capacity": 150
       },
       "pilot1": {
         "id": 1,
@@ -78,8 +78,8 @@
         {
           "id": 3,
           "name": "hhhh",
-          "surname": "hhh",
-          "phone_nr": "8",
+          "surname": "hhhjhhh",
+          "phone_nr": "88988",
           "birthday": "2022-11-03"
         },
         {
@@ -109,25 +109,6 @@
         "surname": "Nowak"
       },
       "date": "2022-10-27 14:28"
-    },
-    {
-      "id": "3",
-      "plane": {
-        "id": 1,
-        "name": "Boeing 575",
-        "capacity": 150
-      },
-      "pilot1": {
-        "id": 1,
-        "name": "Franek",
-        "surname": "Nowak"
-      },
-      "pilot2": {
-        "id": 2,
-        "name": "Sebastian",
-        "surname": "Kowal"
-      },
-      "date": "2022-10-27 14:37"
     }
   ]
 }

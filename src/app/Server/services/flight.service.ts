@@ -7,21 +7,22 @@ import { Passenger } from 'src/app/types/passenger';
   providedIn: 'root'
 })
 export class FlightService {
+  private url="http://localhost:3000/flights/";
 
   constructor(private http:HttpClient) { }
   postFlight(data: Flight){
-    return this.http.post<Flight[]>("http://localhost:3000/flights/",data);
+    return this.http.post<Flight[]>(this.url,data);
   }
   getFlight(){
-    return this.http.get<Flight[]>("http://localhost:3000/flights/");
+    return this.http.get<Flight[]>(this.url);
   }
   getFlightid(id:number){
-    return this.http.get<Flight>("http://localhost:3000/flights/"+id);
+    return this.http.get<Flight>(this.url+id);
   }
   putFlight(data: any, id: number) {
-    return this.http.put<any>("http://localhost:3000/flights/" + id, data)
+    return this.http.put<any>(this.url + id, data)
   }
   deleteFlight(id: number) {
-    return this.http.delete<any>("http://localhost:3000/flights/" + id);
+    return this.http.delete<any>(this.url + id);
   }
 }
