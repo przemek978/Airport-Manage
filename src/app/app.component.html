@@ -14,7 +14,7 @@
     <a  mat-icon-button class="icon" href="login" [routerLink]="['/login']" routerLinkActive="router-link-active" *ngIf="!auth.IsLogged()">
       Logowanie
     </a>
-    <a  mat-icon-button class="icon" [routerLink]="['/logout']" routerLinkActive="router-link-active" *ngIf="auth.IsLogged()" (click)="Logout()">
+    <a  mat-icon-button class="icon" *ngIf="auth.IsLogged()" (click)="Logout()">
       Wyloguj
     </a>
     <a  mat-icon-button class="icon" *ngIf="auth.IsLogged()">

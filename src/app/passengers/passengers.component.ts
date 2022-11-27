@@ -20,22 +20,16 @@ export class PassengersComponent implements OnInit {
   selectedPassenger!:Passenger;
   private newPass:Passenger=new Passenger("","",0,"",0);
   flight!:Flight;
-  temp!:any;
+  //temp!:any;
   constructor(public auth:AuthService,public dialog: MatDialog,private flightservice:FlightService,private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => this.flightid = Number(params.get('id')));
-    //this.passengers=this.flight.passengers;
     this.flightservice.getFlightid(this.flightid)
     .subscribe(res=>{
           this.flight=res;
-          // this.temp=this.flight;
-          // this.flight.passengers=[];
-          // for(let i=0;i<this.temp.passnger;i++){
-          //   this.flight.passengers.push(new Passenger(this.temp.passengers._name,this.temp.passengers._surname,this.temp.passengers._phone_nr,this.temp.passengers._birthday,this.temp.passengers._id));
-          // }
     });
 
   }
