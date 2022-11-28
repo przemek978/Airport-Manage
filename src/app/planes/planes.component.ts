@@ -15,14 +15,9 @@ export class PlanesComponent implements OnInit {
   constructor(private planeservice:PlaneService) { }
 
   ngOnInit(): void {
-    this.planeservice.getPlane().subscribe(res=>{this.planes=res;
-      // console.log(res);
-    });
-    // console.log(this.planes);
+    this.planeservice.getPlane().subscribe(res=>{this.planes=res;});
   }
   onSelect(plane: Plane): void {
-    //console.log(this.planes);
-    //console.log(plane);
     this.selectedPlane = plane;
   }
 

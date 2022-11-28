@@ -27,7 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { PlanesComponent } from './planes/planes.component';
 import { HomeComponent } from './home/home.component';
 import { MainDirective } from './main.directive';
-import { MyDatePipe } from './my-date.pipe';
 
 
 
@@ -46,7 +45,6 @@ import { MyDatePipe } from './my-date.pipe';
     PlanesComponent,
     HomeComponent,
     MainDirective,
-    MyDatePipe
   ],
   imports: [
     BrowserModule,

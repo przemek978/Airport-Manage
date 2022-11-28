@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../Server/services/auth.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
 
   username: any = localStorage.getItem("userName");
   role:any =localStorage.getItem('role');
+
   constructor(public auth:AuthService) { }
 
   ngOnInit(): void {

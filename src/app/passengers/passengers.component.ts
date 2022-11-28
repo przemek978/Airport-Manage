@@ -33,7 +33,6 @@ export class PassengersComponent implements OnInit {
 
   }
 
-
   onSelect(passenger:Passenger): void {
     this.selectedPassenger = passenger;
   }
