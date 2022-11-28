@@ -1,14 +1,11 @@
 
-import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FlightService } from '../Server/services/flight.service';
 import { PilotService } from '../Server/services/pilot.service';
 import { PlaneService } from '../Server/services/plane.service';
-import { Flight } from '../types/flight';
 import { Passenger } from '../types/passenger';
-import { Pilot } from '../types/pilot';
-import { Plane } from '../types/plane';
 
 @Component({
   selector: 'app-editpassenger',
@@ -28,8 +25,6 @@ export class EditpassengerComponent implements OnInit {
       date: [new Date(), Validators.required],
       phone: ['', [Validators.required,Validators.pattern("[0-9]*")]],
     });
-    //console.log(this.editData);
-    //console.log(this.editpassForm);
     if (this.editData) {
       this.editpassForm.controls['name'].setValue(this.editData.pass.name);
       this.editpassForm.controls['surname'].setValue(this.editData.pass.surname);
@@ -53,8 +48,6 @@ export class EditpassengerComponent implements OnInit {
 
       }
     }
-    //this.editData.flight.passengers.push({id:this.editData.flight.passengers.length+1,name:this.editpassForm.value.name,surname:this.editpassForm.value.surname,phone_nr:this.editpassForm.value.phone,birthday:this.editpassForm.value.date});
-    //console.log(this.editData.flight);
     this.flightservice.putFlight(this.editData.flight,this.editData.flight.id).subscribe({
          next: (res) => {
            alert("Edytowano pasażera")

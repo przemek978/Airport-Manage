@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Flight } from '../types/flight';
 import { Pilot } from '../types/pilot';
 import { Plane } from '../types/plane';
@@ -46,16 +46,7 @@ export class EditflightComponent implements OnInit {
     this.tmppassengers=this.editData.passengers;
   }
   editflight(){
-
     this.editflightForm.value.passengers=this.tmppassengers;
-    // this.pom=this.editflightForm.value.date;
-    // console.log(this.pom);
-    // //console.log(this.pom.getFullYear()+"-"+this.pom.getMonth()+"-"+this.pom.getDate());
-    // let date=this.pom.getFullYear()+"-"+this.pom.getMonth()+"-"+this.editflightForm.value.date.getDate();
-    // let h=this.pom.getHours()<10 ? '0'+this.pom.getHours(): this.pom.getHours() ;
-    // let m=this.pom.getMinutes()<10 ? '0'+this.pom.getMinutes(): this.pom.getMinutes() ;
-    // date=date+" "+h+":"+m;
-    // this.editflightForm.value.date=date;
     this.flightservice.putFlight(this.editflightForm.value, this.editData.id).subscribe({
       next: (res) => {
         alert("Lot został edytowany");
