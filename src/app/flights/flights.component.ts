@@ -27,7 +27,6 @@ export class FlightsComponent implements OnInit {
   }
   onSelect(flight:Flight): void {
     this.selectedFlight = flight;
-    //console.log(this.selectedFlight);
   }
   openDialog(add: boolean,edit: boolean) {
 
@@ -39,7 +38,6 @@ export class FlightsComponent implements OnInit {
         data: {}
       })
     } else if (edit) {
-      //console.log(this.selectedFlight);
       dialogRef = this.dialog.open(EditflightComponent, {
         width: '50%',
         data: this.selectedFlight

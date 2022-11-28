@@ -11,13 +11,10 @@ import { Employee } from '../types/employee';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  // employees: Employee[] = [
-  //   new Employee('Arek', 'Łiski', 'Administrator', 'Arek1', 'Arek1'),
-  //   new Employee('Przemo', 'K', 'Administrator', 'P1', 'P1'),
-  // ];
+
   loginForm!: FormGroup;
   newlogin!: Employee;
-  constructor(private formBuilder: FormBuilder,private auth:AuthService, private route: ActivatedRoute, private http: HttpClient,private router:Router) {
+  constructor(private formBuilder: FormBuilder,private auth:AuthService, private router:Router) {
 
   }
 
@@ -30,7 +27,7 @@ export class LoginComponent implements OnInit {
       });
     }
     else {
-      console.log(this.auth.username)
+      //console.log(this.auth.username)
       this.router.navigate(['home']);
     }
   }
@@ -53,7 +50,6 @@ export class LoginComponent implements OnInit {
           this.loginForm.reset();
           alert("Zalogowano");
           window.location.reload();
-          //this.router.navigate(['home']);
         }
         else {
           alert("Nieprawidłowe dane");
