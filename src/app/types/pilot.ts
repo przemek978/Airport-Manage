@@ -1,7 +1,6 @@
 import { Person } from "./person";
 
 export class Pilot extends Person{
-  //private ticket:Ticket;
   constructor(name: string,surname: string,private _licence_id: number) {
     super(name,surname);
   }
