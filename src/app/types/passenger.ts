@@ -1,13 +1,10 @@
 import { Person } from "./person";
 
 export class Passenger extends Person{
-  // private _name:string;
-  // private _surname:string;
   private _phone_nr:number;
   private _birthday:string;
   private _id:number;
 
-  //private ticket:Ticket;
   constructor(name:string,surname:string,phone_nr:number,birthday:string,id:number){
 
     super(name,surname);
