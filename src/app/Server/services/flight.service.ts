@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Flight } from 'src/app/types/flight';
-import { Passenger } from 'src/app/types/passenger';
 
 @Injectable({
   providedIn: 'root'
