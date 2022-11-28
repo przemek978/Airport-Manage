@@ -6,7 +6,6 @@ body{
   color: blue;
   font-weight: bold;
   font-size: xx-large;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-family: 'Oswald', sans-serif;
   text-align: center;
 }
@@ -16,7 +15,6 @@ body{
 }
 
 ol{
-  /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode','Luicia Grande','Luicia Sans',Arial,sans-serif;*/
   font-family: 'Oswald', sans-serif;
   font-size: large;
   background-color: gold;
@@ -46,7 +44,6 @@ td {
 th {
   background-color: #3f51b5;
   color: white;
-  /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-size: large;
@@ -78,54 +75,3 @@ button {
   margin-right: 10%;
   float: right;
 }
-
-/* You can add global styles to this file, and also import other style files */
-/* body {
-  margin: 0;
-  background-color: lightcyan;
-} */
-
-/* header {
-  background-color:darkgreen;
-  color:white;
-  padding: 10px;
-  text-align:center;
-} */
-
-/* h2 {
-  text-align: center;
-}
-
-nav {
-  color: white;
-}
-
-nav a:link,
-nav a:visited {
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-nav a:hover,
-nav a:active {
-  background-color: #466d1d;
-}
-
-span {
-  font-weight: bold;
-}
-
-select {
-  padding: 12px;
-  width: 100%;
-}
-
-footer {
-  background: darkgreen;
-  text-align: center;
-  margin-top: 5px;
-  padding: 5px;
-} */
