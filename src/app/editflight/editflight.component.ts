@@ -44,10 +44,12 @@ export class EditflightComponent implements OnInit {
       this.editflightForm.controls['date'].setValue(this.editData.date);
     }
     this.tmppassengers=this.editData.passengers;
+    console.log(this.tmppassengers);
   }
   editflight(){
 
     this.editflightForm.value.passengers=this.tmppassengers;
+    console.log(this.editflightForm.value.passengers)
     // this.pom=this.editflightForm.value.date;
     // console.log(this.pom);
     // //console.log(this.pom.getFullYear()+"-"+this.pom.getMonth()+"-"+this.pom.getDate());
