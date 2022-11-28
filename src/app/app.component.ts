@@ -16,6 +16,5 @@ export class AppComponent {
   Logout(){
     this.auth.Logout();
     window.location.reload();
-    //this.router.navigate(['home']);
   }
 }

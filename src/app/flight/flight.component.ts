@@ -14,7 +14,4 @@ export class FlightComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-
 }

@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../Server/services/auth.service';
 import { Employee } from '../types/employee';
 
@@ -27,7 +26,6 @@ export class LoginComponent implements OnInit {
       });
     }
     else {
-      //console.log(this.auth.username)
       this.router.navigate(['home']);
     }
   }
@@ -38,7 +36,6 @@ export class LoginComponent implements OnInit {
           return a.username === this.loginForm.value.username && a.password === this.loginForm.value.password
         });
         if (user) {
-          localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
           if (user.role == 'admin') {
             localStorage.setItem('role', 'admin');
           }

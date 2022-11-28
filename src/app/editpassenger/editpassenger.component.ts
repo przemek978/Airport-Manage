@@ -1,10 +1,7 @@
-
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FlightService } from '../Server/services/flight.service';
-import { PilotService } from '../Server/services/pilot.service';
-import { PlaneService } from '../Server/services/plane.service';
 import { Passenger } from '../types/passenger';
 
 @Component({
@@ -16,7 +13,7 @@ export class EditpassengerComponent implements OnInit {
 
   editpassForm!:FormGroup;
   newPass:Passenger=new Passenger("","",0,"",0);
-  constructor(private formBuilder: FormBuilder,private flightservice:FlightService,private planeservice:PlaneService,private pilotservice:PilotService,private dialogRef: MatDialogRef<EditpassengerComponent>, @Inject(MAT_DIALOG_DATA) public editData: any) { }
+  constructor(private formBuilder: FormBuilder,private flightservice:FlightService,private dialogRef: MatDialogRef<EditpassengerComponent>, @Inject(MAT_DIALOG_DATA) public editData: any) { }
 
   ngOnInit(): void {
     this.editpassForm = this.formBuilder.group({

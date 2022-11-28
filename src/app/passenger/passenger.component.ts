@@ -15,6 +15,4 @@ export class PassengerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-
 }
