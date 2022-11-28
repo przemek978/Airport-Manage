@@ -4,22 +4,22 @@
   margin: 20px;
 }
 
-.title{
+.titlemain{
   margin: 10px;
   color: white;
   font-weight: bold;
+  padding-top: 10px;
+  font-size: 20px;
 }
 .login{
-  /* margin: 60%; */
   flex: 1 1 auto;
-
 }
 .toolbar_main{
   width: 100%;
   font-family: 'Oswald', sans-serif;
 }
 .toolbar_main_left{
-  margin-right: 30%;
+  margin-right: 35%;
 }
 .toolbar_main_right{
   margin-left: 35%;
