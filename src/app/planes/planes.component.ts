@@ -16,8 +16,9 @@ export class PlanesComponent implements OnInit {
 
   ngOnInit(): void {
     this.planeservice.getPlane().subscribe(res=>{this.planes=res;
-      console.log(res);});
-    console.log(this.planes);
+      // console.log(res);
+    });
+    // console.log(this.planes);
   }
   onSelect(plane: Plane): void {
     //console.log(this.planes);
