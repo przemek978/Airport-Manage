@@ -1,5 +1,4 @@
 export class Plane {
-  //private ticket:Ticket;
   constructor(private _id: number, private _name: string, private _capacity: number) {}
 
   get id(): number {
