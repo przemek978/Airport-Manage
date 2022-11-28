@@ -9,9 +9,7 @@ import { Passenger } from '../types/passenger';
 export class PassengerComponent implements OnInit {
 
   @Input() passenger!: Passenger;
-  // @Input() prefix!:string;
-  // @Input() isOdd:boolean=true;
-  // @Input() isClicked:boolean=false;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -9,17 +9,12 @@ import { Flight } from '../types/flight';
 export class FlightComponent implements OnInit {
 
   @Input() flight!: Flight;
-  @Input() prefix!:string;
-  @Input() isOdd:boolean=true;
-  @Input() isClicked:boolean=false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  doUnClick(){
-    this.isClicked=false;
-  }
+
 
 }
