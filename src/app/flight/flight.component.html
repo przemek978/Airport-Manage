@@ -1,0 +1,8 @@
+<p [ngClass]="'title'">Szczegóły Lotu</p>
+<div class="flight_details">
+  <span>{{flight.id}}</span>
+  <span>{{flight.plane.name}}</span>
+  <span>{{flight.pilot1.name}} {{flight.pilot1.surname}}</span>
+  <span>{{flight.pilot2.name}} {{flight.pilot2.surname}}</span>
+  <span>{{flight.date | date:'dd-MM-YYYY HH:mm'}}</span>
+</div>

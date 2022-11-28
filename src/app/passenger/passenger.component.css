@@ -2,7 +2,6 @@
   color: blue;
   font-weight: bold;
   font-size: xx-large;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 }
 .subtitle{
@@ -11,7 +10,6 @@
 }
 
 ol{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode','Luicia Grande','Luicia Sans',Arial,sans-serif;
   font-size: large;
   background-color: gold;
 }
