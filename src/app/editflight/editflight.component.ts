@@ -44,6 +44,7 @@ export class EditflightComponent implements OnInit {
       this.editflightForm.controls['date'].setValue(this.editData.date);
     }
     this.tmppassengers=this.editData.passengers;
+    console.log(this.tmppassengers);
   }
   editflight(){
     this.editflightForm.value.passengers=this.tmppassengers;

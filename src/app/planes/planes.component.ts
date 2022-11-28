@@ -20,8 +20,8 @@ export class PlanesComponent implements OnInit {
     console.log(this.planes);
   }
   onSelect(plane: Plane): void {
-    console.log(this.planes);
-    console.log(plane);
+    //console.log(this.planes);
+    //console.log(plane);
     this.selectedPlane = plane;
   }
 

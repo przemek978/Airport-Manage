@@ -20,7 +20,6 @@ export class PassengersComponent implements OnInit {
   selectedPassenger!:Passenger;
   private newPass:Passenger=new Passenger("","",0,"",0);
   flight!:Flight;
-  //temp!:any;
   constructor(public auth:AuthService,public dialog: MatDialog,private flightservice:FlightService,private route: ActivatedRoute) {
 
   }
@@ -40,26 +39,22 @@ export class PassengersComponent implements OnInit {
   }
 
   openDialog(add: boolean,edit: boolean) {
-    //console.log(this.flight);
-    //console.log(this.passengers);
     let dialogRef = null;
 
     if (add) {
       dialogRef = this.dialog.open(AddpassengertoflyComponent, {
-        width: '30%',
+        width: '50%',
         data: {pass: this.newPass,flight: this.flight}
-        // {name: this.newPass.name ,surname: 'a',phone: '',date: ''}
       })
     } else if (edit) {
       console.log(this.selectedPassenger);
       dialogRef = this.dialog.open(EditpassengerComponent, {
-        width: '30%',
+        width: '50%',
         data: {pass:this.selectedPassenger,flight: this.flight}
       })
     } else
       return;
       dialogRef.afterClosed().subscribe(result => {
-        //console.log(result.data);
         if (result !== undefined) {
 
           if (result.data.name.length <3) {
@@ -68,51 +63,8 @@ export class PassengersComponent implements OnInit {
           if(result.data.id== undefined){
             result.data.id=this.passengers.length+1;
           }
-          if(add){
-
-           // console.log(result);
-          //  this.newPass=new Passenger(result.data.name,result.data.surname,result.data.phone_nr,result.data.birthday,this.flight.passengers.length+1);
-          //  // this.newPass.id=this.flight.passengers.length+1;
-          //  // this.newPass.name=result.data.name;
-          //  // this.newPass.surname=result.data.surname;
-          //  // this.newPass.phone_nr=result.data.phone_nr;
-          //  // this.newPass.birthday=result.data.birthday;
-          //  console.log(this.newPass);
-          //  this.flight.passengers.push(this.newPass);
-          //  console.log(this.flight);
-          //  this.flightservice.putFlight(this.flight,this.flightid).subscribe({
-          //    next: (res) => {
-          //      alert("Dodano pasażera")
-          //    },
-          //    error: () => {
-          //      alert("Wystąpił błąd");
-          //    }
-          //  });
-          }
-          else if(edit){
-            // this.passengers.forEach((obj, index, tab) =>{
-            //   if(obj === this.selectedPassenger){
-            //     tab[index] = this.selectedPassenger;
-            //     //this.passengers.editPassenger(this.newPass, this.selectedPassenger); dodac dodanie do serwisu
-            //     this.selectedPassenger = tab[index];
-            //   }
-            // })
-          }
 
         }
       })
   }
-
-  // PassengerClicked(Passenger:Passenger,ind:number):void{
-  //   this.whichClicked=ind;
-  //   console.log("Passenger clicked",Passenger,this.whichClicked);
-
-  // }
-  // get Flightid(){
-  //   return this.flightid;
-  // }
-  // set Flightid(flightid:string){
-  //   this.flightid=flightid;
-  // }
-
 }
