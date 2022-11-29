@@ -59,8 +59,8 @@
     },
     {
       "id": 2,
-      "username": "User1",
-      "password": "User1",
+      "username": "user1",
+      "password": "user1",
       "name": "Pracownik",
       "surname": "K",
       "role": "employee"
