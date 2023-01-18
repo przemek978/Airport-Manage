@@ -36,6 +36,24 @@ export class PassengersComponent implements OnInit {
   onSelect(passenger:Passenger): void {
     this.selectedPassenger = passenger;
   }
+  deletePassenger(){
+    this.flight.passengers.forEach((passenger,index) => {
+      if(passenger.id==this.selectedPassenger.id){
+        this.flight.passengers.splice(index,1);
+        console.log(this.flight.passengers)
+        console.log(index)
+      }
+    });
+
+    this.flightservice.putFlight(this.flight,this.flight.id).subscribe({
+      next: (res) => {
+        alert("Usunięto pasażera")
+      },
+      error: () => {
+        alert("Wystąpił błąd");
+      }
+    });
+  }
 
   openDialog(add: boolean,edit: boolean) {
     let dialogRef = null;
