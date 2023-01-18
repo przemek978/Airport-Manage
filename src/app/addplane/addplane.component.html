@@ -1,6 +1,6 @@
-<h1 mat-dialog-title>Dodaj pasażera do lotu</h1>
+<h1 mat-dialog-title>Dodaj nowy lot</h1>
 <div mat-dialog-content class="mat-dialog-window">
-  <form #f="ngForm" class= "dialog" [formGroup]="passForm">
+  <form #f="ngForm" class= "dialog" [formGroup]="planeForm">
     <mat-form-field class="example-full-width">
       <mat-label>Numer samolotu </mat-label>
       <input matInput name="id" formControlName="id"/>
@@ -18,7 +18,9 @@
     </form>
     <div mat-dialog-actions>
       <button mat-raised-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
-      <button mat-raised-button color="primary" [mat-dialog-close]="newPass" *ngIf="f.valid" cdkFocusInitial (click)="addPlane()">Ok</button>
+      <button mat-raised-button color="primary" [mat-dialog-close]="newPlane" *ngIf="f.valid" cdkFocusInitial (click)="addPlane()">Ok</button>
       <button mat-raised-button (click)="onNoClick()">Wyjdź</button>
   </div>
 </div>
+
+

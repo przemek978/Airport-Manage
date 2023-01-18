@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../Server/services/auth.service';
 import { PlaneService } from '../Server/services/plane.service';
 import { Plane } from '../types/plane';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
+import { AddplaneComponent } from '../addplane/addplane.component';
+import { EditplaneComponent } from '../editplane/editplane.component';
+import { FlightService } from '../Server/services/flight.service';
+import { Flight } from '../types/flight';
 
 
 @Component({
@@ -24,6 +30,36 @@ export class PlanesComponent implements OnInit {
   deletePlane(){
     this.planeservice.deletePlane(this.selectedPlane.id).subscribe(res=>{this.planes=res;});
     this.planeservice.getPlane().subscribe(res=>{this.planes=res;});
+  }
+
+  openDialog(add: boolean,edit: boolean) {
+    let dialogRef = null;
+
+    if (add) {
+      dialogRef = this.dialog.open(AddplaneComponent, {
+        width: '50%',
+        data: {pass: this.newPlane,plane: this.planes}
+      })
+    } else if (edit) {
+      console.log(this.selectedPlane);
+      dialogRef = this.dialog.open(EditplaneComponent, {
+        width: '50%',
+        data: {pass:this.selectedPlane,flight: this.planes}
+      })
+    } else
+      return;
+      dialogRef.afterClosed().subscribe(result => {
+        if (result !== undefined) {
+
+          if (result.data.name.length <3) {
+              alert("Za krótkie imie")
+          }
+          if(result.data.id== undefined){
+            result.data.id=this.planes.length+1;
+          }
+
+        }
+      })
   }
 
 }

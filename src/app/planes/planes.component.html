@@ -23,6 +23,10 @@
 </tbody>
 </table>
 <div *ngIf="this.auth.IsLogged()" class="przyciski">
+  <button mat-raised-button color="primary" (click)="openDialog(true, false)" >Dodaj pasazera</button>
+  <div *ngIf="selectedPlane!=null && this.auth.IsAdmin()" >
+    <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj Pasazera</button>
+  </div>
   <button mat-raised-button color="primary" (click)="deletePlane()">Usuń samolot</button>
 </div>
 
