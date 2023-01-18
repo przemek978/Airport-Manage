@@ -27,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PlanesComponent } from './planes/planes.component';
 import { HomeComponent } from './home/home.component';
 import { MainDirective } from './main.directive';
+import { AddplaneComponent } from './addplane/addplane.component';
+import { EditplaneComponent } from './editplane/editplane.component';
 
 
 
@@ -45,6 +47,8 @@ import { MainDirective } from './main.directive';
     PlanesComponent,
     HomeComponent,
     MainDirective,
+    AddplaneComponent,
+    EditplaneComponent,
   ],
   imports: [
     BrowserModule,
