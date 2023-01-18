@@ -1,0 +1,274 @@
+{
+  "planes": [
+    {
+      "id": 1,
+      "name": "Tu-154",
+      "capacity": 180
+    },
+    {
+      "id": 2,
+      "name": "Airbus A220",
+      "capacity": 220
+    },
+    {
+      "id": 3,
+      "name": "Boeing 787",
+      "capacity": 250
+    },
+    {
+      "id": 4,
+      "name": "Airbus A300",
+      "capacity": 265
+    },
+    {
+      "id": 5,
+      "name": "Boeing 747",
+      "capacity": 400
+    }
+  ],
+  "pilots": [
+    {
+      "id": 1,
+      "name": "Jan",
+      "surname": "Nowak"
+    },
+    {
+      "id": 2,
+      "name": "Sebastian",
+      "surname": "Kowalski"
+    },
+    {
+      "id": 3,
+      "name": "Andrzej",
+      "surname": "Duda"
+    },
+    {
+      "id": 4,
+      "name": "Michał",
+      "surname": "Malinowski"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "name": "admin",
+      "surname": "admin",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "user1",
+      "password": "user1",
+      "name": "Pracownik",
+      "surname": "K",
+      "role": "employee"
+    }
+  ],
+  "flights": [
+    {
+      "id": "1",
+      "plane": {
+        "id": 1,
+        "name": "Tu-154",
+        "capacity": 180
+      },
+      "pilot1": {
+        "id": 1,
+        "name": "Jan",
+        "surname": "Nowak"
+      },
+      "pilot2": {
+        "id": 3,
+        "name": "Andrzej",
+        "surname": "Duda"
+      },
+      "date": "2022-11-30 18:00",
+      "passengers": [
+        {
+          "id": 1,
+          "name": "Maciej",
+          "surname": "Kowalski",
+          "phone_nr": "500100200",
+          "birthday": "2000-02-20"
+        },
+        {
+          "id": 2,
+          "name": "Karol",
+          "surname": "Kit",
+          "phone_nr": "400300200",
+          "birthday": "1987-10-05"
+        },
+        {
+          "id": 3,
+          "name": "Franek",
+          "surname": "Marcinowski",
+          "phone_nr": "505105205",
+          "birthday": "2002-12-09"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "plane": {
+        "id": 3,
+        "name": "Boeing 787",
+        "capacity": 250
+      },
+      "pilot1": {
+        "id": 4,
+        "name": "Michał",
+        "surname": "Malinowski"
+      },
+      "pilot2": {
+        "id": 2,
+        "name": "Sebastian",
+        "surname": "Kowalski"
+      },
+      "date": "2022-12-12 17:00",
+      "passengers": [
+        {
+          "id": 1,
+          "name": "Franek ",
+          "surname": "Frankowski",
+          "phone_nr": "606505303",
+          "birthday": "1987-07-18"
+        },
+        {
+          "id": 2,
+          "name": "Olga",
+          "surname": "Olnik",
+          "phone_nr": "500300400",
+          "birthday": "1975-05-22"
+        },
+        {
+          "id": 3,
+          "name": "Alina",
+          "surname": "Alnikowska",
+          "phone_nr": "698789389",
+          "birthday": "1981-03-31"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "plane": {
+        "id": 2,
+        "name": "Airbus A220",
+        "capacity": 220
+      },
+      "pilot1": {
+        "id": 2,
+        "name": "Sebastian",
+        "surname": "Kowalski"
+      },
+      "pilot2": {
+        "id": 3,
+        "name": "Andrzej",
+        "surname": "Duda"
+      },
+      "date": "2022-12-16 01:00",
+      "passengers": [
+        {
+          "id": 1,
+          "name": "Andrzej",
+          "surname": "Alinow",
+          "phone_nr": "500300200",
+          "birthday": "1974-05-15"
+        },
+        {
+          "id": 2,
+          "name": "Ryszard",
+          "surname": "Kowalski",
+          "phone_nr": "789100200",
+          "birthday": "1955-05-09"
+        },
+        {
+          "id": 3,
+          "name": "Barbara",
+          "surname": "Bocian",
+          "phone_nr": "509405401",
+          "birthday": "1998-04-14"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "plane": {
+        "id": 5,
+        "name": "Boeing 747",
+        "capacity": 400
+      },
+      "pilot1": {
+        "id": 4,
+        "name": "Michał",
+        "surname": "Malinowski"
+      },
+      "pilot2": {
+        "id": 3,
+        "name": "Andrzej",
+        "surname": "Duda"
+      },
+      "date": "2022-12-22T14:15",
+      "passengers": [
+        {
+          "id": 1,
+          "name": "Alina",
+          "surname": "Alinowska",
+          "phone_nr": "500400300",
+          "birthday": "2002-02-02"
+        },
+        {
+          "id": 2,
+          "name": "Tadeusz",
+          "surname": "Kowalski",
+          "phone_nr": "500200100",
+          "birthday": "1951-09-09"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "plane": {
+        "id": 4,
+        "name": "Airbus A300",
+        "capacity": 265
+      },
+      "pilot1": {
+        "id": 1,
+        "name": "Jan",
+        "surname": "Nowak"
+      },
+      "pilot2": {
+        "id": 2,
+        "name": "Sebastian",
+        "surname": "Kowalski"
+      },
+      "date": "2021-12-27T15:10",
+      "passengers": [
+        {
+          "id": 1,
+          "name": "Ewa",
+          "surname": "Kowal",
+          "phone_nr": "590200320",
+          "birthday": "1966-11-27"
+        },
+        {
+          "id": 2,
+          "name": "Wacław",
+          "surname": "Wolny",
+          "phone_nr": "500400102",
+          "birthday": "1991-02-20"
+        },
+        {
+          "id": 3,
+          "name": "Alina",
+          "surname": "Pol",
+          "phone_nr": "544333111",
+          "birthday": "1997-10-03"
+        }
+      ]
+    }
+  ]
+}

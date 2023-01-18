@@ -20,6 +20,9 @@
       <td (mousedown)="onSelect(plane)"><span>{{plane.name}}</span></td>
       <td (mousedown)="onSelect(plane)"><span>{{plane.capacity}}</span></td>
   </tr>
-  </tbody>
+</tbody>
 </table>
+<div *ngIf="this.auth.IsLogged()" class="przyciski">
+  <button mat-raised-button color="primary" (click)="deletePlane()">Usuń samolot</button>
+</div>
 
