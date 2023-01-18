@@ -16,5 +16,10 @@ export class PlaneService {
   getPlane(){
     return this.http.get<Plane[]>(this.url);
   }
-
+  putPlane(data: any, id: number) {
+    return this.http.put<any>(this.url + id, data);
+  }
+  deletePlane(id: number) {
+    return this.http.delete<any>(this.url + id);
+  }
 }
