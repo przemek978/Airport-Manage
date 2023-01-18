@@ -29,6 +29,7 @@ import { HomeComponent } from './home/home.component';
 import { MainDirective } from './main.directive';
 import { AddplaneComponent } from './addplane/addplane.component';
 import { EditplaneComponent } from './editplane/editplane.component';
+import { APIsComponent } from './apis/apis.component';
 
 
 
@@ -49,6 +50,7 @@ import { EditplaneComponent } from './editplane/editplane.component';
     MainDirective,
     AddplaneComponent,
     EditplaneComponent,
+    APIsComponent,
   ],
   imports: [
     BrowserModule,

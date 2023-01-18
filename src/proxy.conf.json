@@ -1,0 +1,7 @@
+{
+  "/APIs": {
+      "target": "http://api.travelpayouts.com/data/en-GB/airports.json",
+      "secure": false,
+      "logLevel": "debug"
+  }
+}
