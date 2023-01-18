@@ -1,6 +1,10 @@
 <h1 mat-dialog-title>Dodaj pasażera do lotu</h1>
 <div mat-dialog-content class="mat-dialog-window">
   <form #f="ngForm" class= "dialog" [formGroup]="passForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Numer samolotu </mat-label>
+      <input matInput name="id" formControlName="id"/>
+  </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Nazwa samolotu</mat-label>
         <input matInput name="name" formControlName="name"/>
