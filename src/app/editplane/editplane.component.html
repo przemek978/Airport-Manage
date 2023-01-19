@@ -1,1 +1,25 @@
-<p>editplane works!</p>
+<h1 mat-dialog-title>Edytuj samolot</h1>
+<div mat-dialog-content class="mat-dialog-window">
+  <form #f="ngForm" class= "dialog" [formGroup]="editplaneForm">
+    <small *ngIf="editplaneForm.controls['capacity'].hasError('pattern')" appMain color="red">Pojemność musi byc liczba</small><br/>
+    <mat-form-field class="example-full-width">
+      <mat-label>Numer samolotu </mat-label>
+      <input  matInput name="id" formControlName="id" readonly/>
+    </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nazwa samolotu</mat-label>
+        <input matInput name="name" formControlName="name"/>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+          <mat-label>Pojemność </mat-label>
+          <input matInput name="capacity" formControlName="capacity"/>
+      </mat-form-field>
+
+    </form>
+    <div mat-dialog-actions>
+      <button mat-raised-button *ngIf="!f.valid" disabled cdkFocusInitial>Ok</button>
+      <button mat-raised-button color="primary" [mat-dialog-close]="newPlane" *ngIf="f.valid" cdkFocusInitial (click)="editPlane()">Ok</button>
+      <button mat-raised-button (click)="onNoClick()">Wyjdź</button>
+  </div>
+</div>

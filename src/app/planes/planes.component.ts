@@ -45,19 +45,14 @@ export class PlanesComponent implements OnInit {
       console.log(this.selectedPlane);
       dialogRef = this.dialog.open(EditplaneComponent, {
         width: '50%',
-        data: {pass:this.selectedPlane,flight: this.planes}
+        data: this.selectedPlane
       })
     } else
       return;
       dialogRef.afterClosed().subscribe(result => {
         if (result !== undefined) {
           this.planeservice.getPlane().subscribe(res=>{this.planes=res;});
-          if (result.data.name.length <3) {
-              alert("Za krótkie imie")
-          }
-          if(result.data.id== undefined){
-            result.data.id=this.planes.length+1;
-          }
+
 
         }
       })

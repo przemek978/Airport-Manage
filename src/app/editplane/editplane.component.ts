@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FlightService } from '../Server/services/flight.service';
+import { PlaneService } from '../Server/services/plane.service';
 import { Plane } from '../types/plane';
 
 @Component({
@@ -11,37 +12,31 @@ import { Plane } from '../types/plane';
 })
 export class EditplaneComponent implements OnInit {
 
-  editpassForm!:FormGroup;
-  newPass:Plane=new Plane(0,"",0);
-  constructor(private formBuilder: FormBuilder,private flightservice:FlightService,private dialogRef: MatDialogRef<EditplaneComponent>, @Inject(MAT_DIALOG_DATA) public editData: any) { }
+  editplaneForm!:FormGroup;
+  newPlane:Plane=new Plane(0,"",0);
+
+  constructor(private planeservice:PlaneService,private formBuilder: FormBuilder,private flightservice:FlightService, private dialogRef: MatDialogRef<EditplaneComponent> , @Inject(MAT_DIALOG_DATA) public editData: any) { }
 
   ngOnInit(): void {
-    this.editpassForm = this.formBuilder.group({
+    this.editplaneForm = this.formBuilder.group({
+      id: ['', [Validators.required,Validators.pattern("[0-9]*")]],
       name: ['', Validators.required,],
-      capacity: ['', Validators.required],
-    });
+      capacity: ['', [Validators.required,Validators.pattern("[0-9]*")]],
+    })
+
+
     if (this.editData) {
-      this.editpassForm.controls['name'].setValue(this.editData.pass.name);
-      this.editpassForm.controls['capacity'].setValue(this.editData.pass.surname);
+      this.editplaneForm.controls['id'].setValue(this.editData.id);
+      this.editplaneForm.controls['name'].setValue(this.editData.name);
+      this.editplaneForm.controls['capacity'].setValue(this.editData.capacity);
     }
+    console.log(this.editData)
   }
 
-  editPassenger(){
 
-    console.log(this.editData);
-    if(this.editData.flight.planes==undefined){
-      this.editData.flight.planes=[];
-    }
-    console.log(this.editData.flight);
-    for(let i=0;i<this.editData.flight.planes.length;i++){
-      console.log(this.editData.flight.planes[i].id);
-      console.log(this.editData.pass.id);
-      if(this.editData.flight.planes[i].id==this.editData.pass.id){
-        this.editData.flight.planes[i]={id:this.editData.flight.planes[i].id,name:this.editpassForm.value.name,capacity:this.editpassForm.value.capacity};
-
-      }
-    }
-    this.flightservice.putFlight(this.editData.flight,this.editData.flight.id).subscribe({
+  editPlane(){
+    console.log(this.editData)
+    this.planeservice.putPlane(this.editplaneForm.value,this.editData.id).subscribe({
          next: (res) => {
            alert("Edytowano samolot")
          },

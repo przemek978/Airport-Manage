@@ -24,16 +24,6 @@
       "id": 5,
       "name": "Boeing 747",
       "capacity": 400
-    },
-    {
-      "id": "6",
-      "name": "ffff",
-      "capacity": "45"
-    },
-    {
-      "id": "7",
-      "name": "gg",
-      "capacity": "200"
     }
   ],
   "pilots": [

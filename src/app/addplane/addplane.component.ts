@@ -18,9 +18,9 @@ export class AddplaneComponent implements OnInit {
 
   ngOnInit(): void {
     this.planeForm = this.formBuilder.group({
-      id: ['', Validators.required,],
+      id: ['', [Validators.required,Validators.pattern("[0-9]*")]],
       name: ['', Validators.required,],
-      capacity: ['', Validators.required],
+      capacity: ['', [Validators.required,Validators.pattern("[0-9]*")]],
     })
   }
 

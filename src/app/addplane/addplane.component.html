@@ -1,6 +1,9 @@
-<h1 mat-dialog-title>Dodaj pasażera do lotu</h1>
+<h1 mat-dialog-title>Dodaj samolot</h1>
 <div mat-dialog-content class="mat-dialog-window">
   <form #f="ngForm" class= "dialog" [formGroup]="planeForm">
+    <small *ngIf="planeForm.controls['id'].hasError('required')" appMain color="red">Numer samolotu jest wymagany</small>
+      <small *ngIf="planeForm.controls['id'].hasError('pattern')" appMain color="red">Numer samolotu musi byc liczba</small>
+      <small *ngIf="planeForm.controls['capacity'].hasError('pattern')" appMain color="red">Pojemność musi byc liczba</small><br/>
     <mat-form-field class="example-full-width">
       <mat-label>Numer samolotu </mat-label>
       <input matInput name="id" formControlName="id"/>
