@@ -19,7 +19,8 @@ export class PlanesComponent implements OnInit {
 
   selectedPlane!:Plane;
   planes: Plane[]=[];
-  constructor(public auth:AuthService,private planeservice:PlaneService) { }
+  newPlane!:Plane;
+  constructor(public dialog: MatDialog,public auth:AuthService,private planeservice:PlaneService) { }
 
   ngOnInit(): void {
     this.planeservice.getPlane().subscribe(res=>{this.planes=res;});
@@ -38,7 +39,7 @@ export class PlanesComponent implements OnInit {
     if (add) {
       dialogRef = this.dialog.open(AddplaneComponent, {
         width: '50%',
-        data: {pass: this.newPlane,plane: this.planes}
+        data: {}
       })
     } else if (edit) {
       console.log(this.selectedPlane);
@@ -50,7 +51,7 @@ export class PlanesComponent implements OnInit {
       return;
       dialogRef.afterClosed().subscribe(result => {
         if (result !== undefined) {
-
+          this.planeservice.getPlane().subscribe(res=>{this.planes=res;});
           if (result.data.name.length <3) {
               alert("Za krótkie imie")
           }

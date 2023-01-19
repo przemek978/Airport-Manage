@@ -10,19 +10,19 @@ export class APIsComponent implements OnInit {
 
   data!:any;
   constructor(private extapi: ExternalAPIService) {
-
+    console.log("AA")
   }
 
   ngOnInit(): void {
     this.extapi.getDATA().subscribe({
       next: (res) => {
-        this.data=res;
+        //this.data=res;
       },
       error: () => {
           alert("blad1")
       }
     });
-    console.log(this.data);
+    //console.log(this.data);
   }
 
 

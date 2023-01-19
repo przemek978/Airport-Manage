@@ -14,7 +14,7 @@ export class ExternalAPIService {
     //this.postAuth();
     console.log(this.http.get<any[]>(this.url));
     this.options={
-      header: 'X-Access-Token 321d6a221f8926b5ec41ae89a3b2ae7b'
+      header: "Access-Control-Allow-Origin: *"
     };
     return this.http.get<any[]>(this.url,this.options);
   }
