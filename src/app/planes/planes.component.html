@@ -26,7 +26,7 @@
   <button mat-raised-button color="primary" (click)="openDialog(true, false)" >Dodaj samolot</button>
   <div *ngIf="selectedPlane!=null && this.auth.IsAdmin()" >
     <button mat-raised-button color="primary" (click)="openDialog(false, true)">Edytuj samolot</button>
+    <button mat-raised-button color="primary" (click)="deletePlane()">Usuń samolot</button>
   </div>
-  <button mat-raised-button color="primary" (click)="deletePlane()">Usuń samolot</button>
 </div>
 

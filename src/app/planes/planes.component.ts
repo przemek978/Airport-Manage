@@ -27,10 +27,12 @@ export class PlanesComponent implements OnInit {
   }
   onSelect(plane: Plane): void {
     this.selectedPlane = plane;
+    console.log(this.selectedPlane);
   }
   deletePlane(){
     this.planeservice.deletePlane(this.selectedPlane.id).subscribe(res=>{this.planes=res;});
     this.planeservice.getPlane().subscribe(res=>{this.planes=res;});
+    window.location.reload();
   }
 
   openDialog(add: boolean,edit: boolean) {
