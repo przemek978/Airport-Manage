@@ -1,3 +1,18 @@
-.przyciski_center button{
-  margin-right: 47.1%;
+.przyciski_center button {
+    margin-right: 47.1%;
+}
+
+.cosapi {
+    padding: auto;
+    width: 100%;
+}
+
+.cosapi1 {
+    width: 350px;
+    float: left;
+}
+
+.cosapi2 {
+    float: left;
+    width: 300px;
 }
