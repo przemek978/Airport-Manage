@@ -1,1 +1,14 @@
-<p>apis works!</p>
+<!DOCTYPE html>
+<html lang="pl">
+<p [ngClass]="'title'">Bored API</p>
+<div class="przyciski_center">
+  <button mat-raised-button color="primary"  (click)="click()">Kliknij mnie</button>
+</div>
+<div *ngIf="this.data">
+  <a>Aktywność: {{data.activity}}</a><br/>
+  <a>Typ: {{data.type}}</a><br/>
+  <a>Liczba uczestników: {{data.participants}}</a><br/>
+  <a>Cena: {{data.price}}</a><br/>
+  <a>Dostępność:{{data.accessibility  }}</a>
+</div>
+</html>

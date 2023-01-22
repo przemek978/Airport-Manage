@@ -6,17 +6,18 @@ import { Injectable } from '@angular/core';
 })
 export class ExternalAPIService {
 
-  private url='http://api.travelpayouts.com/data/en-GB/airports.json';
+  //private url='http://api.travelpayouts.com/data/en-GB/airports.json';
+  private url='https://www.boredapi.com/api/activity/';
   constructor(private http:HttpClient) { }
 
   options:any;
   getDATA(){
     //this.postAuth();
     console.log(this.http.get<any[]>(this.url));
-    this.options={
-      header: "Access-Control-Allow-Origin: *"
-    };
-    return this.http.get<any[]>(this.url,this.options);
+    // this.options={
+    //   header: "X-CSCAPI-KEY: *"
+    // };
+    return this.http.get<any[]>(this.url);
   }
 
 }

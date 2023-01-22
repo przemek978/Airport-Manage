@@ -14,15 +14,21 @@ export class APIsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    //console.log(this.data);
+  }
+
+  click():void{
     this.extapi.getDATA().subscribe({
       next: (res) => {
-        //this.data=res;
+        this.data=res;
+        //this.data=this.data.data
+        console.log(this.data)
       },
       error: () => {
-          alert("blad1")
+          alert("blad")
       }
     });
-    //console.log(this.data);
   }
 
 

@@ -8,6 +8,9 @@
     <a  mat-icon-button class="icon" href="planes" [routerLink]="['/planes']" routerLinkActive="router-link-active">
       Samoloty
     </a>
+    <a  mat-icon-button class="icon" href="API" [routerLink]="['/API']" routerLinkActive="router-link-active">
+      API
+    </a>
   </div>
   <div class="toolbar_main_right">
     <a  mat-icon-button class="icon" href="login" [routerLink]="['/login']" routerLinkActive="router-link-active" *ngIf="!auth.IsLogged()">
